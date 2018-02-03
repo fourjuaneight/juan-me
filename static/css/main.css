@@ -17,7 +17,7 @@ body {
 }
 
 .me {
-    width: 700px;
+    max-width: 700px;
     height: auto;
     align-self: center;
 }
