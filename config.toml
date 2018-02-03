@@ -1,0 +1,14 @@
+baseURL = ""
+languageCode = "en-us"
+title = ""
+copyright = ""
+
+enableRobotsTXT = "true"
+enableEmoji = "true"
+
+[params.meta]
+  keywords = "juan"
+  description = "This is for me, not you"
+
+[outputs]
+  home = ["html", "rss"]
