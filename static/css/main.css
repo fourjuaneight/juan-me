@@ -3,11 +3,6 @@ html {
 }
 
 body {
-    margin: 0;
-    color: var(--text-color);
-}
-
-.foo {
     margin: 40px 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -15,10 +10,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .me {
-    max-width: 700px;
+    max-width: 70vw;
     height: auto;
     align-self: center;
 }
