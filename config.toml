@@ -1,7 +1,7 @@
 baseURL = "https://juanvillela.me"
 languageCode = "en-us"
-title = ""
-copyright = ""
+title = "Juan"
+copyright = "2018 Juan"
 
 enableRobotsTXT = "true"
 enableEmoji = "true"

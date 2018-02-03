@@ -8,6 +8,7 @@ body {
 }
 
 .foo {
+    margin: 40px 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -20,10 +21,4 @@ body {
     max-width: 700px;
     height: auto;
     align-self: center;
-}
-
-h1 {
-    font-family: Helvetica Neue, sans-serif;
-    text-align: center;
-    font-size: 40px
 }
