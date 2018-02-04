@@ -12,3 +12,6 @@ enableEmoji = "true"
 
 [outputs]
   home = ["html", "rss"]
+
+[params.google.analytics]
+    trackerID = "UA-103631497-2"
