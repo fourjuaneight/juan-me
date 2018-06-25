@@ -24,11 +24,12 @@ body {
     [full-start] minmax(1em, 1fr) 
     [main-start] minmax(0, 44rem) [main-end]
     minmax(1em, 1fr) [full-end];
-  height: calc(100vh - 16px);
+  height: 100vh;
+  margin: 0;
   overflow: auto;
   overflow-x: hidden;
     /* Fallback */
-  padding:0 10px;
+  padding: 0 10px;
   
   /* iOS 11 */
   padding-left: constant(safe-area-inset-left);
