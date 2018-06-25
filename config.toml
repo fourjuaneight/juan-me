@@ -1,17 +1,21 @@
-baseURL = "https://juanvillela.me"
+baseURL = "/"
 languageCode = "en-us"
 title = "Juan"
-copyright = "2018 Juan"
+copyright = "2018 Four One Eight LLC"
 
 enableRobotsTXT = "true"
 enableEmoji = "true"
 
 [params.meta]
-  keywords = "juan"
-  description = "This is for me, not you"
+  keywords = "juan, villela, development, front-end"
+  description = "Indie web developer that likes websites."
 
 [outputs]
   home = ["html", "rss"]
 
 [params.google.analytics]
-    trackerID = "UA-103631497-2"
+  trackerID = "UA-103631497-2"
+    
+[params]
+  social = "fourjuaneight"
+  OpenLinksInNewWindow = true

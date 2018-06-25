@@ -1,20 +1,131 @@
+/* BASE STYLING */
+:root {
+  --accent: #000000;
+  --link: #D7545E;
+  --meta: #949393;
+  --text: #414142;
+}
 html {
-    -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
 }
-
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 body {
-    margin: 40px 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  background-color: #FCFBFB;
+  color: #949393;
+  display: -ms-grid;
+  display: grid;
+  font-family: 'Poppins', sans-serif;
+  grid-template-columns:
+    [full-start] minmax(1em, 1fr) 
+    [main-start] minmax(0, 44rem) [main-end]
+    minmax(1em, 1fr) [full-end];
+  height: 100vh;
+  overflow: auto;
+  overflow-x: hidden;
+    /* Fallback */
+  padding:0 10px;
+  
+  /* iOS 11 */
+  padding-left: constant(safe-area-inset-left);
+  padding-right: constant(safe-area-inset-right);
+  
+  /* iOS 11.2+ */
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 }
-
-.me {
-    max-width: 600px;
-    height: auto;
-    align-self: center;
+body > * {
+  grid-column: main;
+}
+h1,h2,h3,h4 {
+  margin: 0 0 15px;
+}
+h2,h3,h4 {
+  margin-top: 25px;
+}
+p {
+  margin: 0;
+}
+figure {
+  margin: 0;
+}
+img {
+  width: auto;
+}
+a {
+  border-bottom: 2px solid #000000;
+  text-decoration: none;
+}
+a:hover svg {
+  fill: #D7545E;
+}
+figure img {
+  height: 100%;
+  width: 100%;
+}
+/* Layout */
+#intro,
+#social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+#intro {
+  flex-direction: column;
+  margin: auto;
+}
+#social {
+  justify-content: space-between;
+  margin: 50px 0 5px;
+  width: 300px;
+}
+.social-item {
+  border: none;
+  height: 100%;
+}
+.social-item svg {
+  height: 55px;
+  width: 55px;
+}
+/* Styling */
+#intro p {
+  font-size: 55px;
+}
+#intro p span {
+  color: #414142;
+}
+.social-item svg,
+.social-item.email svg path {
+  fill: #414142;
+}
+.social-item.email svg:active path {
+  fill: #F14336;
+}
+.social-item.github svg:active {
+  fill: #000;
+}
+.social-item.twitter svg:active {
+  fill: #00ACED;
+}
+.social-item.upwork svg:active {
+  fill: #6FDA44;
+}
+@media (hover: hover) {
+  .social-item.email svg:hover path {
+    fill: #F14336;
+  }
+  .social-item.github svg:hover {
+    fill: #000;
+  }
+  .social-item.twitter svg:hover {
+    fill: #00ACED;
+  }
+  .social-item.upwork svg:hover {
+    fill: #6FDA44;
+  }
 }
