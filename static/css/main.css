@@ -92,9 +92,19 @@ figure img {
   height: 55px;
   width: 55px;
 }
+@media screen and (max-width: 420px) {
+  #social {
+    margin-top: 30px;
+    width: 250px;
+  }
+  .social-item svg {
+    height: 40px;
+    width: 40px;
+  }
+}
 /* Styling */
 #intro p {
-  font-size: 55px;
+  font-size: 45px;
 }
 #intro p span {
   color: #414142;
@@ -127,5 +137,25 @@ figure img {
   }
   .social-item.upwork svg:hover {
     fill: #6FDA44;
+  }
+}
+@media screen and (max-width: 675px) {
+  #intro p {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 420px) {
+  #intro p {
+    font-size: 35px;
+  }
+}
+@media screen and (max-width: 375px) {
+  #intro p {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 320px) {
+  #intro p {
+    font-size: 30px;
   }
 }
