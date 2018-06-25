@@ -24,7 +24,7 @@ body {
     [full-start] minmax(1em, 1fr) 
     [main-start] minmax(0, 44rem) [main-end]
     minmax(1em, 1fr) [full-end];
-  height: 100vh;
+  height: calc(100vh - 16px);
   overflow: auto;
   overflow-x: hidden;
     /* Fallback */
