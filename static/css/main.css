@@ -68,6 +68,12 @@ figure img {
   width: 100%;
 }
 /* Layout */
+.avatar {
+  border-radius: 50%;
+  height: 175px;
+  margin: 5px 0 50px;
+  width: 175px;
+}
 #intro,
 #social {
   display: -webkit-box;
@@ -92,7 +98,18 @@ figure img {
   height: 55px;
   width: 55px;
 }
+@media screen and (max-width: 675px) {
+  .avatar {
+    height: 150px;
+    width: 150px;
+  }
+}
 @media screen and (max-width: 420px) {
+  .avatar {
+    height: 125px;
+    margin-bottom: 30px;
+    width: 125px;
+  }
   #social {
     margin-top: 30px;
     width: 250px;
@@ -100,6 +117,12 @@ figure img {
   .social-item svg {
     height: 40px;
     width: 40px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .avatar {
+    height: 100px;
+    width: 100px;
   }
 }
 /* Styling */
@@ -146,16 +169,16 @@ figure img {
 }
 @media screen and (max-width: 420px) {
   #intro p {
-    font-size: 35px;
+    font-size: 30px;
   }
 }
 @media screen and (max-width: 375px) {
   #intro p {
-    font-size: 30px;
+    font-size: 28px;
   }
 }
 @media screen and (max-width: 320px) {
   #intro p {
-    font-size: 30px;
+    font-size: 25px;
   }
 }
