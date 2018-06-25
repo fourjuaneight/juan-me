@@ -14,7 +14,7 @@ enableEmoji = "true"
   home = ["html", "rss"]
 
 [params.google.analytics]
-  trackerID = "UA-103631497-2"
+  trackerID = "UA-119777735-2"
     
 [params]
   social = "fourjuaneight"
