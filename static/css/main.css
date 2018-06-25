@@ -55,6 +55,7 @@ a {
 }
 a:active,
 a:hover {
+  border-bottom-color: #D7545E;
   color: #D7545E;
 }
 figure img {
@@ -158,7 +159,6 @@ h1, h2, h3, h4,
   font-size: 20px;
 }
 .back,
-#intro p span a,
 .social-item {
   border: none;
 }
@@ -173,6 +173,9 @@ h1, h2, h3, h4,
 .back:active svg {
   fill: #D7545E;
 }
+#intro p span a {
+ border-bottom-width: 4px;
+}
 .social-item.email svg:active path {
   fill: #F14336;
 }
@@ -185,22 +188,20 @@ h1, h2, h3, h4,
 .social-item.upwork svg:active {
   fill: #6FDA44;
 }
-@media (hover: hover) {
-  .back:hover svg {
-    fill: #D7545E;
-  }
-  .social-item.email svg:hover path {
-    fill: #F14336;
-  }
-  .social-item.github svg:hover {
-    fill: #000;
-  }
-  .social-item.twitter svg:hover {
-    fill: #00ACED;
-  }
-  .social-item.upwork svg:hover {
-    fill: #6FDA44;
-  }
+.back:hover svg {
+  fill: #D7545E;
+}
+.social-item.email svg:hover path {
+  fill: #F14336;
+}
+.social-item.github svg:hover {
+  fill: #000;
+}
+.social-item.twitter svg:hover {
+  fill: #00ACED;
+}
+.social-item.upwork svg:hover {
+  fill: #6FDA44;
 }
 @media screen and (max-width: 675px) {
   h1,
