@@ -1,42 +1,55 @@
 <!DOCTYPE HTML>
-<html lang="en-us">
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
 <head>
   <meta charset="utf-8" />
-  <title>Juan</title>
+  <title>
+    {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+    {{ if eq $url "/" }}
+      {{ .Site.Title }}
+    {{ else }}
+      {{ if .Params.heading }}
+        {{ .Params.heading }}
+      {{ else }}
+        {{ .Title }}
+      {{ end }}
+    {{ end }}
+  </title>
   <meta name="author" content="{{ .Site.Author.name }}">
   <meta name="description" content="{{ .Site.Params.meta.description }}">
   <meta name="keywords" content="{{ .Site.Params.meta.keywords }}">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
   {{ .Hugo.Generator }}
+  
+  <!-- RSS -->
+  {{ with .OutputFormats.Get "rss" -}}
+      {{ printf `<link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
   
   <!-- Open Graph -->
   <link rel="canonical" href="{{ .Permalink }}">
-  {{ if .RSSLink }}
-  <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}">
-  {{ end }}
   <base href="{{ .Site.BaseURL }}"/>
   {{ template "_internal/twitter_cards.html" . }}
-  <meta name="twitter:image" content="{{ .Site.BaseURL }}avatar.png">
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}/img/avatar.png">
   {{ template "_internal/opengraph.html" . }}
-  <meta property="og:image" content="{{ .Site.BaseURL }}avatar.png">
+  <meta property="og:image" content="{{ .Site.BaseURL }}/img/avatar.png">
   {{ template "_internal/schema.html" . }}
 
   <!-- Stylesheets -->
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-  <link href="https://fonts.googleapis.com/css?family=Oswald:400,500|Poppins:400,500" rel="stylesheet">
-  <link rel="stylesheet" href={{ "/css/main.css" | relURL }} />
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|IBM+Plex+Sans+Condensed:500" rel="stylesheet">
+  <link rel="stylesheet" href="/css/{{ index .Site.Data.css.hash "main.css" }}" />
   
   <!-- Favicon -->
-  <link rel="shortcut icon" href={{ "./favicon.png" | relURL }}>
+  <link rel="shortcut icon" href="/img/{{ index .Site.Data.img.hash "favicon.png" }}">
 
   <!-- Webclip and Apple Touch Icon -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}">
-  <link rel="apple-touch-icon" sizes="152x152" href={{ "/apple-touch-icon-152x152.png" | relURL }}>
-  <link rel="apple-touch-icon" sizes="167x167" href={{ "/apple-touch-icon-167x167.png" | relURL }}>
-  <link rel="apple-touch-icon" sizes="180x180" href={{ "/apple-touch-icon-180x180.png" | relURL }}>
-  <link rel="mask-icon" color="#D7545E" href={{ "safari-pinned-tab.svg" | relURL }}>
+  <link rel="apple-touch-icon" sizes="152x152" href="/img/{{ index .Site.Data.img.hash "apple-touch-icon-152x152.png" }}">
+  <link rel="apple-touch-icon" sizes="167x167" href="/img/{{ index .Site.Data.img.hash "apple-touch-icon-167x167.png" }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/{{ index .Site.Data.img.hash "apple-touch-icon-180x180.png" }}">
+  <link rel="mask-icon" color="#D7545E" href="/img/{{ index .Site.Data.img.hash "safari-pinned-tab.svg" }}">
   
   <!-- Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.google.analytics.trackerID }}"></script>

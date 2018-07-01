@@ -1,0 +1,7 @@
+<section class="info flex">
+  <p class="author meta">{{ .Site.Author.name }}</p>
+  <p class="meta">&bull;</p>
+  {{ if .Params.showthedate }}
+    <p class="date meta">{{ .Date.Format "2006-01-02" }}</p>
+  {{ end }}
+</section>

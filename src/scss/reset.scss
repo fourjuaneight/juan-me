@@ -1,0 +1,104 @@
+// Reset
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+body {
+  background-color: $background;
+  color: $text;
+  font: 400 18px 'IBM Plex Sans', sans-serif;
+  @extend %center-margin;
+  max-width: 700px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 15px;
+  width: 100%;
+}
+a {
+  @extend %underline;
+  color: $text;
+}
+a,
+a:active,
+a:hover,
+a:visited {
+	text-decoration: none;
+}
+a:active,
+a:hover,
+a:visited {
+  border-color-bottom: $link;
+	color: $link;
+}
+a svg {
+	fill: $text;
+}
+a:active svg,
+a:hover svg,
+a:visited svg {
+	fill: $link;
+}
+a.meta {
+  border: none;
+  color: $meta;
+}
+a.meta:active,
+a.meta:hover,
+a.meta:visited {
+	color: $accent;
+}
+header {
+	text-transform: uppercase;
+}
+header,
+h1, h2, h3, h4 {
+	font-weight: 500;
+}
+header,
+h1, h2, h3, h4,
+.meta {
+	font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+h1 {
+	font-size: 36px;
+}
+h2 {
+	font-size: 32px;
+}
+h3 {
+	font-size: 28px;
+}
+h4 {
+	font-size: 24px;
+}
+h2, h3, h4 {
+	margin-top: 10px;
+}
+img, 
+svg {
+	height: auto;
+}
+nav > * {
+	margin: 0 10px;
+}
+ol,
+ul {
+	padding-left: 30px;
+}
+ol ul {
+	padding-left: 20px;
+}
+.brand {
+	font-size: 42px;
+}
+.brand,
+h1, h2, h3, h4 {
+	margin: 0;
+	margin-bottom: 10px;
+	text-align: center;
+}
