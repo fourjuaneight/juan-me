@@ -12,11 +12,11 @@ body {
   background-color: $background;
   color: $text;
   font: 400 18px 'IBM Plex Sans', sans-serif;
+  height: 100%;
   @extend %center-margin;
-  max-width: 700px;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 0 15px;
+  padding: 0;
   width: 100%;
 }
 a {
@@ -32,7 +32,7 @@ a:visited {
 a:active,
 a:hover,
 a:visited {
-  border-color-bottom: $link;
+  border-bottom-color: $link;
 	color: $link;
 }
 a svg {
@@ -52,17 +52,33 @@ a.meta:hover,
 a.meta:visited {
 	color: $accent;
 }
-header {
-	text-transform: uppercase;
-}
+article,
+footer,
 header,
-h1, h2, h3, h4 {
-	font-weight: 500;
+main {
+  padding: 15px;
 }
+footer,
 header,
 h1, h2, h3, h4,
 .meta {
 	font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+footer,
+header,
+nav,
+section.info {
+  @extend %flex;
+}
+header {
+	text-transform: uppercase;
+	> a {
+	  border: none;
+	}
+}
+header,
+h1, h2, h3, h4 {
+	font-weight: 500;
 }
 h1 {
 	font-size: 36px;
@@ -83,8 +99,18 @@ img,
 svg {
 	height: auto;
 }
+nav.social {
+  width: 255px;
+  a {
+    border: none;
+  }
+}
 nav > * {
-	margin: 0 10px;
+	margin: 0 30px 0 0;
+}
+nav a svg {
+  height: 55px;
+  width: 55px;
 }
 ol,
 ul {
@@ -92,6 +118,9 @@ ul {
 }
 ol ul {
 	padding-left: 20px;
+}
+p {
+  margin: 0;
 }
 .brand {
 	font-size: 42px;

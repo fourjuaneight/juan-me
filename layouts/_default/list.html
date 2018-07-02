@@ -1,15 +1,15 @@
 {{ define "main" }}
-{{ partial "header.html" . }}
-<main class="content-list">
-  {{ range .Data.Pages.GroupByDate "2006" }}
-  <!-- Content Year -->
-  <h2 class="content-list-date">{{ .Key }}</h2>
-    <!-- List Single Post Items Based on Year -->
-    {{ range .Pages }}
-      {{ .Render "li"}}
+  {{ partial "header.html" . }}
+  <main class="list">
+    {{ range .Data.Pages.GroupByDate "2006" }}
+    <!-- Content Year -->
+    <h2 class="list-date">{{ .Key }}</h2>
+      <!-- List Single Post Items Based on Year -->
+      {{ range .Pages }}
+        {{ .Render "li"}}
+      {{ end }}
     {{ end }}
-  {{ end }}
-</main>
-{{ partial "social.html" . }}
-{{ partial "footer.html" . }}
+  </main>
+  {{ partial "social.html" . }}
+  {{ partial "footer.html" . }}
 {{ end }}

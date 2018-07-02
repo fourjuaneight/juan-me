@@ -17,7 +17,7 @@ pygmentsOptions = "linenos=inline, lineseparator=<br>"
 pygmentsStyle = "monokai"
 
 [author]
-  name = "Juan Villela"
+  name = "Juan C Villela"
   email = "hello@juanvillela.me"
 
 [blackfriday]

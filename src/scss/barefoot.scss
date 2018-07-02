@@ -29,16 +29,16 @@
 }
 .footnote-button:after {
   color: $background;
-  content:attr(data-fn-number;
+  content:attr(data-fn-number);
   display:block;
   font-size:.57em;
   font-weight:700;
   left:50%;
   position:absolute;
   top:50%;
-  transform:translate(-50%,-50%;
+  transform:translate(-50%,-50%);
   transition:color .25s ease;
-  -webkit-transform:translate(-50%,-50%;
+  -webkit-transform:translate(-50%,-50%);
   -webkit-transition:color .25s ease;
 }
 .footnote-button:hover {
@@ -88,8 +88,8 @@
   height:1.3em;
   position:absolute;
   top:-.49em;
-  transform:rotate(45deg;
-  -webkit-transform:rotate(45deg;
+  transform:rotate(45deg);
+  -webkit-transform:rotate(45deg);
   width:1.3em;
   z-index:4;
 }

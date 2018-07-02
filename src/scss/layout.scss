@@ -1,11 +1,112 @@
+// Home
+#intro {
+  @extend %flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100vh;
+  margin: 0 auto;
+  max-width: 700px;
+  padding-top: 50px;
+  width: 100%;
+  .avatar {
+    height: 175px;
+    margin: 5px 0 50px;
+    width: 175px;
+    @media screen and (max-width: 675px) {
+      height: 150px;
+      width: 150px;
+    }
+    @media screen and (max-width: 420px) {
+      height: 125px;
+      margin-bottom: 30px;
+      width: 125px;
+    }
+    @media screen and (max-width: 375px) {
+      height: 100px;
+      width: 100px;
+    }
+  }
+  p {
+    color: #949393;
+    font-size: 45px;
+    margin: 15px 0;
+    span {
+      color: $text;
+      a {
+       border-bottom-width: 4px;
+      }
+    }
+    @media screen and (max-width: 675px) {
+      font-size: 40px;
+    }
+    @media screen and (max-width: 420px) {
+      font-size: 30px;
+    }
+    @media screen and (max-width: 375px) {
+      font-size: 28px;
+    }
+    @media screen and (max-width: 320px) {
+      font-size: 25px;
+    }
+  }
+  nav.social {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 50px 0 5px;
+    @media screen and (max-width: 420px) {
+      margin-top: 30px;
+      max-width: 300px;
+    }
+    a {
+      border: none;
+      svg {
+        @media screen and (max-width: 420px) {
+          height: 40px;
+          width: 40px;
+        }
+      }
+    }
+  }
+}
 // Header
-
-// Feed
-
-// Article
-
+header {
+  align-items: start;
+  justify-content: space-between;
+  a.home,
+  a.home svg.avatar {
+    height: 65px;
+    width: 65px;
+  }
+  nav {
+    a {
+      margin: 0 0 0 25px;
+    }
+  }
+}
 // Footer
-
-// Archive
-
-// 404
+footer {
+  flex-direction: column;
+  nav.social,
+  nav.social a,
+  section.copy {
+    @extend %center-margin;
+  }
+  nav.social {
+    @extend %center-content;
+    a,
+    a svg {
+      height: 40px;
+      width: 40px;
+    }
+  }
+  section.copy {
+    @extend %flex;
+    margin-top: 30px;
+    width: auto;
+  }
+}
+// Article Meta
+section.info {
+  @extend %center-content;  
+}

@@ -4,7 +4,6 @@ var gulp         = require('gulp'),
     imagemin     = require('gulp-imagemin'),
     hash         = require('gulp-hash'),
     del          = require('del');
-    
 
 // Compile SCSS files to CSS
 gulp.task('scss', function () {
@@ -15,9 +14,9 @@ gulp.task('scss', function () {
     .pipe(hash())
     .pipe(gulp.dest('static/css'))
     //Create a hash map
-    .pipe(hash.manifest('hash.json')
+    .pipe(hash.manifest('hash.json'))
     //Put the map in the data directory
-    .pipe(gulp.dest('data/css')
+    .pipe(gulp.dest('data/css'))
 })
 
 // Hash img
@@ -26,8 +25,8 @@ gulp.task('img', function () {
   gulp.src('src/img/*')
     .pipe(hash())
     .pipe(gulp.dest('static/img'))
-    .pipe(hash.manifest('hash.json')
-    .pipe(gulp.dest('data/img')
+    .pipe(hash.manifest('hash.json'))
+    .pipe(gulp.dest('data/img'))
 })
 
 // Hash javascript
@@ -36,12 +35,12 @@ gulp.task('js', function () {
   gulp.src('src/js/*')
     .pipe(hash())
     .pipe(gulp.dest('static/js'))
-    .pipe(hash.manifest('hash.json')
-    .pipe(gulp.dest('data/js')
+    .pipe(hash.manifest('hash.json'))
+    .pipe(gulp.dest('data/js'))
 })
 
 // Watch asset folder for changes
-gulp.task('watch', ['scss', 'images', 'js'], function () {
+gulp.task('watch', ['scss', 'img', 'js'], function () {
   gulp.watch('src/scss/*', ['scss'])
   gulp.watch('src/js/*', ['js'])
   gulp.watch('src/img/*', ['img'])

@@ -5,7 +5,7 @@
     {{ partial "article-meta.html" . }}
     <section class="content">{{ .Content }}</section>
     {{ range .Params.tags }}
-      <section class="tags flex"><a class="meta" href="/tags/{{ . | urlize }}">#{{.}}</a></section>
+      <section class="tags"><a class="meta" href="/tags/{{ . | urlize }}">#{{.}}</a></section>
     {{ end }}
   </article>
   {{ partial "social.html" . }}

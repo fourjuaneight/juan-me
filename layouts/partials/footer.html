@@ -1,15 +1,18 @@
-<footer class="flex">
-  <!-- Copyright -->
-  <p>&copy{{ .Site.Copyright }}</p>
-  <p>&nbsp;&ndash;&nbsp;</p>
-  <!-- Link to site source code -->
-  {{with .Site.Params.social}}
-    <a class="nav-item" href="https://www.github.com/{{.}}/clever-laziness" target="_blank">Source</a>
-  {{end}}
+<footer>
+  {{ partial "social.html" . }}
+  <section class="copy">
+    <!-- Copyright -->
+    <p>&copy{{ .Site.Copyright }}</p>
+    <p>&nbsp;&ndash;&nbsp;</p>
+    <!-- Link to site source code -->
+    {{with .Site.Params.social}}
+      <a class="nav-item" href="https://www.github.com/{{.}}/juan" target="_blank">Source</a>
+    {{end}}
+  </section>
 </footer>
 
 <!-- Scripts -->
-<script src={{ "js/barefoot.js" | relURL }}></script>
+<script src="/js/{{ index .Site.Data.js.hash "barefoot.js" }}"></script>
 <script>
   var lf = new BareFoot({
     scope: "article"
