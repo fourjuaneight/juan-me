@@ -52,11 +52,20 @@ a.meta:hover,
 a.meta:visited {
 	color: $accent;
 }
+article p {
+  line-height: 27px;
+}
 article,
 footer,
 header,
 main {
   padding: 15px;
+}
+article,
+main {
+  @extend %center-margin;
+  max-width: 700px;
+  width: 100%;
 }
 footer,
 header,
@@ -78,10 +87,10 @@ header {
 }
 header,
 h1, h2, h3, h4 {
-	font-weight: 500;
+	font-weight: 700;
 }
 h1 {
-	font-size: 36px;
+	font-size: 42px;
 }
 h2 {
 	font-size: 32px;
@@ -100,17 +109,21 @@ svg {
 	height: auto;
 }
 nav.social {
-  width: 255px;
+  width: 150px;
   a {
     border: none;
   }
 }
-nav > * {
-	margin: 0 30px 0 0;
+nav {
+  justify-content: space-between;
+  a svg {
+    height: 55px;
+    width: 55px;
+  }
 }
-nav a svg {
-  height: 55px;
-  width: 55px;
+nav > *,
+p {
+  margin: 0;
 }
 ol,
 ul {
@@ -119,8 +132,8 @@ ul {
 ol ul {
 	padding-left: 20px;
 }
-p {
-  margin: 0;
+li {
+  margin-bottom: 5px;
 }
 .brand {
 	font-size: 42px;

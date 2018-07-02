@@ -5,10 +5,7 @@
   flex-direction: column;
   justify-content: flex-start;
   height: 100vh;
-  margin: 0 auto;
-  max-width: 700px;
   padding-top: 50px;
-  width: 100%;
   .avatar {
     height: 175px;
     margin: 5px 0 50px;
@@ -30,6 +27,8 @@
   p {
     color: #949393;
     font-size: 45px;
+    font-weight: 700;
+    line-height: 65px;
     margin: 15px 0;
     span {
       color: $text;
@@ -52,7 +51,6 @@
   }
   nav.social {
     flex-wrap: wrap;
-    justify-content: flex-start;
     margin: 50px 0 5px;
     @media screen and (max-width: 420px) {
       margin-top: 30px;
@@ -79,8 +77,18 @@ header {
     width: 65px;
   }
   nav {
-    a {
-      margin: 0 0 0 25px;
+    width: 220px;
+    a.rss {
+      @extend %flex;
+      align-items: center;
+      border: none;
+      height: 25px;
+      @extend %center-content;
+      width: 15px;
+      svg {
+        height: 15px;
+        width: 15px;
+      }
     }
   }
 }
@@ -106,7 +114,16 @@ footer {
     width: auto;
   }
 }
+// Article
+article.post {
+  h1, h2, p {
+    margin-bottom: 20px;
+  }
+}
 // Article Meta
 section.info {
-  @extend %center-content;  
+  @extend %center-content;
+  p {
+    margin: 0;
+  }
 }
