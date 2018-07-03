@@ -13,48 +13,17 @@ body {
   color: $text;
   font: 400 18px 'IBM Plex Sans', sans-serif;
   height: 100%;
-  @extend %center-margin;
+  @extend %margin-center;
   overflow-y: auto;
   overflow-x: hidden;
   padding: 0;
   width: 100%;
 }
-a {
-  @extend %underline;
+a,
+article h2 a {
   color: $text;
 }
-a,
-a:active,
-a:hover,
-a:visited {
-	text-decoration: none;
-}
-a:active,
-a:hover,
-a:visited {
-  border-bottom-color: $link;
-	color: $link;
-}
-a svg {
-	fill: $text;
-}
-a:active svg,
-a:hover svg,
-a:visited svg {
-	fill: $link;
-}
-a.meta {
-  border: none;
-  color: $meta;
-}
-a.meta:active,
-a.meta:hover,
-a.meta:visited {
-	color: $accent;
-}
-article p {
-  line-height: 27px;
-}
+a.back-home,
 article,
 footer,
 header,
@@ -62,12 +31,79 @@ main,
 nav.paginate {
   padding: 15px;
 }
+a:active,
+a:hover,
+article h2 a:active,
+article h2 a:hover,
+p.content a.more:active,
+p.content a.more:hover {
+	color: $link;
+	text-decoration: underline;
+}
+a svg {
+	fill: $text;
+}
+a:active svg,
+a:hover svg {
+	fill: $link;
+}
+a.meta,
+hr,
+p.content a.more,
+.meta {
+  color: $meta;
+}
+a.meta:active,
+a.meta:hover {
+	color: $accent;
+}
+article {
+  a {
+    color: $link;
+  }
+  a:active,
+  a:hover {
+    color: $accent;
+  }
+}
+article p {
+  line-height: 27px;
+}
 article,
 main,
 nav.paginate {
-  @extend %center-margin;
+  @extend %margin-center;
   max-width: 700px;
   width: 100%;
+}
+blockquote {
+  border-left: 1px solid $link;
+  margin: 0 0 15px 0;
+  padding-left: 15px;
+}
+code,
+figure {
+  font: 400 17px 'IBM Plex Mono', monospace;
+}
+figure {
+  background-color: $text;
+  color: $background;
+}
+figure,
+h1, h2, h3, h4,
+nav > *,
+p,
+.brand {
+  margin: 0;
+}
+figure,
+pre {
+  box-shadow: 8px 8px 0 0 $meta;
+  margin-bottom: 21px;
+}
+figcaption p,
+pre {
+  padding: 5px;
 }
 footer,
 header,
@@ -83,16 +119,13 @@ section.info {
 }
 header {
 	text-transform: uppercase;
-	> a {
-	  @extend %no-border;
-	}
 }
 header,
 h1, h2, h3, h4 {
 	font-weight: 700;
 }
 h1 {
-	font-size: 42px;
+	font-size: 36px;
 }
 h2 {
 	font-size: 32px;
@@ -109,20 +142,18 @@ h2, h3, h4 {
 img, 
 svg {
 	height: auto;
+	width: 100%;
 }
-nav a {
-  @extend %no-border;
+li {
+  margin-bottom: 5px;
 }
 nav {
+  @extend %vertical-center;
   justify-content: space-between;
   a svg {
     height: 55px;
     width: 55px;
   }
-}
-nav > *,
-p {
-  margin: 0;
 }
 ol,
 ul {
@@ -131,8 +162,10 @@ ul {
 ol ul {
 	padding-left: 20px;
 }
-li {
-  margin-bottom: 5px;
+p code {
+  color: $background;
+  background-color: $text;
+  padding: 0 2px;
 }
 section.info {
   margin-bottom: 15px;
@@ -140,9 +173,9 @@ section.info {
 .brand {
 	font-size: 42px;
 }
-.brand,
-h1, h2, h3, h4 {
-	margin: 0;
+.brand {
 	margin-bottom: 10px;
-	text-align: center;
+}
+.highlight pre {
+  overflow-x: scroll;
 }

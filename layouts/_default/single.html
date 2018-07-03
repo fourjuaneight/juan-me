@@ -2,11 +2,8 @@
   {{ partial "header.html" . }}
   <article class="post">
     <h1 class="title">{{ .Title }}</h1>
-    {{ partial "article-meta.html" . }}
     <section class="content">{{ .Content }}</section>
-    {{ range .Params.tags }}
-      <section class="tags"><a class="meta" href="/tags/{{ . | urlize }}">#{{.}}</a></section>
-    {{ end }}
+    {{ partial "article-meta.html" . }}
   </article>
   {{ partial "footer.html" . }}
 {{ end }}

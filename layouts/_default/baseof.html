@@ -29,14 +29,14 @@
   <link rel="canonical" href="{{ .Permalink }}">
   <base href="{{ .Site.BaseURL }}"/>
   {{ template "_internal/twitter_cards.html" . }}
-  <meta name="twitter:image" content="{{ .Site.BaseURL }}/img/avatar.png">
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}/img/{{ index .Site.Data.img.hash "avatar.png" }}">
   {{ template "_internal/opengraph.html" . }}
-  <meta property="og:image" content="{{ .Site.BaseURL }}/img/avatar.png">
+  <meta property="og:image" content="{{ .Site.BaseURL }}/img/{{ index .Site.Data.img.hash "avatar.png" }}">
   {{ template "_internal/schema.html" . }}
 
   <!-- Stylesheets -->
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|IBM+Plex+Sans+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:300,700|IBM+Plex+Sans|IBM+Plex+Mono" rel="stylesheet">
   <link rel="stylesheet" href="/css/{{ index .Site.Data.css.hash "main.css" }}" />
   
   <!-- Favicon -->

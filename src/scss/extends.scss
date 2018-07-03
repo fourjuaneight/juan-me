@@ -20,13 +20,15 @@
 %grid {
   display: grid;
 }
-%center-margin {
+%margin-center {
   margin: 0 auto
 }
-%center-content {
+%horizontal-center {
   justify-content: center;
 }
-// Styling
-%no-border {
-  border: none;
+%vertical-center {
+  align-items: center;
+}
+%decoration-none {
+  text-decoration: none;
 }
