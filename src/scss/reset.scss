@@ -58,11 +58,13 @@ article p {
 article,
 footer,
 header,
-main {
+main,
+nav.paginate {
   padding: 15px;
 }
 article,
-main {
+main,
+nav.paginate {
   @extend %center-margin;
   max-width: 700px;
   width: 100%;
@@ -82,7 +84,7 @@ section.info {
 header {
 	text-transform: uppercase;
 	> a {
-	  border: none;
+	  @extend %no-border;
 	}
 }
 header,
@@ -108,11 +110,8 @@ img,
 svg {
 	height: auto;
 }
-nav.social {
-  width: 150px;
-  a {
-    border: none;
-  }
+nav a {
+  @extend %no-border;
 }
 nav {
   justify-content: space-between;
@@ -134,6 +133,9 @@ ol ul {
 }
 li {
   margin-bottom: 5px;
+}
+section.info {
+  margin-bottom: 15px;
 }
 .brand {
 	font-size: 42px;

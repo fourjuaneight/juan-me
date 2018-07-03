@@ -1,15 +1,13 @@
 {{ define "main" }}
   {{ partial "header.html" . }}
   <main class="list">
-    {{ range .Data.Pages.GroupByDate "2006" }}
-    <!-- Content Year -->
-    <h2 class="list-date">{{ .Key }}</h2>
-      <!-- List Single Post Items Based on Year -->
-      {{ range .Pages }}
+    {{ $paginator := .Paginate (where .Data.Pages "Type" "blog") 5 }}
+      {{ range $paginator.Pages }}
         {{ .Render "li"}}
-      {{ end }}
     {{ end }}
   </main>
-  {{ partial "social.html" . }}
+  {{ if or .Paginator.HasPrev .Paginator.HasNext }}
+    {{ partial "paginator.html" . }}
+  {{ end }}
   {{ partial "footer.html" . }}
 {{ end }}

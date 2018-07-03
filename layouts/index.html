@@ -3,7 +3,8 @@
   <!-- Avatar -->
   {{ partial "avatar.html" . }}
   <!-- Intro Message -->
-  <p>Hi, I’m <span><a href="/about" class="about">Juan Villela</a></span> and I like websites. I'm an <span>Indie Front-End Developer</span> from Florida.</p>
+  <p>Hi, I’m <a href="{{ .Site.BaseURL }}about" class="about">Juan Villela</a> and I like websites. I'm an <span>Indie Front-End Developer</span> from Florida.</p>
+  <p>You can read some of my coding adventures over at my <a href="{{ .Site.BaseURL }}blog">blog</a>.</p>
   <!-- Social -->
   {{ partial "social.html" . }}
 </main>

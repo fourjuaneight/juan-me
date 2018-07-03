@@ -1,4 +1,5 @@
-<article class="post">
+<article class="list-item">
   <h2 class="title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
   {{ partial "article-meta.html" . }}
+  <p class="content">{{ .Summary }}</p>
 </article>

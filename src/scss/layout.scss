@@ -32,18 +32,21 @@
     margin: 15px 0;
     span {
       color: $text;
-      a {
-       border-bottom-width: 4px;
-      }
+    }
+    a {
+     border-bottom-width: 4px;
     }
     @media screen and (max-width: 675px) {
       font-size: 40px;
+      line-height: 60px;
     }
     @media screen and (max-width: 420px) {
       font-size: 30px;
+      line-height: 50px;
     }
     @media screen and (max-width: 375px) {
       font-size: 28px;
+      line-height: 40px;
     }
     @media screen and (max-width: 320px) {
       font-size: 25px;
@@ -52,9 +55,10 @@
   nav.social {
     flex-wrap: wrap;
     margin: 50px 0 5px;
+    width: 150px;
     @media screen and (max-width: 420px) {
       margin-top: 30px;
-      max-width: 300px;
+      width: 120px;
     }
     a {
       border: none;
@@ -73,15 +77,18 @@ header {
   justify-content: space-between;
   a.home,
   a.home svg.avatar {
-    height: 65px;
-    width: 65px;
+    height: 50px;
+    width: 50px;
   }
   nav {
     width: 220px;
+    a {
+      @extend %underline;
+    }
     a.rss {
       @extend %flex;
       align-items: center;
-      border: none;
+      @extend %no-border;
       height: 25px;
       @extend %center-content;
       width: 15px;
@@ -92,26 +99,15 @@ header {
     }
   }
 }
-// Footer
-footer {
-  flex-direction: column;
-  nav.social,
-  nav.social a,
-  section.copy {
-    @extend %center-margin;
-  }
-  nav.social {
-    @extend %center-content;
-    a,
-    a svg {
-      height: 40px;
-      width: 40px;
+// Feed
+main.list {
+  min-height: calc(100vh - 203px);
+  article.list-item {
+    padding: 0;
+    margin-bottom: 30px;
+    h2.title a {
+      @extend %no-border;
     }
-  }
-  section.copy {
-    @extend %flex;
-    margin-top: 30px;
-    width: auto;
   }
 }
 // Article
@@ -125,5 +121,47 @@ section.info {
   @extend %center-content;
   p {
     margin: 0;
+  }
+}
+// Paginator
+nav.paginate {
+  a {
+    height: 35px;
+    &.page-next {
+      margin-left: auto;
+    }
+    &.page-prev {
+      margin-right: auto;
+    }
+    svg {
+      height: 35px;
+      width: auto;
+    }
+  }
+}
+// Footer
+footer {
+  flex-direction: column;
+  nav.social,
+  nav.social a,
+  section.copy {
+    @extend %center-margin;
+  }
+  nav.social {
+    @extend %center-content;
+    width: 120px;
+    a,
+    a svg {
+      height: 40px;
+      width: 40px;
+    }
+  }
+  section.copy {
+    @extend %flex;
+    margin-top: 30px;
+    width: auto;
+    @media screen and (max-width: 345px) {
+      font-size: 17px;
+    }
   }
 }
