@@ -1,7 +1,7 @@
 // Header
 header {
   @extend %vertical-center;
-  justify-content: space-between;
+  @extend %space-between;
   a.home,
   a.home svg.avatar {
     height: 50px;
@@ -34,25 +34,29 @@ header {
   justify-content: flex-start;
   height: 100vh;
   padding-top: 50px;
+  @media screen and (max-width: 375px) {
+    padding-top: 30px;
+  }
+  @media screen and (max-width: 320px) {
+    padding-top: 15px;
+  }
   .avatar {
     height: 175px;
-    margin: 5px 0 50px;
+    margin: 5px 0 15px;
     width: auto;
     @media screen and (max-width: 675px) {
       height: 150px;
     }
     @media screen and (max-width: 420px) {
       height: 125px;
-      margin-bottom: 30px;
     }
     @media screen and (max-width: 375px) {
       height: 100px;
     }
   }
-  p {
+  h1, h2 {
     color: #949393;
-    font-size: 45px;
-    font-weight: 700;
+    font: 400 45px 'IBM Plex Sans', sans-serif;
     line-height: 65px;
     margin: 15px 0;
     span {
@@ -79,10 +83,9 @@ header {
   }
   nav.social {
     flex-wrap: wrap;
-    margin: 50px 0 5px;
+    margin: 15px 0 5px;
     width: 150px;
     @media screen and (max-width: 420px) {
-      margin-top: 30px;
       width: 120px;
     }
     a {
@@ -95,14 +98,39 @@ header {
       }
     }
   }
-  section.portfolio {
-    
-  }
-  section.feed {
-    
+  a.down {
+    height: 42px;
+    @extend %margin-center;
+    margin-top: auto;
+    width: 50px;
+    @media screen and (max-width: 320px) {
+      height: 25px;
+      width: 30px;
+    }
   }
 }
-// Feed
+// Portfolio
+ul#portfolio {
+  @extend %flex;
+  flex-wrap: wrap;
+  @extend %space-between;
+  padding: 0;
+  h3 {
+    margin-bottom: 20px;
+  }
+  li {
+    list-style: none;
+    max-width: 300px;
+    padding: 0;
+    h4, p {
+      margin-bottom: 13px;
+    }
+    h4 a {
+      @extend %decoration-none;
+    }
+  }
+}
+// List
 main.list {
   min-height: calc(100vh - 203px);
   article.list-item {
@@ -135,7 +163,7 @@ article.post {
 // Article Meta
 section.info {
   @extend %vertical-center;
-  justify-content: space-between;
+  @extend %space-between;
   p {
     margin: 0;
     &.date {

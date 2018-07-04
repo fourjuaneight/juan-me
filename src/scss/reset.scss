@@ -20,7 +20,8 @@ body {
   width: 100%;
 }
 a,
-article h2 a {
+article h2 a,
+ul#portfolio h3 a {
   color: $text;
 }
 a.back-home,
@@ -36,7 +37,9 @@ a:hover,
 article h2 a:active,
 article h2 a:hover,
 p.content a.more:active,
-p.content a.more:hover {
+p.content a.more:hover,
+ul#portfolio h3 a:active,
+ul#portfolio h3 a:hover {
 	color: $link;
 	text-decoration: underline;
 }
@@ -71,7 +74,8 @@ article p {
 }
 article,
 main,
-nav.paginate {
+nav.paginate,
+ul#portfolio {
   @extend %margin-center;
   max-width: 700px;
   width: 100%;

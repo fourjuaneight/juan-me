@@ -12,3 +12,23 @@ I make websites that I would go to. That means they’re fast, accessible, intui
 Other than that, there's not much else you need to know about me; I'm not all that interesting. I'm a voracious reader, like going to the movies, follow a ton of webcomics, and listen to a ton of podcasts. I delivered a baby once; that's interesting, right?
 
 Anyhow, this site serves two purposes: a testing ground for new web technologies I'm learning and a place to share my coding journey. So ideally you'll see the quality of the site improve and the source code constantly evolve.
+
+<!-- Portfolio -->
+<ul id="portfolio">
+  <h3>Here's some of the recent work I've done.</h3>
+  <li>
+    <h4><a href="https://www.rustledjimmies.net" rel="nofollow">Rustled Jimmies</a></h4>
+    {{< img src="jimmies.jpg" >}}
+    <p>A webcomic featuring plump lil dudes with cute butts. The site and all of its functionality were built entirely with Hugo. This was my first foray into designing a site from top to bottom. The goal was to have the comic be the centerpiece, while the rest of the site showcased the aesthetic of the artist. I worked closely with Sam —the creator— to design the icons, banners, and font. The end result was this beautiful and responsive site.</p>
+  </li>
+  <li>
+    <h4><a href="https://www.sf-ref.com" rel="nofollow">The Spotfire Reference</a></h4>
+    {{< img src="spotfire.png" >}}
+    <p>A documentation site with the contribution to the community of Spotfire developers. The sites UI was loosely based on a Material Design theme. It’s built entirely with Hugo, using Bootstrap for the styling and other JS libraries for the syntax highlighting and clipboard functionality.</p>
+  </li>
+  <li>
+    <h4><a href="https://www.safespring.com" rel="nofollow">Safesrping</a></h4>
+    {{< img src="safespring.png" >}}
+    <p>An information site showcasing the fast, flexible and secure cloud services. Originally built using Jekyll, the entire site was migrated and refactored with Hugo. Not only was there a boost in speed, but the codebase was significant reduced.</p>
+  </li>
+</ul>
