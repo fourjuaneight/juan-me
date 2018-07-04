@@ -18,6 +18,7 @@ body {
   overflow-x: hidden;
   padding: 0;
   width: 100%;
+  @extend %notched;
 }
 a,
 article h2 a,
