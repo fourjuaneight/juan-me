@@ -48,3 +48,6 @@ gulp.task('watch', ['scss', 'img', 'js'], function () {
 
 // Run Watch as default
 gulp.task('default', ['watch']);
+
+// Build
+gulp.task('build', ['scss', 'img', 'js']);
