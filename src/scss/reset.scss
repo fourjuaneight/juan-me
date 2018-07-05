@@ -112,12 +112,6 @@ pre {
 }
 footer,
 header,
-h1, h2, h3, h4,
-.meta {
-	font-family: 'IBM Plex Sans Condensed', sans-serif;
-}
-footer,
-header,
 nav,
 section.info {
   @extend %flex;
@@ -127,7 +121,7 @@ header {
 }
 header,
 h1, h2, h3, h4 {
-	font-weight: 700;
+	font-weight: bold;
 }
 h1 {
 	font-size: 36px;
