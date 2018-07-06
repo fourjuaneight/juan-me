@@ -6,20 +6,20 @@ showthedate = false
 +++
 
 * Written and created by Juan Villela.
-* Made with [Hugo](https://gohugo.io).
-* Fonts used are [IBM Plex Sans](https://fonts.google.com/specimen/IBM+Plex+Sans) and [IBM Plex Mono](https://fonts.google.com/specimen/IBM+Plex+Mono).
-* Graphics made with [Affinity Designer](https://itunes.apple.com/us/app/affinity-designer/id824171161?mt=12).
-* Coded using [Coda](https://itunes.apple.com/us/app/coda/id500906297?mt=8&ign-itsct=500906297-500906297&ign-itscg=0177&ign-mpt=uo%3D4) and [Working Copy](https://itunes.apple.com/us/app/working-copy-powerful-git-client/id896694807?mt=8).
-* Articles written in [Markdown](https://daringfireball.net/projects/markdown/syntax) on [Bear](https://itunes.apple.com/us/app/bear-beautiful-writing-app/id1016366447?ls=1&mt=8).
+* Made with {{< link href="https://gohugo.io" content="Hugo" >}}.
+* Fonts used are {{< link href="https://fonts.google.com/specimen/IBM+Plex+Sans" content="IBM Plex Sans" >}} and {{< link href="https://fonts.google.com/specimen/IBM+Plex+Mono" content="IBM Plex Mono" >}}.
+* Graphics made with {{< link href="https://itunes.apple.com/us/app/affinity-designer/id824171161?mt=12" content="Affinity Designer" >}}.
+* Coded using {{< link href="https://itunes.apple.com/us/app/coda/id500906297?mt=8&ign-itsct=500906297-500906297&ign-itscg=0177&ign-mpt=uo%3D4" content="Coda" >}} and {{< link href="https://itunes.apple.com/us/app/working-copy-powerful-git-client/id896694807?mt=8" content="Working Copy" >}}.
+* Articles written in {{< link href="https://daringfireball.net/projects/markdown/syntax" content="Markdown" >}} on {{< link href="https://itunes.apple.com/us/app/bear-beautiful-writing-app/id1016366447?ls=1&mt=8" content="Bear" >}}.
 
 ## Licensing
 Links to apps or other items may include affiliate links.
 
 ### Text Content License
-Unless otherwise noted, the text content on this site is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License, “[CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)”.
+Unless otherwise noted, the text content on this site is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License, “{{< link href="https://creativecommons.org/licenses/by-sa/4.0/" content="CC-BY-SA" >}}”.
 
 ### Source License
-Unless otherwise noted, the source content on this site is released under the [MIT License](https://opensource.org/licenses/MIT).
+Unless otherwise noted, the source content on this site is released under the {{< link href="https://opensource.org/licenses/MIT" content="MIT License" >}}.
 
 ### MIT License
 Copyright © 2018 <span>Juan C Villela</span>
@@ -33,4 +33,4 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 ## Contact
 Feel free to reach out with any questions or concerns.
 
-* Email: [hello@juanvillela.me](mailto:hello@juanvillela.me)
+* Email: {{< link href="mailto:hello@juanvillela.me" content="hello@juanvillela.me" >}}

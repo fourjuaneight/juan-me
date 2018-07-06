@@ -39,6 +39,6 @@ If I were to change with what I work, a change in how I work was needed first. M
 
 Here are some of the articles that helped me a lot during **this** journey of reformation.
 
-* [Giving The iPad a Full-Time Job](https://medium.freecodecamp.org/giving-the-ipad-a-full-time-job-3ae2440e1810)
-* [Learn Linux Vim Basic Features](https://medium.freecodecamp.org/learn-linux-vim-basic-features-19134461ab85)
-* [iPad Pro for Programming](https://jann.is/ipad-pro-for-programming/)
+* {{< link href="https://medium.freecodecamp.org/giving-the-ipad-a-full-time-job-3ae2440e1810" content="Giving The iPad a Full-Time Job" >}}
+* {{< link href="https://medium.freecodecamp.org/learn-linux-vim-basic-features-19134461ab85" content="Learn Linux Vim Basic Features" >}}
+* {{< link href="https://jann.is/ipad-pro-for-programming/" content="iPad Pro for Programming" >}}
