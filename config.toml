@@ -1,9 +1,9 @@
-baseURL = "/"
+baseURL = "https://www.juanvillela.me"
 copyright = " 2018 Juan C Villela"
 enableEmoji = "true"
 enableRobotsTXT = "true"
 languageCode = "en-us"
-title = "Juan C Villela • Indie Web Developer"
+title = "Juan C Villela"
 
 FootnoteReturnLinkContents = "↩"
 SectionPagesMenu = "main"
@@ -32,7 +32,7 @@ pygmentsStyle = "monokai"
   trackerID = "UA-119777735-2"
 
 [params.meta]
-  description = "A site about Juan C Villela and blog featuring his coding adventure"
+  description = "A site about Juan C Villela and a blog featuring his coding adventure"
   keywords = "coding, productivity, development, front-end"
 
 [permalinks]
