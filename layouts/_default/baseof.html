@@ -34,6 +34,13 @@
   <meta property="og:image" content="{{ .Site.BaseURL }}/img/{{ index .Site.Data.img.hash "avatar.png" }}">
   {{ template "_internal/schema.html" . }}
 
+  <!-- Fonts -->
+  <link rel="preload" href="type/IBM-Plex-Sans.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="type/IBM-Plex-Sans-Italic.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="type/IBM-Plex-Sans-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="type/IBM-Plex-Mono.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="type/IBM-Plex-Mono-Italic.ttf" as="font" type="font/ttf" crossorigin>
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/css/{{ index .Site.Data.css.hash "main.css" }}" />
   
