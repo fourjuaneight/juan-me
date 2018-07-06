@@ -19,6 +19,12 @@ gulp.task('scss', function () {
     .pipe(gulp.dest('data/css'))
 })
 
+// Move fonts
+gulp.task('type', function() {
+  gulp.src('src/type/**.*')
+      .pipe(gulp.dest('static/type'));
+});
+
 // Hash img
 gulp.task('img', function () {
   del(['static/img/*'])
@@ -40,8 +46,9 @@ gulp.task('js', function () {
 })
 
 // Watch asset folder for changes
-gulp.task('watch', ['scss', 'img', 'js'], function () {
+gulp.task('watch', ['scss', 'type', 'img', 'js'], function () {
   gulp.watch('src/scss/*', ['scss'])
+  gulp.watch('src/type/**.*', ['type'])
   gulp.watch('src/js/*', ['js'])
   gulp.watch('src/img/*', ['img'])
 });
@@ -50,4 +57,4 @@ gulp.task('watch', ['scss', 'img', 'js'], function () {
 gulp.task('default', ['watch']);
 
 // Build
-gulp.task('build', ['scss', 'img', 'js']);
+gulp.task('build', ['scss', 'type', 'img', 'js']);
