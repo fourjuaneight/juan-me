@@ -1,31 +1,3 @@
-// Header
-header {
-  @extend %vertical-center;
-  @extend %space-between;
-  a.home,
-  a.home svg.avatar {
-    height: 50px;
-    width: auto;
-  }
-  nav {
-    width: 220px;
-    a {
-      @extend %decoration-none;
-      &.rss {
-        @extend %flex;
-        @extend %vertical-center;
-        @extend %decoration-none;
-        height: 25px;
-        @extend %horizontal-center;
-        width: 15px;
-        svg {
-          height: 15px;
-          width: 15px;
-        }
-      }
-    }
-  }
-}
 // Home
 #intro {
   @extend %flex;
@@ -167,12 +139,12 @@ section.info {
   @extend %space-between;
   p {
     margin: 0;
-    &.date {
-      color: $link;
-    }
     span {
       color: $link;
     }
+  }
+  .date {
+    color: $link;
   }
 }
 // Paginator

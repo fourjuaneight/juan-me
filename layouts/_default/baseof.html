@@ -2,18 +2,7 @@
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
 <head>
   <meta charset="utf-8" />
-  <title>
-    {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
-    {{ if eq $url "/" }}
-      {{ .Site.Title }}
-    {{ else }}
-      {{ if .Params.heading }}
-        {{ .Params.heading }}
-      {{ else }}
-        {{ .Title }}
-      {{ end }}
-    {{ end }}
-  </title>
+  <title>{{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}{{ if eq $url "/" }}{{ .Site.Title }}{{ else }}{{ if .Params.heading }}{{ .Params.heading }}{{ else }}{{ .Title }}{{ end }}{{ end }}</title>
   <meta name="author" content="{{ .Site.Author.name }}">
   <meta name="description" content="{{ .Site.Params.meta.description }}">
   <meta name="keywords" content="{{ .Site.Params.meta.keywords }}">
@@ -29,32 +18,76 @@
   <link rel="canonical" href="{{ .Permalink }}">
   <base href="{{ .Site.BaseURL }}"/>
   {{ template "_internal/twitter_cards.html" . }}
-  <meta name="twitter:image" content="{{ .Site.BaseURL }}/img/{{ index .Site.Data.img.hash "avatar.png" }}">
+  {{ $avatar := resources.Get "img/avatar.png" | fingerprint }}
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}/img/{{ $avatar.Permalink }}">
   {{ template "_internal/opengraph.html" . }}
-  <meta property="og:image" content="{{ .Site.BaseURL }}/img/{{ index .Site.Data.img.hash "avatar.png" }}">
+  <meta property="og:image" content="{{ .Site.BaseURL }}/img/{{ $avatar.Permalink }}">
   {{ template "_internal/schema.html" . }}
 
-  <!-- Fonts -->
-  <link rel="preload" href="type/IBM-Plex-Sans.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="type/IBM-Plex-Sans-Italic.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="type/IBM-Plex-Sans-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="type/IBM-Plex-Mono.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="type/IBM-Plex-Mono-Italic.ttf" as="font" type="font/ttf" crossorigin>
-
+  <!-- Fonts -->  
+  <link rel="preload" href={{ "type/IBMPlexSans-subset.woff2" | relURL }} as="font" type="font/woff2" crossorigin>
+  
+  <!-- Critical -->
+  {{ partial "critical-main.html" . }}
+  {{ if eq .IsHome true }}
+    {{ partial "critical-home.html" . }}
+  {{ else }}
+    {{ partial "critical-aboveTheFold.html" . }}
+  {{ end }}
+  
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="/css/{{ index .Site.Data.css.hash "main.css" }}" />
+  {{ $styles := resources.Get "scss/main.scss" | toCSS | postCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
   
   <!-- Favicon -->
-  <link rel="shortcut icon" href="/img/{{ index .Site.Data.img.hash "favicon.png" }}">
+  {{ $favicon := resources.Get "img/favicon.png" | fingerprint }}
+  <link rel="shortcut icon" href="{{ $favicon.Permalink }}">
 
   <!-- Webclip and Apple Touch Icon -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}">
-  <link rel="apple-touch-icon" sizes="152x152" href="/img/{{ index .Site.Data.img.hash "apple-touch-icon-152x152.png" }}">
-  <link rel="apple-touch-icon" sizes="167x167" href="/img/{{ index .Site.Data.img.hash "apple-touch-icon-167x167.png" }}">
-  <link rel="apple-touch-icon" sizes="180x180" href="/img/{{ index .Site.Data.img.hash "apple-touch-icon-180x180.png" }}">
-  <link rel="mask-icon" color="#D7545E" href="/img/{{ index .Site.Data.img.hash "safari-pinned-tab.svg" }}">
+  {{ $ati152 := resources.Get "img/apple-touch-icon-152x152.png" | fingerprint }}
+  <link rel="apple-touch-icon" sizes="152x152" href="{{ $ati152.Permalink }}">
+  {{ $ati167 := resources.Get "img/apple-touch-icon-167x167.png" | fingerprint }}
+  <link rel="apple-touch-icon" sizes="167x167" href="{{ $ati167.Permalink }}">
+  {{ $ati180 := resources.Get "img/apple-touch-icon-180x180.png" | fingerprint }}
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ $ati180.Permalink }}">
+  {{ $spt := resources.Get "img/safari-pinned-tab.svg" | minify | fingerprint }}
+  <link rel="mask-icon" color="#D7545E" href="{{ $spt.Permalink }}">
+  
+  <!-- Critical Font Loading -->
+  <script>
+	(function() {
+		"use strict";
+		// Optimization for Repeat Views
+		if( sessionStorage.fontsLoadedCriticalFoftPreloadFallback ) {
+			document.documentElement.className += " fonts-loaded-2";
+			return;
+		} else if( "fonts" in document ) {
+			document.fonts.load("1em IBM Plex Sans Subset").then(function () {
+				document.documentElement.className += " fonts-loaded-1";
+				Promise.all([
+					document.fonts.load("400 1em IBM Plex Sans"),
+					document.fonts.load("600 1em IBM Plex Sans"),
+					document.fonts.load("italic 1em IBM Plex Sans")
+				]).then(function () {
+					document.documentElement.className += " fonts-loaded-2";
+					// Optimization for Repeat Views
+					sessionStorage.fontsLoadedCriticalFoftPreloadFallback = true;
+				});
+			});
+		} else {
+			// use fallback
+			var ref = document.getElementsByTagName( "script" )[ 0 ];
+			var script = document.createElement( "script" );
+			{{ $criticalJS := resources.Get "js/critical-foft-preload-fallback-optional.js" | minify }}
+			script.src = "{{ $criticalJS.Permalink }}";
+			script.async = true;
+			ref.parentNode.insertBefore( script, ref );
+		}
+	})();
+	</script>
   
   <!-- Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.google.analytics.trackerID }}"></script>
@@ -67,8 +100,19 @@
   </script>
 </head>
 <body>
-  <!-- Main content -->
+    <!-- Main content -->
   {{ block "main" . }}
   {{ end }}
+  
+  <!-- Scripts -->
+  {{ $barefootJS := resources.Get "js/barefoot.js" | minify }}
+  {{ $secureBarefootJS := $barefootJS | resources.Fingerprint "sha512" }}
+  <script type="text/javascript" src="{{ $secureBarefootJS.Permalink }}" integrity="{{ $secureBarefootJS.Data.Integrity }}"></script>
+  <script>
+    var lf = new BareFoot({
+      scope: "article"
+    });
+    lf.init();
+  </script>
 </body>
 </html>

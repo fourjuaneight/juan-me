@@ -1,60 +1,79 @@
 var gulp         = require('gulp'),
-    sass         = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    imagemin     = require('gulp-imagemin'),
-    hash         = require('gulp-hash'),
-    del          = require('del');
+    rename       = require('gulp-rename'),
+    concat       = require('gulp-concat-util'),
+    postcss      = require('gulp-postcss'),
+    autoprefixer = require('autoprefixer'),
+    cssnano      = require('cssnano'),
+    sass         = require('gulp-sass');
 
-// Compile SCSS files to CSS
-gulp.task('scss', function () {
-  del(['static/css/*'])
-  gulp.src('src/scss/main.scss')
-    .pipe(sass({outputStyle : 'compressed'}))
-    .pipe(autoprefixer({browsers : ['last 20 versions']}))
-    .pipe(hash())
-    .pipe(gulp.dest('static/css'))
-    //Create a hash map
-    .pipe(hash.manifest('hash.json'))
-    //Put the map in the data directory
-    .pipe(gulp.dest('data/css'))
-})
-
-// Move fonts
-gulp.task('type', function() {
-  gulp.src('src/type/**.*')
-      .pipe(gulp.dest('static/type'));
+// Critical CSS
+gulp.task('critical-main', function() {
+  var plugins = [
+    autoprefixer({browsers: ['last 2 version']}),
+    cssnano()
+  ];
+  return gulp.src('assets/scss/critical-main.scss')
+  .pipe(sass().on('error', sass.logError))
+  .pipe(postcss(plugins))
+  // wrap with style tags
+  .pipe(concat.header('<style>'))
+  .pipe(concat.footer('</style>'))
+  // convert it to an include file
+  .pipe(rename({
+      basename: 'critical-main',
+      extname: '.html'
+    }))
+  // insert file
+  .pipe(gulp.dest('layouts/partials'));
+});
+gulp.task('critical-home', function() {
+  var plugins = [
+    autoprefixer({browsers: ['last 2 version']}),
+    cssnano()
+  ];
+  return gulp.src('assets/scss/critical-home.scss')
+  .pipe(sass().on('error', sass.logError))
+  .pipe(postcss(plugins))
+  // wrap with style tags
+  .pipe(concat.header('<style>'))
+  .pipe(concat.footer('</style>'))
+  // convert it to an include file
+  .pipe(rename({
+      basename: 'critical-home',
+      extname: '.html'
+    }))
+  // insert file
+  .pipe(gulp.dest('layouts/partials'));
+});
+gulp.task('critical-aboveTheFold', function() {
+  var plugins = [
+    autoprefixer({browsers: ['last 2 version']}),
+    cssnano()
+  ];
+  return gulp.src('assets/scss/critical-aboveTheFold.scss')
+  .pipe(sass().on('error', sass.logError))
+  .pipe(postcss(plugins))
+  // wrap with style tags
+  .pipe(concat.header('<style>'))
+  .pipe(concat.footer('</style>'))
+  // convert it to an include file
+  .pipe(rename({
+      basename: 'critical-aboveTheFold',
+      extname: '.html'
+    }))
+  // insert file
+  .pipe(gulp.dest('layouts/partials'));
 });
 
-// Hash img
-gulp.task('img', function () {
-  del(['static/img/*'])
-  gulp.src('src/img/*')
-    .pipe(hash())
-    .pipe(gulp.dest('static/img'))
-    .pipe(hash.manifest('hash.json'))
-    .pipe(gulp.dest('data/img'))
-})
-
-// Hash javascript
-gulp.task('js', function () {
-  del(['static/js/*'])
-  gulp.src('src/js/*')
-    .pipe(hash())
-    .pipe(gulp.dest('static/js'))
-    .pipe(hash.manifest('hash.json'))
-    .pipe(gulp.dest('data/js'))
-})
-
 // Watch asset folder for changes
-gulp.task('watch', ['scss', 'type', 'img', 'js'], function () {
-  gulp.watch('src/scss/*', ['scss'])
-  gulp.watch('src/type/**.*', ['type'])
-  gulp.watch('src/js/*', ['js'])
-  gulp.watch('src/img/*', ['img'])
+gulp.task('watch', ['critical-main','critical-home','critical-aboveTheFold'], function () {
+  gulp.watch('assets/scss/critical-main.scss', ['critical-main'])
+  gulp.watch('assets/scss/critical-home.scss', ['critical-home'])
+  gulp.watch('assets/scss/critical-aboveTheFold.scss', ['critical-aboveTheFold'])
 });
 
 // Run Watch as default
 gulp.task('default', ['watch']);
 
 // Build
-gulp.task('build', ['scss', 'type', 'img', 'js']);
+gulp.task('build', ['critical-main','critical-home','critical-aboveTheFold']);

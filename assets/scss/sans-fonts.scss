@@ -1,0 +1,21 @@
+@font-face {
+  font-display: swap;	font-family: 'IBM Plex Sans Subset';	font-weight: 400;	font-style: normal;
+	src: url("/type/IBMPlexSans-subset.woff2") format("woff2"),
+	     url("/type/IBMPlexSans-subset.woff") format("woff");
+	unicode-range: U+65-U+90, U+97-122;
+}
+@font-face {
+  font-display: swap;	font-family: 'IBM Plex Sans';	font-weight: 400;	font-style: normal;
+	src: url("/type/IBMPlexSans.woff2") format("woff2"),
+	     url("/type/IBMPlexSans.woff") format("woff");
+}
+@font-face {
+  font-display: swap;	font-family: 'IBM Plex Sans';	font-weight: 400;	font-style: italic;
+	src: url("/type/IBMPlexSans-Italic.woff2") format("woff2"),
+	     url("/type/IBMPlexSans-Italic.woff") format("woff");
+}
+@font-face {
+  font-display: swap;	font-family: 'IBM Plex Sans';	font-weight: 600;	font-style: normal;
+	src: url("/type/IBMPlexSans-SemiBold.woff2") format("woff2"),
+	     url("/type/IBMPlexSans-SemiBold.woff") format("woff");
+}

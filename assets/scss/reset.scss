@@ -11,7 +11,6 @@ html {
 body {
   background-color: $background;
   color: $text;
-  font: 400 18px 'IBM Plex Sans', sans-serif;
   height: 100%;
   @extend %margin-center;
   overflow-y: auto;

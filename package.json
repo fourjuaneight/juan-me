@@ -5,16 +5,18 @@
   "main": "gulpfile.js",
   "dependencies": {
     "concurrently": "^3.6.0",
-    "del": "^3.0.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-hash": "^4.2.2",
-    "gulp-imagemin": "^4.1.0",
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.0.1",
+    "cssnano": "^4.0.3",
+    "gulp-concat-util": "^0.5.5",
+    "gulp-postcss": "^7.0.1",
+    "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.1"
   },
-  "devDependencies": {},
   "scripts": {
-    "build": "gulp build; hugo", 
+    "build": "gulp build; hugo",
     "start": "concurrently \"gulp\" \"hugo server --disableFastRender\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
