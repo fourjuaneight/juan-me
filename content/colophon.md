@@ -7,7 +7,7 @@ showthedate = false
 
 * Written and created by Juan Villela.
 * Made with {{< link href="https://gohugo.io" content="Hugo" >}}.
-* Fonts used are {{< link href="https://fonts.google.com/specimen/IBM+Plex+Sans" content="IBM Plex Sans" >}} and {{< link href="https://fonts.google.com/specimen/IBM+Plex+Mono" content="IBM Plex Mono" >}}.
+* Font used is {{< link href="https://fonts.google.com/specimen/IBM+Plex+Sans" content="IBM Plex Sans" >}}.
 * Graphics made with {{< link href="https://itunes.apple.com/us/app/affinity-designer/id824171161?mt=12" content="Affinity Designer" >}}.
 * Coded using {{< link href="https://itunes.apple.com/us/app/coda/id500906297?mt=8&ign-itsct=500906297-500906297&ign-itscg=0177&ign-mpt=uo%3D4" content="Coda" >}} and {{< link href="https://itunes.apple.com/us/app/working-copy-powerful-git-client/id896694807?mt=8" content="Working Copy" >}}.
 * Articles written in {{< link href="https://daringfireball.net/projects/markdown/syntax" content="Markdown" >}} on {{< link href="https://itunes.apple.com/us/app/bear-beautiful-writing-app/id1016366447?ls=1&mt=8" content="Bear" >}}.

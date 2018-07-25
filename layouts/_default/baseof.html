@@ -26,9 +26,9 @@
 
   <!-- Fonts -->  
   <link rel="preload" href={{ "type/IBMPlexSans-subset.woff2" | relURL }} as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href={{ "type/IBMPlexSans-subset.woff" | relURL }} as="font" type="font/woff" crossorigin>
   
   <!-- Critical -->
-  {{ partial "critical-main.html" . }}
   {{ if eq .IsHome true }}
     {{ partial "critical-home.html" . }}
   {{ else }}
@@ -103,16 +103,5 @@
     <!-- Main content -->
   {{ block "main" . }}
   {{ end }}
-  
-  <!-- Scripts -->
-  {{ $barefootJS := resources.Get "js/barefoot.js" | minify }}
-  {{ $secureBarefootJS := $barefootJS | resources.Fingerprint "sha512" }}
-  <script type="text/javascript" src="{{ $secureBarefootJS.Permalink }}" integrity="{{ $secureBarefootJS.Data.Integrity }}"></script>
-  <script>
-    var lf = new BareFoot({
-      scope: "article"
-    });
-    lf.init();
-  </script>
 </body>
 </html>

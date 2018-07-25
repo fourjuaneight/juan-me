@@ -1,7 +1,7 @@
 {
   "name": "juan",
   "version": "1.0.0",
-  "description": "A site about Juan C Villela and blog featuring his coding adventure",
+  "description": "A site about Juan Villela and blog featuring his coding adventure",
   "main": "gulpfile.js",
   "dependencies": {
     "concurrently": "^3.6.0",
@@ -30,7 +30,7 @@
     "development",
     "front-end"
   ],
-  "author": "Juan C Villela",
+  "author": "Juan Villela",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/fourjuaneight/juan/issues"

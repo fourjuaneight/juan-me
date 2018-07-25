@@ -7,33 +7,15 @@ var gulp         = require('gulp'),
     sass         = require('gulp-sass');
 
 // Critical CSS
-gulp.task('critical-main', function() {
-  var plugins = [
-    autoprefixer({browsers: ['last 2 version']}),
-    cssnano()
-  ];
-  return gulp.src('assets/scss/critical-main.scss')
-  .pipe(sass().on('error', sass.logError))
-  .pipe(postcss(plugins))
-  // wrap with style tags
-  .pipe(concat.header('<style>'))
-  .pipe(concat.footer('</style>'))
-  // convert it to an include file
-  .pipe(rename({
-      basename: 'critical-main',
-      extname: '.html'
-    }))
-  // insert file
-  .pipe(gulp.dest('layouts/partials'));
-});
 gulp.task('critical-home', function() {
   var plugins = [
     autoprefixer({browsers: ['last 2 version']}),
     cssnano()
   ];
-  return gulp.src('assets/scss/critical-home.scss')
+  return gulp.src(['assets/scss/critical-main.scss', 'assets/scss/critical-home.scss'])
   .pipe(sass().on('error', sass.logError))
   .pipe(postcss(plugins))
+  .pipe(concat('critical-home.html'))
   // wrap with style tags
   .pipe(concat.header('<style>'))
   .pipe(concat.footer('</style>'))
@@ -50,9 +32,10 @@ gulp.task('critical-aboveTheFold', function() {
     autoprefixer({browsers: ['last 2 version']}),
     cssnano()
   ];
-  return gulp.src('assets/scss/critical-aboveTheFold.scss')
+  return gulp.src(['assets/scss/critical-main.scss', 'assets/scss/critical-aboveTheFold.scss'])
   .pipe(sass().on('error', sass.logError))
   .pipe(postcss(plugins))
+  .pipe(concat('critical-aboveTheFold.html'))
   // wrap with style tags
   .pipe(concat.header('<style>'))
   .pipe(concat.footer('</style>'))
@@ -66,8 +49,7 @@ gulp.task('critical-aboveTheFold', function() {
 });
 
 // Watch asset folder for changes
-gulp.task('watch', ['critical-main','critical-home','critical-aboveTheFold'], function () {
-  gulp.watch('assets/scss/critical-main.scss', ['critical-main'])
+gulp.task('watch', ['critical-home','critical-aboveTheFold'], function () {
   gulp.watch('assets/scss/critical-home.scss', ['critical-home'])
   gulp.watch('assets/scss/critical-aboveTheFold.scss', ['critical-aboveTheFold'])
 });
@@ -76,4 +58,4 @@ gulp.task('watch', ['critical-main','critical-home','critical-aboveTheFold'], fu
 gulp.task('default', ['watch']);
 
 // Build
-gulp.task('build', ['critical-main','critical-home','critical-aboveTheFold']);
+gulp.task('build', ['critical-home','critical-aboveTheFold']);

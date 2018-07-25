@@ -1,24 +1,4 @@
 // Reset
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-html {
-  box-sizing: border-box;
-  -webkit-overflow-scrolling: touch;
-}
-body {
-  background-color: $background;
-  color: $text;
-  height: 100%;
-  @extend %margin-center;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 0;
-  width: 100%;
-  @extend %notched;
-}
 a,
 article h2 a,
 ul#portfolio h4 a {
@@ -87,7 +67,7 @@ blockquote {
 }
 code,
 figure {
-  font: 400 17px 'IBM Plex Mono', monospace;
+  font: 400 17px monospace;
 }
 figure {
   background-color: $text;
