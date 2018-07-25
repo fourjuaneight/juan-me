@@ -2,7 +2,7 @@
   <!-- Intro Copy -->
   <main id="intro">
     <!-- Avatar -->
-    <img src="/img/{{ index .Site.Data.img.hash "avatar.svg" }}" style="height: 178px; width: 128px;">
+    {{ partial "avatar.html" . }}
     <!-- Intro Message -->
     <h1>Hi, I’m <a href="{{ .Site.BaseURL }}about" class="about">Juan</a> and I like websites. Sometimes I make them.</h1>
     <h2>You can read all about it on my <a href="{{ .Site.BaseURL }}blog">blog</a>!</h2>
