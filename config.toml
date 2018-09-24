@@ -28,9 +28,6 @@ pygmentsStyle = "monokai"
   OpenLinksInNewWindow = true
   social = "fourjuaneight"
 
-[params.google.analytics]
-  trackerID = "UA-119777735-2"
-
 [params.meta]
   description = "A site about Juan Villela and a blog featuring his coding adventure"
   keywords = "coding, productivity, development, front-end"
