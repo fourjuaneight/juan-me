@@ -4,7 +4,6 @@
   "description": "A site about Juan Villela and blog featuring his coding adventure",
   "main": "gulpfile.js",
   "dependencies": {
-    "concurrently": "^3.6.0",
     "gulp": "^3.9.1"
   },
   "devDependencies": {

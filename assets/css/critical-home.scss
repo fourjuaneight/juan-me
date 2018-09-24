@@ -1,3 +1,4 @@
+@import 'mixins';
 body {
   #intro {
     display: flex;
@@ -6,23 +7,23 @@ body {
     justify-content: flex-start;
     height: 100%;
     padding-top: 50px;
-    @media screen and (max-width: 375px) {
+    @include media-query-max(375px) {
       padding-top: 30px;
     }
-    @media screen and (max-width: 320px) {
+    @include media-query-max(320px) {
       padding-top: 15px;
     }
     .avatar {
       height: 175px;
       margin: 5px 0 15px;
       width: auto;
-      @media screen and (max-width: 675px) {
+      @include media-query-max(675px) {
         height: 150px;
       }
-      @media screen and (max-width: 420px) {
+      @include media-query-max(420px) {
         height: 125px;
       }
-      @media screen and (max-width: 375px) {
+      @include media-query-max(375px) {
         height: 100px;
       }
     }
@@ -38,33 +39,31 @@ body {
       a {
        border-bottom-width: 4px;
       }
-      @media screen and (max-width: 675px) {
+      @include media-query-max(675px) {
         font-size: 40px;
         line-height: 60px;
       }
-      @media screen and (max-width: 420px) {
+      @include media-query-max(420px) {
         font-size: 30px;
         line-height: 50px;
       }
-      @media screen and (max-width: 375px) {
+      @include media-query-max(375px) {
         font-size: 28px;
         line-height: 40px;
       }
-      @media screen and (max-width: 320px) {
+      @include media-query-max(320px) {
         font-size: 25px;
       }
     }
     nav.social {
       flex-wrap: wrap;
       margin: 15px 0 5px;
-      width: 150px;
-      @media screen and (max-width: 420px) {
-        width: 120px;
-      }
+      max-width: 300px;
+      width: 100%;
       a {
         text-decoration: none;
         svg {
-          @media screen and (max-width: 420px) {
+          @include media-query-max(420px) {
             height: 40px;
             width: 40px;
           }
@@ -76,7 +75,7 @@ body {
       margin: 0 auto;
       margin-top: auto;
       width: 50px;
-      @media screen and (max-width: 320px) {
+      @include media-query-max(320px) {
         height: 25px;
         width: 30px;
       }

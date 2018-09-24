@@ -7,10 +7,9 @@ showthedate = false
 
 * Written and created by Juan Villela.
 * Made with {{< link href="https://gohugo.io" content="Hugo" >}}.
-* Font used is {{< link href="https://fonts.google.com/specimen/IBM+Plex+Sans" content="IBM Plex Sans" >}}.
+* Font used is {{< link href="https://fonts.google.com/specimen/IBM+Plex+Sans" content="Plex" >}}.
 * Graphics made with {{< link href="https://itunes.apple.com/us/app/affinity-designer/id824171161?mt=12" content="Affinity Designer" >}}.
-* Coded using {{< link href="https://itunes.apple.com/us/app/coda/id500906297?mt=8&ign-itsct=500906297-500906297&ign-itscg=0177&ign-mpt=uo%3D4" content="Coda" >}} and {{< link href="https://itunes.apple.com/us/app/working-copy-powerful-git-client/id896694807?mt=8" content="Working Copy" >}}.
-* Articles written in {{< link href="https://daringfireball.net/projects/markdown/syntax" content="Markdown" >}} on {{< link href="https://itunes.apple.com/us/app/bear-beautiful-writing-app/id1016366447?ls=1&mt=8" content="Bear" >}}.
+* Coded on {{< link href="https://www.vim.org/" content="VIM" >}}.
 
 ## Licensing
 Links to apps or other items may include affiliate links.
@@ -31,6 +30,6 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Contact
-Feel free to reach out with any questions or concerns.
+Feel free to reach out with any questions or business inquiries.
 
-* Email: {{< link href="mailto:hello@juanvillela.me" content="hello@juanvillela.me" >}}
+* Email: {{< link href="mailto:juan@fouroneeight.co" content="juan@fouroneeight.co" >}}

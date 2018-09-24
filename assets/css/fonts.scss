@@ -1,0 +1,70 @@
+@font-face {
+  font-family: 'Plex Subset';
+  font-weight: 400;
+  font-style: normal;
+  src: local(IBMPlexSans-subset),
+       local(IBMPlexSans-subset),
+       url("type/IBMPlexSans-subset.woff2") format("woff2"),
+       url("type/IBMPlexSans-subset.woff") format("woff");
+  unicode-range: U+20-7E;
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Plex';
+  font-weight: 400;
+  font-style: normal;
+  src: local(IBMPlexSans),
+       local(IBMPlexSans),
+       url("type/IBMPlexSans.woff2") format("woff2"),
+       url("type/IBMPlexSans.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Plex';
+  font-weight: 400;
+  font-style: italic;
+  src: local(IBMPlexSansItalic),
+       local(IBMPlexSansItalic),
+       url("type/IBMPlexSansItalic.woff2") format("woff2"),
+       url("type/IBMPlexSansItalic.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Plex';
+  font-weight: 600;
+  font-style: normal;
+  src: local(IBMPlexSansSemiBold),
+       local(IBMPlexSansSemiBold),
+       url("type/IBMPlexSansSemiBold.woff2") format("woff2"),
+       url("type/IBMPlexSansSemiBold.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Plex Mono';
+  font-weight: 400;
+  font-style: normal;
+  src: local(IBMPlexMono),
+       local(IBMPlexMono),
+       url("type/IBMPlexMono.woff2") format("woff2"),
+       url("type/IBMPlexMono.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Plex Mono';
+  font-weight: 400;
+  font-style: italic;
+  src: local(IBMPlexMonoItalic),
+       local(IBMPlexMonoItalic),
+       url("type/IBMPlexMonoItalic.woff2") format("woff2"),
+       url("type/IBMPlexMonoItalic.woff") format("woff");
+}
+
+body {
+  font-family: sans-serif;
+}
+.fonts-loaded-1 body {
+  font-family: 'Plex Subset';
+}
+.fonts-loaded-2 body {
+  font-family: 'Plex';
+}

@@ -14,7 +14,6 @@ let config = {
       autoprefixer: true
     }
   },
-  // Other options such as input and output
 };
 
 module.exports = config;

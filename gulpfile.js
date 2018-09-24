@@ -12,7 +12,7 @@ gulp.task('critical-home', function() {
     autoprefixer({browsers: ['last 2 version']}),
     cssnano()
   ];
-  return gulp.src(['assets/scss/critical-main.scss', 'assets/scss/critical-home.scss'])
+  return gulp.src(['assets/css/critical-main.scss', 'assets/css/critical-home.scss'])
   .pipe(sass().on('error', sass.logError))
   .pipe(postcss(plugins))
   .pipe(concat('critical-home.html'))
@@ -32,7 +32,7 @@ gulp.task('critical-aboveTheFold', function() {
     autoprefixer({browsers: ['last 2 version']}),
     cssnano()
   ];
-  return gulp.src(['assets/scss/critical-main.scss', 'assets/scss/critical-aboveTheFold.scss'])
+  return gulp.src(['assets/css/critical-main.scss', 'assets/css/critical-aboveTheFold.scss'])
   .pipe(sass().on('error', sass.logError))
   .pipe(postcss(plugins))
   .pipe(concat('critical-aboveTheFold.html'))
@@ -50,8 +50,8 @@ gulp.task('critical-aboveTheFold', function() {
 
 // Watch asset folder for changes
 gulp.task('watch', ['critical-home','critical-aboveTheFold'], function () {
-  gulp.watch('assets/scss/critical-home.scss', ['critical-home'])
-  gulp.watch('assets/scss/critical-aboveTheFold.scss', ['critical-aboveTheFold'])
+  gulp.watch('assets/css/critical-home.scss', ['critical-home'])
+  gulp.watch('assets/css/critical-aboveTheFold.scss', ['critical-aboveTheFold'])
 });
 
 // Run Watch as default

@@ -45,6 +45,7 @@ main.list {
 }
 // Article
 article.post {
+  min-height: calc(100vh - 204px);
   h1, h2, p {
     margin-bottom: 15px;
   }
@@ -92,15 +93,15 @@ a.back-home {
   p {
     font-size: 40px; 
     line-height: 60px;
-    @media screen and (max-width: 675px) {
+    @include media-query-max(675px) {
       font-size: 30px;
       line-height: 50px;
     }
-    @media screen and (max-width: 420px) {
+    @include media-query-max(420px) {
       font-size: 28px;
       line-height: 40px;
     }
-    @media screen and (max-width: 375px) {
+    @include media-query-max(375px) {
       font-size: 25px;
     }
   }
@@ -118,6 +119,7 @@ main.err-404 {
 // Footer
 footer {
   flex-direction: column;
+  height: 124px;
   nav.social,
   nav.social a,
   section.copy {
@@ -125,7 +127,8 @@ footer {
   }
   nav.social {
     @extend %horizontal-center;
-    width: 120px;
+    max-width: 300px;
+    width: 100%;
     a,
     a svg {
       height: 40px;
@@ -136,7 +139,7 @@ footer {
     @extend %flex;
     margin-top: 30px;
     width: auto;
-    @media screen and (max-width: 345px) {
+    @include media-query-max(345px) {
       font-size: 17px;
     }
   }

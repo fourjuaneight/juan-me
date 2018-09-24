@@ -20,15 +20,15 @@ p.content a.more:active,
 p.content a.more:hover,
 ul#portfolio h4 a:active,
 ul#portfolio h4 a:hover {
-	color: $link;
-	text-decoration: underline;
+  color: $link;
+  text-decoration: underline;
 }
 a svg {
-	fill: $text;
+  fill: $text;
 }
 a:active svg,
 a:hover svg {
-	fill: $link;
+  fill: $link;
 }
 a.meta,
 hr,
@@ -38,7 +38,7 @@ p.content a.more,
 }
 a.meta:active,
 a.meta:hover {
-	color: $accent;
+  color: $accent;
 }
 article {
   a {
@@ -96,31 +96,31 @@ section.info {
   @extend %flex;
 }
 header {
-	text-transform: uppercase;
+  text-transform: uppercase;
 }
 header,
 h1, h2, h3, h4 {
-	font-weight: 600;
+  font-weight: 600;
 }
 h1 {
-	font-size: 36px;
+  font-size: 36px;
 }
 h2 {
-	font-size: 32px;
+  font-size: 32px;
 }
 h3 {
-	font-size: 28px;
+  font-size: 28px;
 }
 h4 {
-	font-size: 24px;
+  font-size: 24px;
 }
 h2, h3, h4 {
-	margin-top: 10px;
+  margin-top: 10px;
 }
 img, 
 svg {
-	height: auto;
-	width: 100%;
+  height: auto;
+  width: 100%;
 }
 li {
   margin-bottom: 5px;
@@ -135,10 +135,10 @@ nav {
 }
 ol,
 ul {
-	padding-left: 30px;
+  padding-left: 30px;
 }
 ol ul {
-	padding-left: 20px;
+  padding-left: 20px;
 }
 p code {
   color: $background;
@@ -149,10 +149,10 @@ section.info {
   margin-bottom: 15px;
 }
 .brand {
-	font-size: 42px;
+  font-size: 42px;
 }
 .brand {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 .highlight pre {
   overflow-x: scroll;
