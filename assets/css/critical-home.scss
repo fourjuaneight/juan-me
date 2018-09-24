@@ -1,3 +1,4 @@
+@import 'variables';
 @import 'mixins';
 body {
   #intro {
@@ -28,7 +29,7 @@ body {
       }
     }
     h1, h2 {
-      color: #777;
+      color: $meta;
       font-size: 45px;
       font-weight: 600;
       line-height: 65px;
