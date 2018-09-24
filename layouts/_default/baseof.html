@@ -18,10 +18,10 @@
   <link rel="canonical" href="{{ .Permalink }}">
   <base href="{{ .Site.BaseURL }}"/>
   {{ template "_internal/twitter_cards.html" . }}
-  {{ $avatar := resources.Get "img/avatar.png" | fingerprint }}
-  <meta name="twitter:image" content="{{ .Site.BaseURL }}/img/{{ $avatar.Permalink }}">
+  {{ $avatar := resources.Get "icons/avatar.png" | fingerprint }}
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}/icons/{{ $avatar.Permalink }}">
   {{ template "_internal/opengraph.html" . }}
-  <meta property="og:image" content="{{ .Site.BaseURL }}/img/{{ $avatar.Permalink }}">
+  <meta property="og:image" content="{{ .Site.BaseURL }}/icons/{{ $avatar.Permalink }}">
   {{ template "_internal/schema.html" . }}
 
   <!-- Fonts -->  
@@ -44,21 +44,29 @@
   {{ partial "loadCSS.html" . }}
   
   <!-- Favicon -->
-  {{ $favicon := resources.Get "img/favicon.png" | fingerprint }}
+  {{ $favicon := resources.Get "icons/favicon.png" | fingerprint }}
   <link rel="shortcut icon" href="{{ $favicon.Permalink }}" integrity="{{ $favicon.Data.Integrity }}">
 
   <!-- Webclip and Apple Touch Icon -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}">
-  {{ $ati152 := resources.Get "img/apple-touch-icon-152x152.png" | fingerprint }}
+  {{ $ati152 := resources.Get "icons/apple-touch-icon-152x152.png" | fingerprint }}
   <link rel="apple-touch-icon" sizes="152x152" href="{{ $ati152.Permalink }}" integrity="{{ $ati152.Data.Integrity }}">
-  {{ $ati167 := resources.Get "img/apple-touch-icon-167x167.png" | fingerprint }}
+  {{ $ati167 := resources.Get "icons/apple-touch-icon-167x167.png" | fingerprint }}
   <link rel="apple-touch-icon" sizes="167x167" href="{{ $ati167.Permalink }}" integrity="{{ $ati167.Data.Integrity }}">
-  {{ $ati180 := resources.Get "img/apple-touch-icon-180x180.png" | fingerprint }}
+  {{ $ati180 := resources.Get "icons/apple-touch-icon-180x180.png" | fingerprint }}
   <link rel="apple-touch-icon" sizes="180x180" href="{{ $ati180.Permalink }}" integrity="{{ $ati180.Data.Integrity }}">
-  {{ $spt := resources.Get "img/safari-pinned-tab.svg" | minify | fingerprint }}
+  {{ $spt := resources.Get "icons/safari-pinned-tab.svg" | minify | fingerprint }}
   <link rel="mask-icon" color="#8F3A6D" href="{{ $spt.Permalink }}" integrity="{{ $spt.Data.Integrity }}">
+
+  <!-- Android Chrome Icon -->
+  {{ $ac128 := resources.Get "icons/android-chrome-128x128.png" | fingerprint }}
+  <link rel="android-chrome" sizes="128x128" href="{{ $ac128.Permalink }}" integrity="{{ $ac128.Data.Integrity }}">
+  {{ $ac192 := resources.Get "icons/android-chrome-192x192.png" | fingerprint }}
+  <link rel="android-chrome" sizes="192x192" href="{{ $ac192.Permalink }}" integrity="{{ $ac192.Data.Integrity }}">
+  {{ $ac512 := resources.Get "icons/android-chrome-512x512.png" | fingerprint }}
+  <link rel="android-chrome" sizes="512x512" href="{{ $ac512.Permalink }}" integrity="{{ $ac512.Data.Integrity }}">
   
   <!-- Critical Font Loading -->
   <script>
