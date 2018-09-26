@@ -72,11 +72,7 @@
   
   <!-- Stylesheets -->
   {{ $styles := resources.Get "css/main.scss" | toCSS | postCSS | minify | fingerprint }}
-  <link rel="preload" href="{{ $styles.Permalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-		<link rel="stylesheet" href="{{ $styles.Permalink }}">
-  </noscript>
-  {{ partial "loadCSS.html" . }}
+  <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
   
   <!-- Favicon -->
   {{ $favicon := resources.Get "icons/favicon.png" | fingerprint }}

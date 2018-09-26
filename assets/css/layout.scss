@@ -134,6 +134,11 @@ footer {
       height: 40px;
       width: 40px;
     }
+    a.email {
+      svg g path {
+        fill: transparent;
+      }
+    }
   }
   section.copy {
     @extend %flex;

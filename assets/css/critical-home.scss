@@ -34,11 +34,11 @@ body {
       font-weight: 600;
       line-height: 65px;
       margin: 15px 0;
-      span {
-        @include color(color, accent);
-      }
       a {
-       border-bottom-width: 4px;
+        border-bottom-width: 4px;
+        &:hover {
+          @include color(color, link);
+        }
       }
       @include media-query-max(675px) {
         font-size: 40px;
