@@ -1,6 +1,6 @@
 .chroma {
-  color: $background;
-  background-color: $text;
+  @include color(color, background);
+  @include color(background-color, text);
   /* Error */ .err { color: #960050; background-color: #1e0010 }
   /* LineTableTD */ .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
   /* LineTable */ .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; width: auto; overflow: auto; display: block; }

@@ -2,7 +2,7 @@
 a,
 article h2 a,
 ul#portfolio h4 a {
-  color: $text;
+  @include color(color, text);
 }
 a.back-home,
 article,
@@ -20,33 +20,33 @@ p.content a.more:active,
 p.content a.more:hover,
 ul#portfolio h4 a:active,
 ul#portfolio h4 a:hover {
-  color: $link;
+  @include color(color, link);
   text-decoration: underline;
 }
 a svg {
-  fill: $text;
+  @include color(fill, text);
 }
 a:active svg,
 a:hover svg {
-  fill: $link;
+  @include color(fill, link);
 }
 a.meta,
 hr,
 p.content a.more,
 .meta {
-  color: $meta;
+  @include color(color, meta);
 }
 a.meta:active,
 a.meta:hover {
-  color: $accent;
+  @include color(color, accent);
 }
 article {
   a {
-    color: $link;
+    @include color(color, link);
   }
   a:active,
   a:hover {
-    color: $accent;
+    @include color(color, accent);
   }
 }
 article p {
@@ -61,7 +61,9 @@ ul#portfolio {
   width: 100%;
 }
 blockquote {
-  border-left: 1px solid $link;
+  @include color(border-left-color, link);
+  border-left-style: solid;
+  border-left-width: 1px;
   margin: 0 0 15px 0;
   padding-left: 15px;
 }
@@ -70,8 +72,8 @@ figure {
   font: 400 17px monospace;
 }
 figure {
-  background-color: $text;
-  color: $background;
+  @include color(background-color, text);
+  @include color(color, background);
 }
 figure,
 h1, h2, h3, h4,
@@ -82,7 +84,7 @@ p,
 }
 figure,
 pre {
-  box-shadow: 8px 8px 0 0 $meta;
+  @include color(box-shadow, box);
   margin-bottom: 21px;
 }
 figcaption p,
@@ -141,8 +143,8 @@ ol ul {
   padding-left: 20px;
 }
 p code {
-  color: $background;
-  background-color: $text;
+  @include color(background-color, text);
+  @include color(color, background);
   padding: 0 2px;
 }
 section.info {

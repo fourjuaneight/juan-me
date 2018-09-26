@@ -57,11 +57,11 @@ section.info {
   p {
     margin: 0;
     span {
-      color: $link;
+      @include color(color, link);
     }
   }
   .date {
-    color: $link;
+    @include color(color, link);
   }
 }
 // Paginator

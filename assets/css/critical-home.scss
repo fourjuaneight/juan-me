@@ -1,4 +1,4 @@
-@import 'variables';
+@import 'colors';
 @import 'mixins';
 body {
   #intro {
@@ -29,13 +29,13 @@ body {
       }
     }
     h1, h2 {
-      color: $meta;
+      @include color(color, meta);
       font-size: 45px;
       font-weight: 600;
       line-height: 65px;
       margin: 15px 0;
       span {
-        color: $accent;
+        @include color(color, accent);
       }
       a {
        border-bottom-width: 4px;
@@ -67,6 +67,11 @@ body {
           @include media-query-max(420px) {
             height: 40px;
             width: 40px;
+          }
+        }
+        &.email {
+          svg g path {
+            fill: transparent;
           }
         }
       }

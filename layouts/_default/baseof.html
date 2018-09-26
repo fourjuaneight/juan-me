@@ -34,6 +34,41 @@
   {{ else }}
     {{ partial "critical-aboveTheFold.html" . }}
   {{ end }}
+
+  <!-- Critical Font Loading -->
+  <script>
+    (function() {
+      "use strict";
+      // Optimization for Repeat Views
+      if( sessionStorage.fontsLoadedCriticalFoftPreloadFallback ) {
+        document.documentElement.className += " fonts-loaded-2";
+        return;
+      } else if( "fonts" in document ) {
+        document.fonts.load("1em Plex Subset").then(function () {
+          document.documentElement.className += " fonts-loaded-1";
+          Promise.all([
+            document.fonts.load("400 1em Plex"),
+            document.fonts.load("600 1em Plex"),
+            document.fonts.load("italic 1em Plex"),
+            document.fonts.load("400 1em Plex Mono"),
+            document.fonts.load("italic 1em Plex Mono"),
+          ]).then(function () {
+            document.documentElement.className += " fonts-loaded-2";
+            // Optimization for Repeat Views
+            sessionStorage.fontsLoadedCriticalFoftPreloadFallback = true;
+          });
+        });
+      } else {
+        // use fallback
+        var ref = document.getElementsByTagName( "script" )[ 0 ];
+        var script = document.createElement( "script" );
+        {{ $criticalJS := resources.Get "js/critical-foft-preload-fallback-optional.js" | minify }}
+        script.src = "{{ $criticalJS.Permalink }}";
+        script.async = true;
+        ref.parentNode.insertBefore( script, ref );
+      }
+    })();
+    </script>
   
   <!-- Stylesheets -->
   {{ $styles := resources.Get "css/main.scss" | toCSS | postCSS | minify | fingerprint }}
@@ -67,43 +102,8 @@
   <link rel="android-chrome" sizes="192x192" href="{{ $ac192.Permalink }}" integrity="{{ $ac192.Data.Integrity }}">
   {{ $ac512 := resources.Get "icons/android-chrome-512x512.png" | fingerprint }}
   <link rel="android-chrome" sizes="512x512" href="{{ $ac512.Permalink }}" integrity="{{ $ac512.Data.Integrity }}">
-  
-  <!-- Critical Font Loading -->
-  <script>
-  (function() {
-    "use strict";
-    // Optimization for Repeat Views
-    if( sessionStorage.fontsLoadedCriticalFoftPreloadFallback ) {
-      document.documentElement.className += " fonts-loaded-2";
-      return;
-    } else if( "fonts" in document ) {
-      document.fonts.load("1em Plex Subset").then(function () {
-        document.documentElement.className += " fonts-loaded-1";
-        Promise.all([
-          document.fonts.load("400 1em Plex"),
-          document.fonts.load("600 1em Plex"),
-          document.fonts.load("italic 1em Plex"),
-          document.fonts.load("400 1em Plex Mono"),
-          document.fonts.load("italic 1em Plex Mono"),
-        ]).then(function () {
-          document.documentElement.className += " fonts-loaded-2";
-          // Optimization for Repeat Views
-          sessionStorage.fontsLoadedCriticalFoftPreloadFallback = true;
-        });
-      });
-    } else {
-      // use fallback
-      var ref = document.getElementsByTagName( "script" )[ 0 ];
-      var script = document.createElement( "script" );
-      {{ $criticalJS := resources.Get "js/critical-foft-preload-fallback-optional.js" | minify }}
-      script.src = "{{ $criticalJS.Permalink }}";
-      script.async = true;
-      ref.parentNode.insertBefore( script, ref );
-    }
-  })();
-  </script>
 </head>
-<body>
+<body {{ if .IsHome }}id="home"{{ end }} class="light">
     <!-- Main content -->
   {{ block "main" . }}
   {{ end }}
