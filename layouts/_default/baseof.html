@@ -115,14 +115,15 @@
   </script>
   <!-- SW -->
   <script>
-    if (navigator.serviceWorker) {
-      navigator.serviceWorker.register('/sw.js', {
-        scope: '/'
-      });
-      window.addEventListener('load', function() {
-        if (navigator.serviceWorker.controller) {
-          navigator.serviceWorker.controller.postMessage({'command': 'trimCaches'});
-        }
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register("/sw.js", { scope: "/" })
+        .then(function(registration) {
+          console.log("Service Worker Registered");
+        });
+
+      navigator.serviceWorker.ready.then(function(registration) {
+        console.log("Service Worker Ready");
       });
     }
   </script>
