@@ -112,8 +112,22 @@
     button.onclick = function() {
       body.classList.toggle('dark');
     }
-    console.log('I love to sleep because in my dreams I can finally get revenge on the stingray that strangled Steve Irwin.');
-    
+  </script>
+  <!-- SW -->
+  <script>
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.register('/sw.js', {
+        scope: '/'
+      });
+      window.addEventListener('load', function() {
+        if (navigator.serviceWorker.controller) {
+          navigator.serviceWorker.controller.postMessage({'command': 'trimCaches'});
+        }
+      });
+    }
+  </script>
+  <!-- Console Crap -->
+  <script>
     function isIE() {
       ua = navigator.userAgent;
       var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
@@ -122,6 +136,7 @@
     if (isIE()){
       console.log('Fuck yeah it works on IE 11.');
     } 
+    console.log('I love to sleep because in my dreams I can finally get revenge on the stingray that strangled Steve Irwin.');
   </script>
 </body>
 </html>
