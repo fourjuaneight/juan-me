@@ -1,9 +1,11 @@
 {{ define "main" }}
   {{ partial "header.html" . }}
-  <article class="post">
-    <h1 class="title">{{ .Title }}</h1>
-    <section class="content">{{ .Content }}</section>
-    {{ partial "article-meta.html" . }}
-  </article>
+  <main class="list">
+    <article class="post">
+      <h1 class="title">{{ .Title }}</h1>
+      <section class="content">{{ .Content }}</section>
+      {{ partial "article-meta.html" . }}
+    </article>
+  </main>
   {{ partial "footer.html" . }}
 {{ end }}

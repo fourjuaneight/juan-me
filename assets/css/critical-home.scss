@@ -17,15 +17,18 @@ body {
     .avatar {
       height: 175px;
       margin: 5px 0 15px;
-      width: auto;
+      width: 126px;
       @include media-query-max(675px) {
         height: 150px;
+        width: 108px;
       }
       @include media-query-max(420px) {
         height: 125px;
+        width: 90px;
       }
       @include media-query-max(375px) {
         height: 100px;
+        width: 72px;
       }
     }
     h1, h2 {
@@ -34,6 +37,7 @@ body {
       font-weight: 600;
       line-height: 65px;
       margin: 15px 0;
+      max-width: 700px;
       a {
         border-bottom-width: 4px;
         &:hover {

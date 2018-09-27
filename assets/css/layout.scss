@@ -21,7 +21,7 @@ ul#portfolio {
 }
 // List
 main.list {
-  min-height: calc(100vh - 203px);
+  min-height: calc(100vh - 250px);
   article.list-item {
     padding: 0;
     margin-bottom: 30px;
@@ -45,7 +45,6 @@ main.list {
 }
 // Article
 article.post {
-  min-height: calc(100vh - 204px);
   h1, h2, p {
     margin-bottom: 15px;
   }
@@ -134,16 +133,24 @@ footer {
       height: 40px;
       width: 40px;
     }
+    a svg {
+      margin: 0;
+    }
     a.email {
       svg g path {
         fill: transparent;
+      }
+    }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      a {
+        margin: 0 15px;
       }
     }
   }
   section.copy {
     @extend %flex;
     margin-top: 30px;
-    width: auto;
+    width: 265px;
     @include media-query-max(345px) {
       font-size: 17px;
     }

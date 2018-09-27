@@ -113,6 +113,15 @@
       body.classList.toggle('dark');
     }
     console.log('I love to sleep because in my dreams I can finally get revenge on the stingray that strangled Steve Irwin.');
+    
+    function isIE() {
+      ua = navigator.userAgent;
+      var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
+      return is_ie; 
+    }
+    if (isIE()){
+      console.log('Fuck yeah it works on IE 11.');
+    } 
   </script>
 </body>
 </html>
