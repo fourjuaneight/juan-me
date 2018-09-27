@@ -16,7 +16,7 @@ body {
   @include color(color, text);
   font-size: 18px;
   font-weight: 400;
-  height: 100%;
+  height: calc(100vh - 55px);
   margin: 0 auto;
   overflow-y: auto;
   overflow-x: hidden;
@@ -43,5 +43,51 @@ body {
     --meta: #{map-get($dark, meta)};
     --link: #{map-get($dark, link)};
     --accent: #{map-get($dark, accent)};
+  }
+  button#theme-switcher {
+    background: none;
+    border: none;
+    bottom: 15px;
+    left: 15px;
+    padding: 0;
+    position: sticky;
+    svg {
+      height: 40px;
+      width: 40px;
+      #dracula {
+        #cape {
+          fill: rgba(#424352,.7);
+        }
+        #face {
+          fill: rgba(#d3d4d5,.5);
+        }
+        #eyes path {
+          fill: rgba(#8f3a6d,.7);
+        }
+        #hair {
+          fill: rgba(#424352,.7);
+        }
+      }
+    }
+    &:hover {
+      svg {
+        height: 40px;
+        width: 40px;
+        #dracula {
+          #cape {
+            fill: #424352;
+          }
+          #face {
+            fill: #d3d4d5;
+          }
+          #eyes path {
+            fill: #8f3a6d;
+          }
+          #hair {
+            fill: #424352;
+          }
+        }
+      }
+    }
   }
 }

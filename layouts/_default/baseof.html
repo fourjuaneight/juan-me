@@ -103,5 +103,16 @@
     <!-- Main content -->
   {{ block "main" . }}
   {{ end }}
+
+  <!-- Theme Switcher -->
+  {{ partial "dracula.html" . }}
+  <script>
+    var button = document.querySelector('#theme-switcher');
+    var body = document.querySelector("body");
+    button.onclick = function() {
+      body.classList.toggle('dark');
+    }
+    console.log('I love to sleep because in my dreams I can finally get revenge on the stingray that strangled Steve Irwin.');
+  </script>
 </body>
 </html>
