@@ -1,5 +1,5 @@
 (function () {
-  const version = 'v1';
+  const version = 'v2';
   const cacheName = ':juanvillela:';
 
   const staticCacheName = version + cacheName + 'static';
