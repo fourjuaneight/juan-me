@@ -17,11 +17,10 @@
   
   <!-- Open Graph -->
   <link rel="canonical" href="{{ .Permalink }}">
-  <base href="{{ .Site.BaseURL }}"/>
   {{ template "_internal/twitter_cards.html" . }}
-  <meta name="twitter:image" content="{{ .Site.BaseURL }}{{ "icons/avatar.png" | relURL }}">
+  <meta name="twitter:image" content="{{ "icons/avatar.png" | relURL }}">
   {{ template "_internal/opengraph.html" . }}
-  <meta property="og:image" content="{{ .Site.BaseURL }}{{ "icons/avatar.png" | relURL }}">
+  <meta property="og:image" content="{{ "icons/avatar.png" | relURL }}">
   {{ template "_internal/schema.html" . }}
 
   <!-- Fonts -->  
