@@ -4,7 +4,6 @@
     <p>Home</p>
   </a>
   <main class="err-404">
-    {{ $img404 := resources.Get "img/here's-juan.svg" | minify | fingerprint }}
-    <img src="{{ $img404.Permalink }}" alt="Heeeeere’s Juann!">
+    <img src="{{ "img/here's-juan.svg" | relURL }}" alt="Heeeeere’s Juann!">
   </main>
 {{ end }}
