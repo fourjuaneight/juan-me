@@ -61,8 +61,7 @@
         // use fallback
         var ref = document.getElementsByTagName( "script" )[ 0 ];
         var script = document.createElement( "script" );
-        {{ $criticalJS := resources.Get "js/critical-foft-preload-fallback-optional.js" | minify }}
-        script.src = "{{ $criticalJS.Permalink }}";
+        script.src = "{{ "js/critical-foft-preload-fallback-optional.js" | relURL }}";
         script.async = true;
         ref.parentNode.insertBefore( script, ref );
       }

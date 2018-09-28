@@ -10,8 +10,19 @@
     '/blog/',
     '/offline/',
     '/css/main.min.css',
+    '/js/critical-foft-preload-fallback-optional.js',
     '/type/IBMPlexSans-subset.woff',
-    '/type/IBMPlexSans-subset.woff2'
+    '/type/IBMPlexSans-subset.woff2',
+    '/type/IBMPlexSans.woff',
+    '/type/IBMPlexSans.woff2',
+    '/type/IBMPlexSansItalic.woff',
+    '/type/IBMPlexSansItalic.woff2',
+    '/type/IBMPlexSansSemiBold.woff',
+    '/type/IBMPlexSansSemiBold.woff2',
+    '/type/IBMPlexMono.woff',
+    '/type/IBMPlexMono.woff2',
+    '/type/IBMPlexMonoItalic.woff',
+    '/type/IBMPlexMonoItalic.woff2',
   ];
   function updateStaticCache() {
     // These items must be cached for the Service Worker to complete installation
