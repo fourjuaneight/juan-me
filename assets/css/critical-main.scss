@@ -16,7 +16,7 @@ body {
   @include color(color, text);
   font-size: 18px;
   font-weight: 400;
-  height: calc(100vh - 55px);
+  height: 100vh;
   margin: 0 auto;
   overflow-x: hidden;
   padding: 0;
