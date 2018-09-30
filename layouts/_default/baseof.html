@@ -104,6 +104,12 @@
     <p class="smaller">Nothing.</p>
   </section>
 
-  {{ partial "scripts.html" . }}
+  {{ partial "dracula.html" . }}
+
+  {{ $scripts := resources.Get "js/scripts.js" | minify }}
+  <script src="{{ $scripts.Permalink }}"></script>
+  <!-- a11y -->
+  <!-- {{ $tota11y := resources.Get "js/tota11y.js" | minify }}
+  <script src="{{ $tota11y.Permalink }}"></script> -->
 </body>
 </html>

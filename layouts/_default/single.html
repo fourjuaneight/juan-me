@@ -1,10 +1,10 @@
 {{ define "main" }}
   {{ partial "header.html" . }}
-  <main class="list">
+  <main class="list" role="main">
     <article class="post">
       <h1 class="title">{{ .Title }}</h1>
-      <section class="content">{{ .Content }}</section>
       {{ partial "article-meta.html" . }}
+      <section class="content">{{ .Content }}</section>
     </article>
   </main>
   {{ partial "footer.html" . }}

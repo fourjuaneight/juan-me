@@ -16,8 +16,6 @@ a:active,
 a:hover,
 article h2 a:active,
 article h2 a:hover,
-p.content a.more:active,
-p.content a.more:hover,
 ul#portfolio h4 a:active,
 ul#portfolio h4 a:hover {
   @include color(color, link);
@@ -32,7 +30,6 @@ a:hover svg {
 }
 a.meta,
 hr,
-p.content a.more,
 .meta {
   @include color(color, meta);
 }
@@ -128,7 +125,7 @@ li {
   margin-bottom: 5px;
 }
 nav {
-  @extend %vertical-center;
+  @extend %items-center;
   justify-content: space-between;
   a svg {
     height: 55px;

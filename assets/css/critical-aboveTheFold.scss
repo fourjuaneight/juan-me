@@ -1,8 +1,8 @@
 @import 'colors';
 @import 'extends';
 @import 'reset';
-header {
-  @extend %vertical-center;
+header#header {
+  @extend %items-center;
   @extend %space-between;
   a.home,
   a.home svg.avatar {
@@ -15,10 +15,10 @@ header {
       @extend %decoration-none;
       &.rss {
         @extend %flex;
-        @extend %vertical-center;
+        @extend %items-center;
         @extend %decoration-none;
         height: 25px;
-        @extend %horizontal-center;
+        @extend %content-center;
         width: 15px;
         svg {
           height: 15px;
@@ -29,5 +29,5 @@ header {
   }
 }
 @media print {
-  header {display: none;}
+  header#header {display: none;}
 }

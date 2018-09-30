@@ -10,6 +10,7 @@
     '/blog/',
     '/offline/',
     '/css/main.min.css',
+    '/js/scripts.min.js',
     '/js/critical-foft-preload-fallback-optional.js',
     '/type/IBMPlexSans-subset.woff',
     '/type/IBMPlexSans-subset.woff2',

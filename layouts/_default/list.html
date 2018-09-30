@@ -1,6 +1,7 @@
 {{ define "main" }}
   {{ partial "header.html" . }}
-  <main class="list">
+  <main class="list" role="main">
+    <h1 class="hidden">Juan Villela Blog Feed</h1>
     {{ $paginator := .Paginate (where .Data.Pages "Type" "blog") 5 }}
       {{ range $paginator.Pages }}
         {{ .Render "li"}}

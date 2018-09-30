@@ -3,6 +3,9 @@
   border-bottom: 2px solid #414142;
 }
 // Layouts
+%none {
+  display: none;
+}
 %flex {
   display: flex;
 }
@@ -12,10 +15,10 @@
 %margin-center {
   margin: 0 auto
 }
-%horizontal-center {
+%content-center {
   justify-content: center;
 }
-%vertical-center {
+%items-center {
   align-items: center;
 }
 %decoration-none {
@@ -23,4 +26,10 @@
 }
 %space-between {
   justify-content: space-between;
+}
+%visually-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px; width: 1px;
+  overflow: hidden;
+  position: absolute !important;
 }

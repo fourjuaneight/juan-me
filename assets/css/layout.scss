@@ -35,12 +35,6 @@ main.list {
     p.content {
       margin: 0 0 15px;
     }
-    p.content {
-      a.more {
-        font-size: 15px;
-        @extend %decoration-none;
-      }
-    }
   }
 }
 // Article
@@ -52,7 +46,7 @@ article.post {
 }
 // Article Meta
 section.info {
-  @extend %vertical-center;
+  @extend %items-center;
   @extend %space-between;
   p {
     margin: 0;
@@ -83,7 +77,7 @@ nav.paginate {
 // 404
 a.back-home {
   @extend %flex;
-  @extend %vertical-center;
+  @extend %items-center;
   @extend %decoration-none;
   svg {
     height: 38px;
@@ -108,7 +102,7 @@ a.back-home {
 }
 main.err-404 {
   @extend %flex;
-  @extend %vertical-center;
+  @extend %items-center;
   height: calc(100vh - 82px);
   img {
     height: auto;
@@ -117,7 +111,7 @@ main.err-404 {
   }
 }
 // Footer
-footer {
+footer#footer {
   flex-direction: column;
   height: 124px;
   padding-bottom: 30px !important;
@@ -127,7 +121,7 @@ footer {
     @extend %margin-center;
   }
   nav.social {
-    @extend %horizontal-center;
+    @extend %content-center;
     max-width: 300px;
     width: 100%;
     a,
@@ -158,6 +152,54 @@ footer {
     }
   }
 }
+// Dracula
+button#theme-switcher {
+  background: none;
+  border: none;
+  bottom: 15px;
+  right: 15px;
+  padding: 0;
+  position: fixed;
+  z-index: 10;
+  svg {
+    height: 40px;
+    width: 40px;
+    #dracula {
+      #cape {
+        fill: rgba(#424352,.7);
+      }
+      #face {
+        fill: rgba(#d3d4d5,.5);
+      }
+      #eyes path {
+        fill: rgba(#8f3a6d,.7);
+      }
+      #hair {
+        fill: rgba(#424352,.7);
+      }
+    }
+  }
+  &:hover {
+    svg {
+      height: 40px;
+      width: 40px;
+      #dracula {
+        #cape {
+          fill: #424352;
+        }
+        #face {
+          fill: #d3d4d5;
+        }
+        #eyes path {
+          fill: #8f3a6d;
+        }
+        #hair {
+          fill: #424352;
+        }
+      }
+    }
+  }
+}
 // Stuff
 body {
   > * {
@@ -184,13 +226,13 @@ body {
       transform: rotate(-90deg);
     }
     p.small {
-      display: flex;
+      @extend %flex;
       @include media-query-max(190px) {
         display: none;
       }
     }
     p.smaller {
-      display: none;
+      @extend %none;
       @include media-query-max(190px) {
         display: flex;
       }
