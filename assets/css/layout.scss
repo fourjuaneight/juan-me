@@ -162,7 +162,7 @@ footer {
 body {
   > * {
     @include media-query-max(260px) {
-      display: none;
+      display: none !important;
     }
   }
   section.stuff {
