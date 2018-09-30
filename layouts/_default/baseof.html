@@ -98,40 +98,12 @@
   {{ block "main" . }}
   {{ end }}
 
-  <!-- Theme Switcher -->
-  {{ partial "dracula.html" . }}
-  <script>
-    var button = document.querySelector('#theme-switcher');
-    var body = document.querySelector("body");
-    button.onclick = function() {
-      body.classList.toggle('dark');
-    }
-  </script>
-  <!-- SW -->
-  <script>
-    if (navigator.serviceWorker) {
-      navigator.serviceWorker.register("/sw.js", { scope: "/" });
-      navigator.serviceWorker.ready.then(function(registration) {
-        console.log("Service Worker Ready");
-      });
-      window.addEventListener("load", function() {
-        if (navigator.serviceWorker.controller) {
-          navigator.serviceWorker.controller.postMessage({ command: "trimCaches" });
-        }
-      });
-    }
-  </script>
-  <!-- Console Crap -->
-  <script>
-    function isIE() {
-      ua = navigator.userAgent;
-      var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
-      return is_ie; 
-    }
-    if (isIE()){
-      console.log('Fuck yeah it works on IE 11.');
-    } 
-    console.log('I love to sleep because in my dreams I can finally get revenge on the stingray that strangled Steve Irwin.');
-  </script>
+  <!-- Stuff -->
+  <section class="stuff" aria-hidden="true">
+    <p class="small">Guess what happens when you go smaller?</p>
+    <p class="smaller">Nothing.</p>
+  </section>
+
+  {{ partial "scripts.html" . }}
 </body>
 </html>

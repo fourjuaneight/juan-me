@@ -158,3 +158,42 @@ footer {
     }
   }
 }
+// Stuff
+body {
+  > * {
+    @include media-query-max(260px) {
+      display: none;
+    }
+  }
+  section.stuff {
+    @extend %flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+    @include media-query-min(261px) {
+      clip: rect(1px, 1px, 1px, 1px);
+      display: none;
+      height: 1px; width: 1px;
+      overflow: hidden;
+      position: absolute !important;
+    }
+    p {
+      font-size: 30px;
+      text-transform: uppercase;
+      transform: rotate(-90deg);
+    }
+    p.small {
+      display: flex;
+      @include media-query-max(190px) {
+        display: none;
+      }
+    }
+    p.smaller {
+      display: none;
+      @include media-query-max(190px) {
+        display: flex;
+      }
+    }
+  }
+}
