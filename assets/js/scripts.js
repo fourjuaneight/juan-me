@@ -3,6 +3,7 @@ const button = document.querySelector('#theme-switcher');
 const body = document.querySelector("body");
 button.onclick = () => {
   body.classList.toggle('dark');
+  body.classList.toggle('light');
 }
 // SW
 if (navigator.serviceWorker) {

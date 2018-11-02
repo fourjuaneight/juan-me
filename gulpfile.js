@@ -1,14 +1,14 @@
-var gulp         = require('gulp'),
-    rename       = require('gulp-rename'),
-    concat       = require('gulp-concat-util'),
-    postcss      = require('gulp-postcss'),
-    autoprefixer = require('autoprefixer'),
-    cssnano      = require('cssnano'),
-    sass         = require('gulp-sass');
-
+const gulp         = require('gulp'),
+      rename       = require('gulp-rename'),
+      concat       = require('gulp-concat-util'),
+      postcss      = require('gulp-postcss'),
+      autoprefixer = require('autoprefixer'),
+      cssnano      = require('cssnano'),
+      sass         = require('gulp-sass');
+    
 // Critical CSS
-gulp.task('critical-home', function() {
-  var plugins = [
+gulp.task('critical-home', () => {
+  const plugins = [
     autoprefixer({browsers: ['last 2 version']}),
     cssnano()
   ];
@@ -27,8 +27,8 @@ gulp.task('critical-home', function() {
   // insert file
   .pipe(gulp.dest('layouts/partials'));
 });
-gulp.task('critical-aboveTheFold', function() {
-  var plugins = [
+gulp.task('critical-aboveTheFold', () => {
+  const plugins = [
     autoprefixer({browsers: ['last 2 version']}),
     cssnano()
   ];
@@ -49,7 +49,7 @@ gulp.task('critical-aboveTheFold', function() {
 });
 
 // Watch asset folder for changes
-gulp.task('watch', ['critical-home','critical-aboveTheFold'], function () {
+gulp.task('watch', ['critical-home','critical-aboveTheFold'], () => {
   gulp.watch('assets/css/critical-home.scss', ['critical-home'])
   gulp.watch('assets/css/critical-aboveTheFold.scss', ['critical-aboveTheFold'])
 });
