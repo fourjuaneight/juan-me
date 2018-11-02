@@ -104,7 +104,7 @@
     <p class="smaller">Nothing.</p>
   </section>
 
-  {{ partial "dracula.html" . }}
+  {{ partial "theme-swticher.html" . }}
 
   {{ $scripts := resources.Get "js/scripts.js" | minify }}
   <script src="{{ $scripts.Permalink }}"></script>

@@ -152,49 +152,41 @@ footer#footer {
     }
   }
 }
-// Dracula
-button#theme-switcher {
-  background: none;
-  border: none;
-  bottom: 15px;
-  right: 15px;
-  padding: 0;
-  position: fixed;
-  z-index: 10;
-  svg {
-    height: 40px;
-    width: 40px;
-    #dracula {
-      #cape {
-        fill: rgba(#424352,.7);
-      }
-      #face {
-        fill: rgba(#d3d4d5,.5);
-      }
-      #eyes path {
-        fill: rgba(#8f3a6d,.7);
-      }
-      #hair {
-        fill: rgba(#424352,.7);
-      }
-    }
-  }
-  &:hover {
+// Theme Switcher
+body {
+  button#theme-switcher {
+    background: none;
+    border: none;
+    bottom: 15px;
+    right: 15px;
+    padding: 0;
+    position: fixed;
+    z-index: 10;
     svg {
       height: 40px;
       width: 40px;
-      #dracula {
-        #cape {
+    }
+  }
+  &.light {
+    button#theme-switcher {
+      svg path {
+        fill: rgba(#424352,.7);
+      }
+      &:hover {
+        svg path {
           fill: #424352;
         }
-        #face {
+      }
+    }
+  }
+  &.dark {
+    button#theme-switcher {
+      svg path {
+        fill: rgba(#d3d4d5,.5);
+      }
+      &:hover {
+        svg path {
           fill: #d3d4d5;
-        }
-        #eyes path {
-          fill: #8f3a6d;
-        }
-        #hair {
-          fill: #424352;
         }
       }
     }
