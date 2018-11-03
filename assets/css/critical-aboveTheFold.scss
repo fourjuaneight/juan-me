@@ -4,10 +4,15 @@
 header#header {
   @extend %items-center;
   @extend %space-between;
-  a.home,
-  a.home svg.avatar {
-    height: 50px;
-    width: 36px;
+  a.home {
+    @extend %content-center;
+    @extend %flex;
+    @extend %items-center;
+    height: 35px;
+    width: 60px;
+    &.open-box {
+      width: 65px;
+    }
   }
   nav {
     width: 220px;

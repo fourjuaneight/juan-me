@@ -1,8 +1,16 @@
 <header id="header" role="banner">
   <!-- Avatar and link to homepage -->
-  <a class="home" href="{{ .Site.BaseURL }}" aria-label="Juan Villela Dot Me Homepage">
-    {{ partial "avatar.html" . }}
+  {{ $box := resources.Get "img/box.svg" | minify }}
+  {{ $openbox := resources.Get "img/open-box.svg" | minify }}
+  {{ if .IsHome }}
+  <a class="home box" href="{{ .Site.BaseURL }}" aria-label="Juan Villela Dot Me Homepage">
+    <img src="{{ $box.Permalink }}" alt="A box. A beautiful box.">
   </a>
+  {{ else }}
+  <a class="home open-box" href="{{ .Site.BaseURL }}" aria-label="Juan Villela Dot Me Homepage">
+    <img src="{{ $openbox.Permalink }}" alt="A box. A beautiful box.">
+  </a>
+  {{ end }}
 
   <!-- Site navigation menu -->
   <nav class="navbar" role="navigation">

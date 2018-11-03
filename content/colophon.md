@@ -8,7 +8,7 @@ showthedate = false
 * Written and created by Juan Villela.
 * Made with {{< link href="https://gohugo.io" content="Hugo" >}}.
 * Font used is {{< link href="https://fonts.google.com/specimen/IBM+Plex+Sans" content="Plex" >}}.
-* Graphics made with {{< link href="https://itunes.apple.com/us/app/affinity-designer/id824171161?mt=12" content="Affinity Designer" >}}.
+* The intricate box and paint roller icons were designed using {{< link href="https://itunes.apple.com/us/app/affinity-designer/id824171161?mt=12" content="Affinity Designer" >}}.
 * Coded on {{< link href="https://www.vim.org/" content="VIM" >}}.
 
 ## Licensing
