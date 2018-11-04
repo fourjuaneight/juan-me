@@ -101,8 +101,14 @@ body {
     align-items: flex-start;
     flex-direction: column;
     justify-content: flex-start;
-    height: 100%;
+    height: calc(100vh - 72px);
     padding-top: 50px;
+    @media screen and (min-width: 421px) and (max-height: 715px) {
+      height: 100%;
+    }
+    @media screen and (max-width: 420px) and (max-height: 545px) {
+      height: 100%;
+    }
     @include media-query-max(375px) {
       padding-top: 30px;
     }
