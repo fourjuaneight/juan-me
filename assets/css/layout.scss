@@ -200,7 +200,7 @@ body {
 // Stuff
 body {
   > * {
-    @include media-query-max(260px) {
+    @include media-query-max(300px) {
       display: none !important;
     }
   }
@@ -210,7 +210,7 @@ body {
     height: 100%;
     justify-content: center;
     width: 100%;
-    @include media-query-min(261px) {
+    @include media-query-min(301px) {
       clip: rect(1px, 1px, 1px, 1px);
       display: none;
       height: 1px; width: 1px;

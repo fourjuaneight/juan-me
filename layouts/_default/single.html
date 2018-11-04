@@ -1,6 +1,6 @@
 {{ define "main" }}
   {{ partial "header.html" . }}
-  <main class="list" role="main">
+  <main class="list" role="main" aria-hidden="false">
     <article class="post">
       <h1 class="title">{{ .Title }}</h1>
       {{ partial "article-meta.html" . }}
