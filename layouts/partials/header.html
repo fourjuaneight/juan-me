@@ -1,14 +1,19 @@
 <header id="header" role="banner">
   <!-- Avatar and link to homepage -->
   {{ $box := resources.Get "img/box.svg" | minify }}
-  {{ $openbox := resources.Get "img/open-box.svg" | minify }}
+  {{ $openBoxJuan := resources.Get "img/open-box-juan.svg" | minify }}
+  {{ $openBox := resources.Get "img/open-box.svg" | minify }}
   {{ if .IsHome }}
   <a class="home box" href="{{ .Site.BaseURL }}" aria-label="Juan Villela Dot Me Homepage">
     <img src="{{ $box.Permalink }}" alt="A box. A beautiful box.">
   </a>
+  {{ else if .IsPage }}
+  <a class="home open-box-juan" href="{{ .Site.BaseURL }}" aria-label="Juan Villela Dot Me Homepage">
+    <img src="{{ $openBoxJuan.Permalink }}" alt="An open box with someone peaking out. A beautiful open box with a sexy beast peaking out.">
+  </a>
   {{ else }}
   <a class="home open-box" href="{{ .Site.BaseURL }}" aria-label="Juan Villela Dot Me Homepage">
-    <img src="{{ $openbox.Permalink }}" alt="A box. A beautiful box.">
+    <img src="{{ $openBox.Permalink }}" alt="An open box. A beautiful open box.">
   </a>
   {{ end }}
 

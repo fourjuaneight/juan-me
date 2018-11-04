@@ -29,11 +29,7 @@
   <link rel="preload" href={{ "type/IBMPlexSans-subset.woff" | relURL }} as="font" type="font/woff" crossorigin>
   
   <!-- Critical -->
-  {{ if eq .IsHome true }}
-    {{ partial "critical-home.html" . }}
-  {{ else }}
-    {{ partial "critical-aboveTheFold.html" . }}
-  {{ end }}
+  {{ partial "critical.html" . }}
 
   <!-- Critical Font Loading -->
   <script>

@@ -1,0 +1,184 @@
+@import 'colors';
+@import 'fonts';
+@import 'extends';
+@import 'mixins';
+@import 'reset';
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+body {
+  @include color(background-color, background);
+  @include color(color, text);
+  font-size: 18px;
+  font-weight: 400;
+  height: 100vh;
+  margin: 0 auto;
+  overflow-x: hidden;
+  padding: 0;
+  width: 100%;
+  /* Fallback */
+  padding: 0 10px;
+  /* iOS 11 */
+  padding-left: constant(safe-area-inset-left);
+  padding-right: constant(safe-area-inset-right);
+  /* iOS 11.2+ */
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  &.light {
+    --background: #{map-get($light, background)};
+    --text: #{map-get($light, text)};
+    --meta: #{map-get($light, meta)};
+    --link: #{map-get($light, link)};
+    --accent: #{map-get($light, accent)};
+  }
+  &.dark {
+    --background: #{map-get($dark, background)};
+    --text: #{map-get($dark, text)};
+    --meta: #{map-get($dark, meta)};
+    --link: #{map-get($dark, link)};
+    --accent: #{map-get($dark, accent)};
+  }
+  .hidden {
+    @extend %visually-hidden;
+  }
+  header#header {
+    @extend %items-center;
+    @extend %content-space-between;
+    height: 70px;
+    a.home {
+      @extend %content-center;
+      @extend %flex;
+      @extend %items-flex-end;
+      height: 40px;
+      width: 65px;
+      img {
+        height: 25px;
+        width: 65px;
+      }
+      &.box img {
+        margin: 0 7.5px;
+        width: 50px;
+      }
+      &.open-box-juan img {
+        height: 44px;
+      }
+    }
+    nav {
+      width: 220px;
+      a {
+        @extend %decoration-none;
+        &.rss {
+          @extend %flex;
+          @extend %items-center;
+          @extend %decoration-none;
+          height: 25px;
+          @extend %content-center;
+          width: 15px;
+          svg {
+            height: 15px;
+            width: 15px;
+          }
+        }
+      }
+    }
+  }
+  #intro {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    padding-top: 50px;
+    @include media-query-max(375px) {
+      padding-top: 30px;
+    }
+    @include media-query-max(320px) {
+      padding-top: 15px;
+    }
+    .avatar {
+      height: 175px;
+      margin: 5px 0 15px;
+      width: 126px;
+      @include media-query-max(675px) {
+        height: 150px;
+        width: 108px;
+      }
+      @include media-query-max(420px) {
+        height: 125px;
+        width: 90px;
+      }
+      @include media-query-max(375px) {
+        height: 100px;
+        width: 72px;
+      }
+    }
+    h1, h2 {
+      @include color(color, meta);
+      font-size: 45px;
+      font-weight: 600;
+      line-height: 65px;
+      margin: 15px 0;
+      max-width: 700px;
+      a {
+        border-bottom-width: 4px;
+        &:hover {
+          @include color(color, link);
+        }
+      }
+      @include media-query-max(675px) {
+        font-size: 40px;
+        line-height: 60px;
+      }
+      @include media-query-max(420px) {
+        font-size: 30px;
+        line-height: 50px;
+      }
+      @include media-query-max(375px) {
+        font-size: 28px;
+        line-height: 40px;
+      }
+      @include media-query-max(320px) {
+        font-size: 25px;
+      }
+    }
+    nav.social {
+      flex-wrap: wrap;
+      margin: 15px 0 5px;
+      max-width: 300px;
+      width: 100%;
+      a {
+        text-decoration: none;
+        svg {
+          @include media-query-max(420px) {
+            height: 40px;
+            width: 40px;
+          }
+        }
+        &.email {
+          svg g path {
+            fill: transparent;
+          }
+        }
+      }
+    }
+    a.down {
+      height: 42px;
+      margin: 0 auto;
+      margin-top: auto;
+      width: 50px;
+      @include media-query-max(320px) {
+        height: 25px;
+        width: 30px;
+      }
+    }
+  }
+}
+@media print {
+  header#header {display: none;}
+}

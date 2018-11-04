@@ -7,55 +7,31 @@ const gulp         = require('gulp'),
       sass         = require('gulp-sass');
     
 // Critical CSS
-gulp.task('critical-home', () => {
+gulp.task('critical', () => {
   const plugins = [
     autoprefixer({browsers: ['last 2 version']}),
     cssnano()
   ];
-  return gulp.src(['assets/css/critical-main.scss', 'assets/css/critical-home.scss'])
+  return gulp.src(['assets/css/critical.scss'])
   .pipe(sass().on('error', sass.logError))
   .pipe(postcss(plugins))
-  .pipe(concat('critical-home.html'))
   // wrap with style tags
   .pipe(concat.header('<style>'))
   .pipe(concat.footer('</style>'))
   // convert it to an include file
   .pipe(rename({
-      basename: 'critical-home',
+      basename: 'critical',
       extname: '.html'
     }))
   // insert file
   .pipe(gulp.dest('layouts/partials'));
 });
-gulp.task('critical-aboveTheFold', () => {
-  const plugins = [
-    autoprefixer({browsers: ['last 2 version']}),
-    cssnano()
-  ];
-  return gulp.src(['assets/css/critical-main.scss', 'assets/css/critical-aboveTheFold.scss'])
-  .pipe(sass().on('error', sass.logError))
-  .pipe(postcss(plugins))
-  .pipe(concat('critical-aboveTheFold.html'))
-  // wrap with style tags
-  .pipe(concat.header('<style>'))
-  .pipe(concat.footer('</style>'))
-  // convert it to an include file
-  .pipe(rename({
-      basename: 'critical-aboveTheFold',
-      extname: '.html'
-    }))
-  // insert file
-  .pipe(gulp.dest('layouts/partials'));
-});
-
 // Watch asset folder for changes
-gulp.task('watch', ['critical-home','critical-aboveTheFold'], () => {
-  gulp.watch('assets/css/critical-home.scss', ['critical-home'])
-  gulp.watch('assets/css/critical-aboveTheFold.scss', ['critical-aboveTheFold'])
+gulp.task('watch', ['critical'], () => {
+  gulp.watch('assets/css/critical.scss', ['critical'])
+  gulp.watch('assets/css/reset.scss', ['critical'])
 });
-
 // Run Watch as default
 gulp.task('default', ['watch']);
-
 // Build
-gulp.task('build', ['critical-home','critical-aboveTheFold']);
+gulp.task('build', ['critical']);
