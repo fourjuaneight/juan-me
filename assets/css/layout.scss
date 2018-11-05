@@ -28,6 +28,7 @@ main.list {
   section.year-container {
     @extend %content-space-between;
     @extend %flex;
+    @extend %flex-wrap;
     @extend %items-flex-start;
     margin-bottom: 15px;
     &:nth-child(n+2) {
@@ -40,6 +41,14 @@ main.list {
       margin: 0;
       &.list-date {
         width: 85px;
+        @include media-query-max(590px) {
+          @include color(border-bottom-color, meta);
+          border-bottom-style: solid;
+          border-bottom-width: 1px;
+          margin-bottom: 15px;
+          padding-bottom: 15px;
+          width: 100%;
+        }
       }
     }
     div.list-posts {

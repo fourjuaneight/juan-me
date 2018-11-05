@@ -74,12 +74,15 @@ body {
       @extend %decoration-none;
       height: 40px;
       width: 135px;
+      @include media-query-max(450px) {
+        width: 65px;
+      }
       img {
         height: 25px;
         width: 65px;
       }
       img.box {
-        margin: 0 7.5px;
+        margin: 0 15px 0 0;
         width: 50px;
       }
       img.open-box-juan {
@@ -88,27 +91,45 @@ body {
       p {
         line-height: 18px;
         width: 68px;
+        @include media-query-max(450px) {
+          display: none;
+        }
       }
     }
     nav {
       width: 250px;
+      @include media-query-max(350px) {
+        width: 220px;
+      }
       a {
         @extend %decoration-none;
         line-height: 18px;
         transition: text-decoration 0.5s ease;
+        @include media-query-max(350px) {
+          font-size: 15px;
+          line-height: 15px;
+        }
         &:hover {
           text-decoration: underline;
         }
         &.rss {
+          @extend %content-center;
           @extend %flex;
           @extend %items-center;
           @extend %decoration-none;
           height: 15px;
-          @extend %content-center;
           width: 15px;
           svg {
             height: 15px;
             width: 15px;
+          }
+          @include media-query-max(350px) {
+            height: 13px;
+            width: 13px;
+            svg {
+              height: 13px;
+              width: 13px;
+            }
           }
         }
       }
