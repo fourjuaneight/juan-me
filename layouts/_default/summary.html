@@ -1,4 +1,5 @@
 <article class="post">
   <h2 class="title"><a href='{{ .Permalink }}' >{{ .Title }}</a></h2>
-  {{ partial "article-meta.html" . }}
+  {{ partial "date.html" . }}
+  <p class="content">{{ .Summary }}</p>
 </article>

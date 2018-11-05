@@ -2,8 +2,10 @@
   {{ partial "social.html" . }}
   <section class="copy">
     <!-- Copyright -->
-    <p>&copy{{ .Site.Copyright }}</p>
-    <p>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</p>
+    <p>Copyright {{ time.Now.Format "2006" }}</p>
+    <p>&nbsp;&bull;&nbsp;</p>
+    <p>{{ .Site.Title }}</p>
+    <p>&nbsp;&bull;&nbsp;</p>
     <a href="{{ .Site.BaseURL }}colophon">Colophon</a>
   </section>
 </footer>

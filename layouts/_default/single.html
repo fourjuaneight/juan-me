@@ -3,8 +3,9 @@
   <main class="list" role="main" aria-hidden="false">
     <article class="post">
       <h1 class="title">{{ .Title }}</h1>
-      {{ partial "article-meta.html" . }}
+      {{ partial "date.html" . }}
       <section class="content">{{ .Content }}</section>
+      {{ partial "tags.html" . }}
     </article>
   </main>
   {{ partial "footer.html" . }}

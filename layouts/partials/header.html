@@ -3,24 +3,21 @@
   {{ $box := resources.Get "img/box.svg" | minify }}
   {{ $openBoxJuan := resources.Get "img/open-box-juan.svg" | minify }}
   {{ $openBox := resources.Get "img/open-box.svg" | minify }}
-  {{ if .IsHome }}
-  <a class="home box" href="{{ .Site.BaseURL }}" aria-label="Juan Villela Dot Me Homepage">
-    <img src="{{ $box.Permalink }}" alt="A box. A beautiful box.">
+  <a class="home" href="{{ .Site.BaseURL }}" aria-label="Juan Villela Dot Me Homepage">
+    {{ if .IsHome }}
+    <img class="box" src="{{ $box.Permalink }}" alt="A box. A beautiful box.">
+    {{ else if .IsPage }}
+    <img class="open-box-juan" src="{{ $openBoxJuan.Permalink }}" alt="An open box with someone peaking out. A beautiful open box with a sexy beast peaking out.">
+    {{ else }}
+    <img class="open-box" src="{{ $openBox.Permalink }}" alt="An open box. A beautiful open box.">
+    {{ end }}
+    <p>Juan V</p>
   </a>
-  {{ else if .IsPage }}
-  <a class="home open-box-juan" href="{{ .Site.BaseURL }}" aria-label="Juan Villela Dot Me Homepage">
-    <img src="{{ $openBoxJuan.Permalink }}" alt="An open box with someone peaking out. A beautiful open box with a sexy beast peaking out.">
-  </a>
-  {{ else }}
-  <a class="home open-box" href="{{ .Site.BaseURL }}" aria-label="Juan Villela Dot Me Homepage">
-    <img src="{{ $openBox.Permalink }}" alt="An open box. A beautiful open box.">
-  </a>
-  {{ end }}
 
   <!-- Site navigation menu -->
   <nav class="navbar" role="navigation">
     <a href="{{ .Site.BaseURL }}">Home</a>
-    <a href="{{ .Site.BaseURL }}blog">Blog</a>
+    <a href="{{ .Site.BaseURL }}archive">Archive</a>
     <a href="{{ .Site.BaseURL }}about">About</a>
     <a href="{{ .Site.RSSLink }}" class="rss" target="_blank" rel="noopener" aria-label="RSS">
       <svg width="15" height="15" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

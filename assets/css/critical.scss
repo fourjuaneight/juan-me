@@ -31,19 +31,33 @@ body {
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
   // Themes
-  &.light {
-    --background: #{map-get($light, background)};
-    --text: #{map-get($light, text)};
-    --meta: #{map-get($light, meta)};
-    --link: #{map-get($light, link)};
-    --accent: #{map-get($light, accent)};
+  &.dieci {
+    --background: #{map-get($dieci, background)};
+    --text: #{map-get($dieci, text)};
+    --meta: #{map-get($dieci, meta)};
+    --link: #{map-get($dieci, link)};
+    --accent: #{map-get($dieci, accent)};
   }
-  &.dark {
-    --background: #{map-get($dark, background)};
-    --text: #{map-get($dark, text)};
-    --meta: #{map-get($dark, meta)};
-    --link: #{map-get($dark, link)};
-    --accent: #{map-get($dark, accent)};
+  &.dracula {
+    --background: #{map-get($dracula, background)};
+    --text: #{map-get($dracula, text)};
+    --meta: #{map-get($dracula, meta)};
+    --link: #{map-get($dracula, link)};
+    --accent: #{map-get($dracula, accent)};
+  }
+  &.gotham {
+    --background: #{map-get($gotham, background)};
+    --text: #{map-get($gotham, text)};
+    --meta: #{map-get($gotham, meta)};
+    --link: #{map-get($gotham, link)};
+    --accent: #{map-get($gotham, accent)};
+  }
+  &.panic {
+    --background: #{map-get($panic, background)};
+    --text: #{map-get($panic, text)};
+    --meta: #{map-get($panic, meta)};
+    --link: #{map-get($panic, link)};
+    --accent: #{map-get($panic, accent)};
   }
   .hidden {
     @extend %visually-hidden;
@@ -57,22 +71,27 @@ body {
       @extend %content-center;
       @extend %flex;
       @extend %items-flex-end;
+      @extend %decoration-none;
       height: 40px;
-      width: 65px;
+      width: 135px;
       img {
         height: 25px;
         width: 65px;
       }
-      &.box img {
+      img.box {
         margin: 0 7.5px;
         width: 50px;
       }
-      &.open-box-juan img {
+      img.open-box-juan {
         height: 44px;
+      }
+      p {
+        line-height: 18px;
+        width: 68px;
       }
     }
     nav {
-      width: 220px;
+      width: 250px;
       a {
         @extend %decoration-none;
         line-height: 18px;
@@ -84,7 +103,7 @@ body {
           @extend %flex;
           @extend %items-center;
           @extend %decoration-none;
-          height: 18px;
+          height: 15px;
           @extend %content-center;
           width: 15px;
           svg {
@@ -95,97 +114,38 @@ body {
       }
     }
   }
-  // Homepage Intro
-  #intro {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: flex-start;
-    height: calc(100vh - 72px);
-    padding-top: 50px;
-    @media screen and (min-width: 421px) and (max-height: 715px) {
-      height: 100%;
+  // Article
+  article {
+    padding: 0;
+    margin-bottom: 30px;
+    h1, h2, p {
+      margin-bottom: 15px;
     }
-    @media screen and (max-width: 420px) and (max-height: 545px) {
-      height: 100%;
-    }
-    @include media-query-max(375px) {
-      padding-top: 30px;
-    }
-    @include media-query-max(320px) {
-      padding-top: 15px;
-    }
-    .avatar {
-      height: 175px;
-      margin: 5px 0 15px;
-      width: 126px;
-      @include media-query-max(675px) {
-        height: 150px;
-        width: 108px;
-      }
-      @include media-query-max(420px) {
-        height: 125px;
-        width: 90px;
-      }
-      @include media-query-max(375px) {
-        height: 100px;
-        width: 72px;
+    h2.title {
+      font-size: 36px;
+      a {
+        @extend %decoration-none;
       }
     }
-    h1, h2 {
+    h2.title,
+    p.content {
+      margin: 0 0 15px;
+    }
+    time.date {
       @include color(color, meta);
-      font-size: 40px;
-      font-weight: 600;
-      line-height: 60px;
+    }
+    section.content {
       margin: 15px 0;
-      max-width: 700px;
-      a {
-        border-bottom-width: 4px;
-        &:hover {
-          @include color(color, link);
-        }
-      }
-      @include media-query-max(675px) {
-        font-size: 35px;
-        line-height: 55px;
-      }
-      @include media-query-max(420px) {
-        font-size: 25px;
-        line-height: 35px;
-      }
-      @include media-query-max(375px) {
-        font-size: 20px;
-        line-height: 30px;
-      }
-    }
-    nav.social {
-      flex-wrap: wrap;
-      margin: 15px 0 5px;
-      max-width: 300px;
-      width: 100%;
-      a {
-        text-decoration: none;
+      div#avatar {
+        @extend %content-flex-start;
+        @extend %flex;
+        height: 250px;
+        margin-bottom: 15px;
+        width: 100%;
         svg {
-          @include media-query-max(420px) {
-            height: 40px;
-            width: 40px;
-          }
+          height: 250px;
+          width: 185px;
         }
-        &.email {
-          svg g path {
-            fill: transparent;
-          }
-        }
-      }
-    }
-    a.down {
-      height: 42px;
-      margin: 0 auto;
-      margin-top: auto;
-      width: 50px;
-      @include media-query-max(320px) {
-        height: 25px;
-        width: 30px;
       }
     }
   }

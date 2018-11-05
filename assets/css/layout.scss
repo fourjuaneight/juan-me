@@ -22,39 +22,40 @@ ul#portfolio {
 // List
 main.list {
   min-height: calc(100vh - 250px);
-  article.list-item {
-    padding: 0;
+  h1.page-title {
     margin-bottom: 30px;
-    h2.title {
-      font-size: 36px;
-      a {
-        @extend %decoration-none;
+  }
+  section.year-container {
+    @extend %content-space-between;
+    @extend %flex;
+    @extend %items-flex-start;
+    margin-bottom: 15px;
+    &:nth-child(n+2) {
+      @include color(border-top-color, meta);
+      border-top-style: solid;
+      border-top-width: 1px;
+      padding-top: 15px;
+    }
+    h3 {
+      margin: 0;
+      &.list-date {
+        width: 85px;
       }
     }
-    h2.title,
-    p.content {
-      margin: 0 0 15px;
+    div.list-posts {
+      @extend %full-width;
+      max-width: 475px;
+      article.list-item:last-child,
+      article.list-item section.info {
+        margin-bottom: 0;
+      }
     }
   }
 }
-// Article
-article.post {
-  padding: 0;
-  h1, h2, p {
-    margin-bottom: 15px;
-  }
-}
-// Article Meta
-section.info {
-  @extend %items-center;
-  @extend %content-space-between;
-  p {
-    margin: 0;
-    span {
-      @include color(color, link);
-    }
-  }
-  .date {
+// Tags
+p.tag {
+  margin: 0;
+  span {
     @include color(color, link);
   }
 }
@@ -147,7 +148,7 @@ footer#footer {
   section.copy {
     @extend %flex;
     margin-top: 30px;
-    width: 265px;
+    width: 345px;
     @include media-query-max(345px) {
       font-size: 17px;
     }
@@ -168,30 +169,58 @@ body {
       width: 40px;
     }
   }
-  &.light {
+  &.dieci {
     button#theme-switcher {
       svg path {
-        fill: rgba(#424352,.7);
-        stroke: rgba(#424352,.7);
+        fill: rgba(#FBCD23,.7);
+        stroke: rgba(#FBCD23,.7);
       }
       &:hover {
         svg path {
-          fill: #424352;
-          stroke: #424352;
+          fill: #FBCD23;
+          stroke: #FBCD23;
         }
       }
     }
   }
-  &.dark {
+  &.dracula {
     button#theme-switcher {
       svg path {
-        fill: rgba(#d3d4d5,.5);
-        stroke: rgba(#d3d4d5,.5);
+        fill: rgba(#FF8ACC,.7);
+        stroke: rgba(#FF8ACC,.7);
       }
       &:hover {
         svg path {
-          fill: #d3d4d5;
-          stroke: #d3d4d5;
+          fill: #FF8ACC;
+          stroke: #FF8ACC;
+        }
+      }
+    }
+  }
+  &.gotham {
+    button#theme-switcher {
+      svg path {
+        fill: rgba(#F2815A,.7);
+        stroke: rgba(#F2815A,.7);
+      }
+      &:hover {
+        svg path {
+          fill: #F2815A;
+          stroke: #F2815A;
+        }
+      }
+    }
+  }
+  &.panic {
+    button#theme-switcher {
+      svg path {
+        fill: rgba(#F8B437,.5);
+        stroke: rgba(#F8B437,.5);
+      }
+      &:hover {
+        svg path {
+          fill: #F8B437;
+          stroke: #F8B437;
         }
       }
     }
