@@ -5,7 +5,7 @@
     {{ range .Data.Pages.GroupByDate "2006" }}
     <section class="year-container">
       <h3 class="title list-date">{{ .Key }}</h3>
-      <div class="list-posts">
+      <div class="posts-list">
         {{ range .Pages }}
           {{ .Render "li"}}
         {{ end }}

@@ -1,0 +1,14 @@
+{{ define "main" }}
+  {{ partial "header.html" . }}
+  <main class="list" role="main" aria-hidden="false">
+    <article class="post">
+      {{ partial "cover.html" . }}
+      <h1 class="title book-title">{{ .Title }}</h1>
+      {{ partial "author.html" . }}
+      {{ partial "read-date.html" . }}
+      <section class="content">{{ .Content }}</section>
+      {{ partial "tags.html" . }}
+    </article>
+  </main>
+  {{ partial "footer.html" . }}
+{{ end }}

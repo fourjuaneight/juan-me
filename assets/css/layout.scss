@@ -51,12 +51,46 @@ main.list {
         }
       }
     }
-    div.list-posts {
+    div.posts-list {
       @extend %full-width;
       max-width: 475px;
       article.list-item:last-child,
       article.list-item section.info {
         margin-bottom: 0;
+      }
+    }
+
+  }
+  &.bookshelf {
+    section.book-list {
+      @extend %content-flex-start;
+      @extend %flex;
+      @extend %flex-wrap;
+      @extend %items-center;
+      @include color(border-top-color, meta);
+      border-top-style: solid;
+      border-top-width: 1px;
+      padding-top: 15px;
+      margin: 15px -15px 0;
+      @include media-query-max(370px) {
+        justify-content: center;
+      }
+      article {
+        margin: 0 15px 30px;
+        width: 155px;
+        a.audible-link {
+          width: 150px;
+          img.cover {
+            height: 230px;
+            width: 150px;
+          }
+        }
+        h2.book-title {
+          height: 40px;
+        }
+        time.date {
+          font-size: 16px;
+        }
       }
     }
   }

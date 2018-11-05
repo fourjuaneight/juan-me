@@ -1,0 +1,6 @@
+<article class="list-item book">
+  {{ partial "cover.html" . }}
+  <h2 class="title book-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+  {{ partial "author.html" . }}
+  {{ partial "read-date.html" . }}
+</article>
