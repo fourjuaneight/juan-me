@@ -61,6 +61,39 @@ main.list {
     }
   }
 }
+// About
+ul.portfolio {
+  @extend %content-space-between;
+  @extend %flex;
+  @extend %flex-wrap;
+  @extend %items-center;
+  margin: 0;
+  padding: 0;
+  @include media-query-max(670px) {
+    justify-content: center;
+  }
+  li.projects {
+    list-style: none;
+    margin: 10px;
+    min-height: 280px;
+    figure {
+      @extend %full-width;
+      max-width: 300px;
+    }
+    h3 {
+      @extend %full-width;
+      max-width: 300px;
+      text-align: center;
+      // a {
+      //   @extend %decoration-none;
+      //   @include color(color, text);
+      //   &:hover {
+      //     @include color(color, link);
+      //   }
+      // }
+    }
+  }
+}
 // Tags
 p.tag {
   margin: 0;
