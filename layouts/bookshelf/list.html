@@ -1,7 +1,7 @@
 {{ define "main" }}
   {{ partial "header.html" . }}
   <main class="list bookshelf" role="main" aria-hidden="false">
-    <h1 class="title page-title">Bookshelf</h1>
+    <h1 class="title page-title">Audio Bookshelf</h1>
     <section class="book-list">
       {{ range .Pages }}
         {{ .Render "li"}}

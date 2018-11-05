@@ -76,6 +76,7 @@ main.list {
         justify-content: center;
       }
       article {
+        height: 350px;
         margin: 0 15px 30px;
         width: 155px;
         a.audible-link {
@@ -84,9 +85,6 @@ main.list {
             height: 230px;
             width: 150px;
           }
-        }
-        h2.book-title {
-          height: 40px;
         }
         time.date {
           font-size: 16px;
