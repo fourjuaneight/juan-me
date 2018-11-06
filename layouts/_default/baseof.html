@@ -32,6 +32,7 @@
   {{ partial "critical.html" . }}
 
   <!-- Critical Font Loading -->
+  {{ $critical := resources.Get "js/critical-fallback.js" | minify }}
   <script>
     (function() {
       "use strict";
@@ -58,8 +59,7 @@
         // use fallback
         var ref = document.getElementsByTagName( "script" )[ 0 ];
         var script = document.createElement( "script" );
-        {{ $critical := resources.Get "js/critical-fallback.js" | minify }}
-        script.src = "{{ $critical.Permalink }}";
+        script.src = "{{ $critical.RelPermalink  }}";
         script.async = true;
         ref.parentNode.insertBefore( script, ref );
       }
@@ -74,21 +74,37 @@
   <link rel="shortcut icon" href="{{ "icons/favicon.png" | relURL }}">
 
   <!-- Manifest -->
-  <link rel="manifest" href="{{ "/manifest.json" | relURL }}">
-  
+  {{ $manifest := resources.Get "manifest.json" }}
+  <link rel="manifest" href="{{ $manifest.RelPermalink  }}">
+
+  <!-- Favicon -->
+  {{ $favicon := resources.Get "icons/favicon.png" }}
+  <link rel="shortcut icon" href="{{ $favicon.RelPermalink }}" i>
+
   <!-- Webclip and Apple Touch Icon -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}">
-  <link rel="apple-touch-icon" sizes="152x152" href="{{ "icons/apple-touch-icon-152x152.png" | relURL }}">
-  <link rel="apple-touch-icon" sizes="167x167" href="{{ "icons/apple-touch-icon-167x167.png" | relURL }}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ "icons/apple-touch-icon-180x180.png" }}">
-  <link rel="mask-icon" color="#B68C62" href="{{ "icons/safari-pinned-tab.svg" | relURL }}">
+  {{ $ati152 := resources.Get "icons/apple-touch-icon-152x152.png" }}
+  <link rel="apple-touch-icon" sizes="152x152" href="{{ $ati152.RelPermalink }}">
+  {{ $ati167 := resources.Get "icons/apple-touch-icon-167x167.png" }}
+  <link rel="apple-touch-icon" sizes="167x167" href="{{ $ati167.RelPermalink }}">
+  {{ $ati180 := resources.Get "icons/apple-touch-icon-180x180.png" }}
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ $ati180.RelPermalink }}">
+  {{ $spt := resources.Get "icons/safari-pinned-tab.svg" | minify }}
+  <link rel="mask-icon" color="#8F3A6D" href="{{ $spt.RelPermalink }}">
 
-  <!-- Android Chrome Icon -->
-  <link rel="icon" sizes="128x128" href="{{ "icons/icon-128x128.png" | relURL }}">
-  <link rel="icon" sizes="192x192" href="{{ "icons/icon-192x192.png" | relURL }}">
-  <link rel="icon" sizes="512x512" href="{{ "icons/icon-512x512.png" | relURL }}">
+  <!-- Icons -->
+  {{ $i128 := resources.Get "icons/icon-128x128.png" }}
+  <link rel="icon" sizes="128x128" href="{{ $i128.RelPermalink }}">
+  {{ $i192 := resources.Get "icons/icon-192x192.png" }}
+  <link rel="icon" sizes="192x192" href="{{ $i192.RelPermalink }}">
+  {{ $i512 := resources.Get "icons/icon-512x512.png" }}
+  <link rel="icon" sizes="512x512" href="{{ $i512.RelPermalink }}">
+
+  <!-- Keybase Proof -->
+  {{ $keybase := resources.Get "keybase.txt" }}
+  <link href="{{ $keybase.RelPermalink }}">
 </head>
 <body {{ if .IsHome }}id="home"{{ end }} class="dracula">
     <!-- Main content -->
@@ -108,9 +124,10 @@
   <script src="{{ $tota11y.Permalink }}"></script> -->
   
   <!-- SW -->
+  {{ $sw := resources.Get "sw.js" | minify }}
   <script>
     if (navigator.serviceWorker) {
-      navigator.serviceWorker.register("/sw.js", { scope: "/" });
+      navigator.serviceWorker.register("{{ $sw.RelPermalink  }}", { scope: "/" });
       navigator.serviceWorker.ready.then(registration => {
         console.log("Service Worker Ready");
       });

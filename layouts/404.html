@@ -4,7 +4,8 @@
     <p>Home</p>
   </a>
   <main class="err-404">
-    <h1 class="hidden">404. Looks like there's nothing here.</h1>
-    <img src="{{ "img/here's-juan.svg" | relURL }}" alt="Heeeeere’s Juann!">
+    <h1>404. Looks like there's nothing here.</h1>
+    {{ $404Juan := resources.Get "img/heres-juan.svg" | minify }}
+    <img src="{{ $404Juan.Permalink }}" alt="Heeeeere’s Juann!">
   </main>
 {{ end }}

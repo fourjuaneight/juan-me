@@ -176,12 +176,19 @@ a.back-home {
   }
 }
 main.err-404 {
+  @extend %content-space-around;
   @extend %flex;
+  @extend %flex-column;
   @extend %items-center;
-  height: calc(100vh - 82px);
+  height: calc(100vh - 90px);
+  h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
   img {
     height: auto;
-    max-width: 700px;
+    max-width: 650px;
     width: 100%;
   }
 }
