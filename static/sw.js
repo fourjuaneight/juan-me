@@ -7,7 +7,7 @@
   const imagesCacheName = cacheName + 'images';
   const staticAssets = [
     '/',
-    '/blog/',
+    '/archive/',
     '/offline/',
     '/css/main.min.css',
     '/js/critical-foft-preload-fallback-optional.js',
