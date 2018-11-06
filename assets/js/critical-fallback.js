@@ -14,11 +14,11 @@
   z(p,function(a){h=a;u()});t(p,L(c,'"'+c.family+'",monospace'))})})};"object"===typeof module?module.exports=A:(window.FontFaceObserver=A,window.FontFaceObserver.prototype.load=A.prototype.load);}());
 
   // App Code, don’t bother with the subset font here.
-  var fontA = new FontFaceObserver("Plex");
-  var fontB = new FontFaceObserver("Plex", {
-    weight: 600
+  var fontA = new FontFaceObserver("Rubik");
+  var fontB = new FontFaceObserver("Rubik", {
+    weight: 700
   });
-  var fontC = new FontFaceObserver("Plex", {
+  var fontC = new FontFaceObserver("Rubik", {
     style: "italic"
 	});
 	var fontD = new FontFaceObserver("Plex Mono");
