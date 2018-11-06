@@ -9,7 +9,6 @@
   unicode-range: U+20-7E;
 }
 @font-face {
-  font-display: swap;
   font-family: 'Rubik';
   font-weight: 400;
   font-style: normal;
@@ -17,9 +16,9 @@
        local(Rubik),
        url("type/Rubik.woff2") format("woff2"),
        url("type/Rubik.woff") format("woff");
+  font-display: swap;
 }
 @font-face {
-  font-display: swap;
   font-family: 'Rubik';
   font-weight: 400;
   font-style: italic;
@@ -27,9 +26,9 @@
        local(Rubik-Italic),
        url("type/Rubik-Italic.woff2") format("woff2"),
        url("type/Rubik-Italic.woff") format("woff");
+  font-display: swap;
 }
 @font-face {
-  font-display: swap;
   font-family: 'Rubik';
   font-weight: 700;
   font-style: normal;
@@ -37,9 +36,9 @@
        local(Rubik-Bold),
        url("type/Rubik-Bold.woff2") format("woff2"),
        url("type/Rubik-Bold.woff") format("woff");
+  font-display: swap;
 }
 @font-face {
-  font-display: swap;
   font-family: 'Plex Mono';
   font-weight: 400;
   font-style: normal;
@@ -47,9 +46,9 @@
        local(IBMPlexMono),
        url("type/IBMPlexMono.woff2") format("woff2"),
        url("type/IBMPlexMono.woff") format("woff");
+  font-display: swap;
 }
 @font-face {
-  font-display: swap;
   font-family: 'Plex Mono';
   font-weight: 400;
   font-style: italic;
@@ -57,6 +56,7 @@
        local(IBMPlexMonoItalic),
        url("type/IBMPlexMonoItalic.woff2") format("woff2"),
        url("type/IBMPlexMonoItalic.woff") format("woff");
+  font-display: swap;
 }
 
 body {
