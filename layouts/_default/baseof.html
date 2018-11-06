@@ -102,10 +102,46 @@
 
   {{ partial "theme-swticher.html" . }}
 
-  {{ $scripts := resources.Get "js/scripts.js" | minify }}
-  <script src="{{ $scripts.Permalink }}"></script>
   <!-- a11y -->
   <!-- {{ $tota11y := resources.Get "js/tota11y.js" | minify }}
   <script src="{{ $tota11y.Permalink }}"></script> -->
+  
+  <!-- SW -->
+  <script>
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.register("/sw.js", { scope: "/" });
+      navigator.serviceWorker.ready.then(registration => {
+        console.log("Service Worker Ready");
+      });
+      window.addEventListener("load", () => {
+        if (navigator.serviceWorker.controller) {
+          navigator.serviceWorker.controller.postMessage({ command: "trimCaches" });
+        }
+      });
+    }
+  </script>
+  <!-- Theme Switcher -->
+  <script>
+    const themes = ['dieci', 'dracula', 'gotham', 'panic'];
+    const themeSwitcher = document.querySelectorAll('#theme-switcher');
+    const body = document.querySelector("body");
+    for (let button of themeSwitcher) {
+      button.onclick = () => {
+        body.className = themes[Math.floor(Math.random() * themes.length)];
+      }
+    }
+  </script>
+  <!-- Console Crap -->
+  <script>
+    function isIE() {
+      ua = navigator.userAgent;
+      const is_ie = ua.includes("MSIE ") || ua.includes("Trident/");
+      return is_ie;
+    }
+    if (isIE()){
+      console.log('Fuck yeah it works on IE 11.');
+    }
+    console.log('I love to sleep because in my dreams I can finally get revenge on the stingray that strangled Steve Irwin.');
+  </script>
 </body>
 </html>
