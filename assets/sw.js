@@ -11,8 +11,6 @@
     '/offline/',
     '/css/main.min.css',
     '/js/critical-fallback.min.js',
-    '/type/Rubik-subset.woff',
-    '/type/Rubik-subset.woff2',
     '/type/Rubik.woff',
     '/type/Rubik.woff2',
     '/type/Rubik-Italic.woff',
