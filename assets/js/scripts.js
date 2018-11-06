@@ -19,18 +19,6 @@ if (navigator.serviceWorker) {
     }
   });
 }
-// Stuff
-const main = document.querySelector("main");
-const stuff = document.querySelector("section.stuff");
-window.addEventListener("resize", () => {
-  if (window.matchMedia("(max-width: 300px)").matches) {
-    main.setAttribute("aria-hidden", "true");
-    stuff.setAttribute("aria-hidden", "false");
-  } else {
-    main.setAttribute("aria-hidden", "false");
-    stuff.setAttribute("aria-hidden", "true");
-  }
-});
 // Console Crap
 function isIE() {
   ua = navigator.userAgent;

@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{ partial "header.html" . }}
   <!-- Intro Copy -->
-  <main class="list" role="main" aria-hidden="false">
+  <main class="list">
     <h1 class="hidden">Juan Villela Blog Feed</h1>
     {{ $paginator := .Paginate (where .Data.Pages "Type" "archive") 10 }}
       {{ range $paginator.Pages }}

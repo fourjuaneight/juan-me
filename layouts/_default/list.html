@@ -1,6 +1,6 @@
 {{ define "main" }}
   {{ partial "header.html" . }}
-  <main class="list" role="main" aria-hidden="false">
+  <main class="list">
     <h1 class="title page-title">Archives</h1>
     {{ range .Data.Pages.GroupByDate "2006" }}
     <section class="year-container">
