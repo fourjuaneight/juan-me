@@ -10,7 +10,7 @@
     '/archive/',
     '/offline/',
     '/css/main.min.css',
-    '/js/critical-fallback.min.js',
+    '/js/critical-fallback.js',
     '/type/Rubik.woff',
     '/type/Rubik.woff2',
     '/type/Rubik-Italic.woff',
