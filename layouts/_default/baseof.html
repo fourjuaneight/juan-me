@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+<html itemscope lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
 <head>
   {{ .Hugo.Generator }}
   <meta charset="utf-8" />
@@ -85,9 +85,9 @@
   <link rel="mask-icon" color="#B68C62" href="{{ "icons/safari-pinned-tab.svg" | relURL }}">
 
   <!-- Android Chrome Icon -->
-  <link rel="android-chrome" sizes="128x128" href="{{ "icons/android-chrome-128x128.png" | relURL }}">
-  <link rel="android-chrome" sizes="192x192" href="{{ "icons/android-chrome-192x192.png" | relURL }}">
-  <link rel="android-chrome" sizes="512x512" href="{{ "icons/android-chrome-512x512.png" | relURL }}">
+  <link rel="icon" sizes="128x128" href="{{ "icons/icon-128x128.png" | relURL }}">
+  <link rel="icon" sizes="192x192" href="{{ "icons/icon-192x192.png" | relURL }}">
+  <link rel="icon" sizes="512x512" href="{{ "icons/icon-512x512.png" | relURL }}">
 </head>
 <body {{ if .IsHome }}id="home"{{ end }} class="dracula">
     <!-- Main content -->
