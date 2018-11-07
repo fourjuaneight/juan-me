@@ -10,7 +10,6 @@
     '/archive/',
     '/offline/',
     '/css/main.min.css',
-    '/js/critical-fallback.js',
     '/type/Rubik-subset.woff',
     '/type/Rubik-subset.woff2',
     '/type/Rubik.woff',
