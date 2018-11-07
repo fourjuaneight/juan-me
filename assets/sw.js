@@ -1,7 +1,6 @@
 (function () {
   const version = 'v2';
   const cacheName = ':juanvillela:';
-
   const staticCacheName = version + cacheName + 'static';
   const pagesCacheName = cacheName + 'pages';
   const imagesCacheName = cacheName + 'images';
@@ -30,12 +29,10 @@
         return cache.addAll(staticAssets.map(url => new Request(url, { credentials: 'include' })));
       });
   }
-
   function stashInCache(cacheName, request, response) {
     caches.open(cacheName)
       .then(cache => cache.put(request, response));
   }
-
   // Limit the number of items in a specified cache.
   function trimCache(cacheName, maxItems) {
     caches.open(cacheName)
@@ -49,7 +46,6 @@
           });
       });
   }
-
   // Remove caches whose name is no longer valid
   function clearOldCaches() {
     return caches.keys()
@@ -60,7 +56,6 @@
         );
       });
   }
-
   // Events!
   self.addEventListener('message', event => {
     if (event.data.command === 'trimCaches') {
@@ -68,27 +63,22 @@
       trimCache(imagesCacheName, 20);
     }
   });
-
   self.addEventListener('install', event => {
     event.waitUntil(updateStaticCache()
       .then(() => self.skipWaiting())
     );
   });
-
   self.addEventListener('activate', event => {
     event.waitUntil(clearOldCaches()
       .then(() => self.clients.claim())
     );
   });
-
   self.addEventListener('fetch', event => {
     const request = event.request;
     const url = new URL(request.url);
-
     if (url.href.indexOf('https://www.juanvillela.me') !== 0) return;
     if (request.method !== 'GET') return;
     if (url.href.indexOf('?') !== -1) return;
-
     if (request.headers.get('Accept').includes('text/html')) {
       event.respondWith(
         fetch(request)
@@ -109,7 +99,6 @@
       );
       return;
     }
-
     event.respondWith(
       fetch(request)
         .then(response => {
