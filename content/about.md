@@ -1,5 +1,5 @@
 +++
-title = "About Juan"
+title = "About Me"
 menu = "main"
 weight = 100
 showthedate = false
