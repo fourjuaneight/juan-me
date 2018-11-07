@@ -6,7 +6,7 @@
   const pagesCacheName = cacheName + 'pages';
   const imagesCacheName = cacheName + 'images';
   const staticAssets = [
-    '/',
+    '/about/',
     '/archive/',
     '/offline/',
     '/css/main.min.css'
