@@ -60,5 +60,11 @@
 }
 
 body {
-  font-family: 'Rubik', 'Rubik Subset', sans-serif;
+  font-family: sans-serif;
+}
+.fonts-loaded-1 body {
+  font-family: 'Rubik Subset';
+}
+.fonts-loaded-2 body {
+  font-family: 'Rubik';
 }

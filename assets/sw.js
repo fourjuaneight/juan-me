@@ -9,19 +9,7 @@
     '/',
     '/archive/',
     '/offline/',
-    '/css/main.min.css',
-    '/type/Rubik-subset.woff',
-    '/type/Rubik-subset.woff2',
-    '/type/Rubik.woff',
-    '/type/Rubik.woff2',
-    '/type/Rubik-Italic.woff',
-    '/type/Rubik-Italic.woff2',
-    '/type/Rubik-Bold.woff',
-    '/type/Rubik-Bold.woff2',
-    '/type/IBMPlexMono.woff',
-    '/type/IBMPlexMono.woff2',
-    '/type/IBMPlexMonoItalic.woff',
-    '/type/IBMPlexMonoItalic.woff2',
+    '/css/main.min.css'
   ];
   function updateStaticCache() {
     // These items must be cached for the Service Worker to complete installation
