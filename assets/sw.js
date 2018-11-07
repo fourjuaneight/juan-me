@@ -6,10 +6,23 @@
   const pagesCacheName = cacheName + 'pages';
   const imagesCacheName = cacheName + 'images';
   const staticAssets = [
-    '/about/',
+    '/',
     '/archive/',
     '/offline/',
-    '/css/main.min.css'
+    '/css/main.min.css',
+    '/js/critical-foft-preload-fallback-optional.js',
+    '/type/Rubik-subset.woff',
+    '/type/Rubik-subset.woff2',
+    '/type/Rubik.woff',
+    '/type/Rubik.woff2',
+    '/type/Rubik-Italic.woff',
+    '/type/Rubik-Italic.woff2',
+    '/type/Rubik-Bold.woff',
+    '/type/Rubik-Bold.woff2',
+    '/type/IBMPlexMono.woff',
+    '/type/IBMPlexMono.woff2',
+    '/type/IBMPlexMonoItalic.woff',
+    '/type/IBMPlexMonoItalic.woff2',
   ];
   function updateStaticCache() {
     // These items must be cached for the Service Worker to complete installation
