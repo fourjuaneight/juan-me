@@ -10,6 +10,8 @@
     '/archive/',
     '/offline/',
     '/css/main.min.css',
+    '/type/Rubik-subset.woff',
+    '/type/Rubik-subset.woff2',
     '/type/Rubik.woff',
     '/type/Rubik.woff2',
     '/type/Rubik-Italic.woff',
