@@ -1,12 +1,15 @@
 {{ define "main" }}
+{{ partial "header.html" . }}
   <!-- Intro Copy -->
-  <main id="intro">
-    <!-- Avatar -->
-    {{ partial "avatar.html" . }}
-    <!-- Intro Message -->
-    <h1>Hi, I’m <a href="{{ .Site.BaseURL }}about" class="about">Juan</a> and I like websites. Sometimes I make them.</h1>
-    <h2>You can read all about it on my <a href="{{ .Site.BaseURL }}blog">blog</a>!</h2>
-    <!-- Social -->
-    {{ partial "social.html" . }}
+  <main class="list">
+    <h1 class="hidden">Juan Villela Blog Feed</h1>
+    {{ $paginator := .Paginate (where .Data.Pages "Type" "archive") 10 }}
+      {{ range $paginator.Pages }}
+        {{ .Render "summary"}}
+    {{ end }}
   </main>
+  {{ if or .Paginator.HasPrev .Paginator.HasNext }}
+    {{ partial "paginator.html" . }}
+  {{ end }}
+  {{ partial "footer.html" . }}
 {{ end }}

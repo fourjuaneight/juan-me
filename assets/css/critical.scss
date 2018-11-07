@@ -1,0 +1,294 @@
+@import 'colors';
+@import 'fonts';
+@import 'extends';
+@import 'mixins';
+@import 'reset';
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+body {
+  @include color(background-color, background);
+  @include color(color, text);
+  font-size: 18px;
+  font-weight: 400;
+  height: 100vh;
+  margin: 0 auto;
+  overflow-x: hidden;
+  padding: 0;
+  width: 100%;
+  /* Fallback */
+  padding: 0 10px;
+  /* iOS 11 */
+  padding-left: constant(safe-area-inset-left);
+  padding-right: constant(safe-area-inset-right);
+  /* iOS 11.2+ */
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  // Themes
+  &.dieci {
+    --background: #{map-get($dieci, background)};
+    --text: #{map-get($dieci, text)};
+    --meta: #{map-get($dieci, meta)};
+    --link: #{map-get($dieci, link)};
+    --accent: #{map-get($dieci, accent)};
+  }
+  &.dracula {
+    --background: #{map-get($dracula, background)};
+    --text: #{map-get($dracula, text)};
+    --meta: #{map-get($dracula, meta)};
+    --link: #{map-get($dracula, link)};
+    --accent: #{map-get($dracula, accent)};
+  }
+  &.gotham {
+    --background: #{map-get($gotham, background)};
+    --text: #{map-get($gotham, text)};
+    --meta: #{map-get($gotham, meta)};
+    --link: #{map-get($gotham, link)};
+    --accent: #{map-get($gotham, accent)};
+  }
+  &.panic {
+    --background: #{map-get($panic, background)};
+    --text: #{map-get($panic, text)};
+    --meta: #{map-get($panic, meta)};
+    --link: #{map-get($panic, link)};
+    --accent: #{map-get($panic, accent)};
+  }
+  .hidden {
+    @extend %visually-hidden;
+  }
+  // Header
+  header#header {
+    @extend %items-flex-end;
+    @extend %content-space-between;
+    height: 70px;
+    a.home {
+      @extend %content-center;
+      @extend %flex;
+      @extend %items-flex-end;
+      @extend %decoration-none;
+      height: 40px;
+      width: 135px;
+      @include media-query-max(450px) {
+        width: 65px;
+      }
+      svg {
+        height: 25px;
+        width: 65px;
+      }
+      svg#box {
+        margin: 0 15px 0 0;
+        width: 50px;
+      }
+      svg#open-box-juan {
+        height: 44px;
+      }
+      p {
+        line-height: 18px;
+        width: 68px;
+        @include media-query-max(450px) {
+          display: none;
+        }
+      }
+    }
+    nav {
+      width: 250px;
+      @include media-query-max(350px) {
+        width: 220px;
+      }
+      a {
+        @extend %decoration-none;
+        line-height: 18px;
+        transition: text-decoration 0.5s ease;
+        @include media-query-max(350px) {
+          font-size: 15px;
+          line-height: 15px;
+        }
+        &:hover {
+          text-decoration: underline;
+        }
+        &.rss {
+          @extend %content-center;
+          @extend %flex;
+          @extend %items-center;
+          @extend %decoration-none;
+          height: 15px;
+          width: 15px;
+          svg {
+            height: 15px;
+            width: 15px;
+          }
+          @include media-query-max(350px) {
+            height: 13px;
+            width: 13px;
+            svg {
+              height: 13px;
+              width: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+  // Article
+  article {
+    padding: 0;
+    margin-bottom: 30px;
+    h1, h2, p {
+      margin-bottom: 15px;
+    }
+    h2.title {
+      font-size: 36px;
+      a {
+        @extend %decoration-none;
+      }
+    }
+    h2.title,
+    p.content {
+      margin: 0 0 15px;
+    }
+    time.date {
+      @include color(color, meta);
+    }
+    section.content {
+      margin: 15px 0;
+      div#avatar {
+        @extend %content-flex-start;
+        @extend %flex;
+        height: 250px;
+        margin-bottom: 15px;
+        width: 100%;
+        svg {
+          height: 250px;
+          width: 185px;
+        }
+      }
+    }
+    &.book {
+      margin-bottom: 20px;
+      h2.book-title {
+        font-size: 20px;
+        line-height: 20px;
+        margin-bottom: 5px;
+      }
+      p.author {
+        @include color(color, text);
+        font-size: 16px;
+        line-height: 16px;
+        margin-bottom: 10px;
+      }
+    }
+    &.book-review {
+      @extend %content-space-between;
+      @extend %grid;
+      grid-column-gap: 10px;
+      grid-template-columns: 250px 600px;
+      grid-template-rows: repeat(3,auto);
+      @include media-query-max(900px) {
+        grid-template-columns: 150px minmax(auto,700px);
+      }
+      @include media-query-max(880px) {
+        justify-content: center;
+      }
+      @include media-query-max(340px) {
+        grid-template-rows: 43px 26px 164px repeat(2,auto);
+      }
+      > * {
+        grid-column: 2;
+      }
+      a.audible-link {
+        grid-column: 1;
+        grid-row: 1/5;
+        @include media-query-max(900px) {
+          grid-row: 1/3;
+        }
+        img.cover {
+          height: 385px;
+          width: 250px;
+          @include media-query-max(900px) {
+            height: 235px;
+            width: 150px;
+          }
+        }
+      }
+      section.info {
+        @extend %content-flex-start;
+        @extend %flex;
+        @extend %flex-column;
+        @extend %items-flex-start;
+        grid-row: 1;
+        h1.book-title {
+          line-height: 38px;
+          margin-bottom: 5px;
+          @include media-query-max(340px) {
+            font-size: 22px;
+            line-height: 28px;
+          }
+        }
+        p.author {
+          @include color(color, text);
+          margin-bottom: 10px;
+        }
+        p.author,
+        time.date {
+          @include media-query-max(340px) {
+            font-size: 15px;
+            line-height: 15px;
+          }
+        }
+      }
+      section.content {
+        grid-row: 4;
+        @include media-query-max(900px) {
+          grid-column: 1/3;
+        }
+      }
+      p.tag {
+        grid-row: 5;
+        @include media-query-max(900px) {
+          grid-column: 1/2;
+        }
+      }
+    }
+  }
+}
+@media print {
+  header#header,
+  footer#footer,
+  section.stuff,
+  button#theme-switcher {
+    display: none;
+  }
+  main.list {
+    > * {
+      color: #333;
+    }
+    h1 {
+      font-size: 28px;
+    }
+    h2 {
+      font-size: 26px;
+    }
+    h3 {
+      font-size: 24px;
+    }
+    h4 {
+      font-size: 20px;
+    }
+    h3, h4 {
+      font-weight: normal;
+    }
+    a {
+      color: #333;
+      text-decoration: none;
+      &.email::after {
+        content: ': hello@juanvillela.me';
+      }
+    }
+  }
+}

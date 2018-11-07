@@ -1,0 +1,16 @@
+{{ define "main" }}
+  {{ partial "header.html" . }}
+  <main class="list">
+    <article class="post book-review">
+      {{ partial "cover.html" . }}
+      <section class="info">
+        <h1 class="title book-title">{{ .Title }}</h1>
+        {{ partial "author.html" . }}
+        {{ partial "read-date.html" . }}
+      </section>
+      <section class="content">{{ .Content }}</section>
+      {{ partial "tags.html" . }}
+    </article>
+  </main>
+  {{ partial "footer.html" . }}
+{{ end }}

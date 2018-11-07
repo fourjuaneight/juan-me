@@ -1,8 +1,0 @@
-{{ if .Params.showthedate }}
-<section class="info meta">
-  <time class="date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
-  {{ range .Params.tags }}
-    <p><span>#</span><a class="tags meta" href="/tags/{{ . | urlize }}">{{.}}</a></p>
-  {{ end }}
-</section>
-{{ end }}

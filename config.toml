@@ -1,5 +1,4 @@
 baseURL = "https://www.juanvillela.me/"
-copyright = " 2018 Juan Villela"
 enableEmoji = "true"
 enableRobotsTXT = "true"
 languageCode = "en-us"
@@ -25,7 +24,6 @@ pygmentsStyle = "monokai"
   plainIDAnchors = true
 
 [params]
-  OpenLinksInNewWindow = true
   social = "fourjuaneight"
 
 [params.meta]
@@ -33,7 +31,7 @@ pygmentsStyle = "monokai"
   keywords = "coding, productivity, development, front-end"
 
 [permalinks]
-  blog = "/:title/"
+  archive = "/:title/"
   
 [outputs]
   home = ["html", "rss"]

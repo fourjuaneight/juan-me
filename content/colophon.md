@@ -8,8 +8,11 @@ showthedate = false
 * Written and created by Juan Villela.
 * Made with {{< link href="https://gohugo.io" content="Hugo" >}}.
 * Font used is {{< link href="https://fonts.google.com/specimen/IBM+Plex+Sans" content="Plex" >}}.
-* Graphics made with {{< link href="https://itunes.apple.com/us/app/affinity-designer/id824171161?mt=12" content="Affinity Designer" >}}.
+* The intricate box and paint roller icons were designed using {{< link href="https://itunes.apple.com/us/app/affinity-designer/id824171161?mt=12" content="Affinity Designer" >}}.
 * Coded on {{< link href="https://www.vim.org/" content="VIM" >}}.
+
+## About the Site
+The site's look and feel is a shamelessly inspired from {{< link href="https://daverupert.com/" content="Dave Rupert's" >}} blog and some of my previous projects. The themes used are copied from {{< link href="https://itunes.apple.com/us/app/bear-beautiful-writing-app/id1016366447" content="Bear Notes" >}}. The box and avatar where "designed" by me. The box is a generic box. I'm not sure why it's there. And the avatar is based on {{< link href="http://onepunchman.wikia.com/wiki/Saitama" content="Saitama" >}}.
 
 ## Licensing
 Links to apps or other items may include affiliate links.
@@ -32,4 +35,4 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 ## Contact
 Feel free to reach out with any questions or business inquiries.
 
-* Email: {{< link href="mailto:juan@fouroneeight.co" content="juan@fouroneeight.co" >}}
+* Email: {{< link href="mailto:hello@juanvillela.me" content="hello@juanvillela.me" >}}

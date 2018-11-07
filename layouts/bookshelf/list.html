@@ -1,0 +1,12 @@
+{{ define "main" }}
+  {{ partial "header.html" . }}
+  <main class="list bookshelf">
+    <h1 class="title page-title">Audio Bookshelf</h1>
+    <section class="book-list">
+      {{ range .Pages }}
+        {{ .Render "li"}}
+      {{ end }}
+    </section>
+  </main>
+  {{ partial "footer.html" . }}
+{{ end }}
