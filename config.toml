@@ -24,7 +24,6 @@ pygmentsStyle = "monokai"
   plainIDAnchors = true
 
 [params]
-  OpenLinksInNewWindow = true
   social = "fourjuaneight"
 
 [params.meta]

@@ -1,5 +1,5 @@
 +++
-title = "About"
+title = "About Juan"
 menu = "main"
 weight = 100
 showthedate = false
@@ -14,7 +14,7 @@ Other than that, there's not much else you need to know about me; I'm not all th
 Anyhow, this site serves two purposes: a testing ground for new web technologies I'm learning and a place to share my coding journey. So ideally you'll see the quality of the site improve and the source code constantly evolve. Fair warning, I'm a shitty writer so don't expect much from the content.
 
 ## Work
-These are some of the recent projects I've worked on.
+These are some of the recent projects I've worked on. For a printable resume, you can go [here](/resume).
 <ul class="portfolio">
   <li class="projects">
     {{< img src="portfolio/jimmies.jpg" alt="Rustled Jimmies" >}}

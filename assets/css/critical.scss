@@ -258,5 +258,37 @@ body {
   }
 }
 @media print {
-  header#header {display: none;}
+  header#header,
+  footer#footer,
+  section.stuff,
+  button#theme-switcher {
+    display: none;
+  }
+  main.list {
+    > * {
+      color: #333;
+    }
+    h1 {
+      font-size: 28px;
+    }
+    h2 {
+      font-size: 26px;
+    }
+    h3 {
+      font-size: 24px;
+    }
+    h4 {
+      font-size: 20px;
+    }
+    h3, h4 {
+      font-weight: normal;
+    }
+    a {
+      color: #333;
+      text-decoration: none;
+      &.email::after {
+        content: ': hello@juanvillela.me';
+      }
+    }
+  }
 }
