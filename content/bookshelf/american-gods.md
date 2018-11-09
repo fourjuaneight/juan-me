@@ -10,10 +10,10 @@ draft = false
 showthedate = true
 +++
 
-### Performance
-I listened to the Tenth Anniversary Full Cast version that features several great narrators. This gave the book a whole new depth which made it a pleasure to listen to. I had briefly seen a couple episodes of the tv show adaptation which had created this image of what the main characters should look like. Yet still, the narrators paired beautifully with the personality of the characters and my mental picture of them.
-
 ### Story
 The reason I decided to listen to this book was that of a single Goodreads review in which the reader explained how this book helped them overcome their religious breakup. Indirectly related to them and thought I’d give it a try. I loved American Gods. Not because it changed my worldview, but because of stories. And of course, all books are stories. But I’ve always had a fascination with peoples journey and struggles. Listening to the Old Gods talk about how their few believers carried them over to the new world reminded me of a Sunday evening at my grandparents listening to their stories about how their world was vastly different than mine and how that shaped who they are now.
 
 I do have my thoughts about shadow and his almost *conformity* with everything happening around him. But, nevertheless, this was a great listen. Not in the "religious guilt shattering" way (to me at least) but in the "I want more of this" way.
+
+### Performance
+I listened to the Tenth Anniversary Full Cast version that features several great narrators. This gave the book a whole new depth which made it a pleasure to listen to. I had briefly seen a couple episodes of the tv show adaptation which had created this image of what the main characters should look like. Yet still, the narrators paired beautifully with the personality of the characters and my mental picture of them.
