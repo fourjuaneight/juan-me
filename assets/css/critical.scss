@@ -48,6 +48,15 @@ body {
   .hidden {
     @extend %visually-hidden;
   }
+  @media screen and (prefers-color-scheme: dark) {
+    &.dark {
+      --background: #{map-get($dark, background)};
+      --text: #{map-get($dark, text)};
+      --meta: #{map-get($dark, meta)};
+      --link: #{map-get($dark, link)};
+      --accent: #{map-get($dark, accent)};
+    }
+  }
   // Header
   header#header {
     @extend %items-flex-end;
