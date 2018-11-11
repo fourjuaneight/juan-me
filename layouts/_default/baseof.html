@@ -71,7 +71,7 @@
   <link href="{{ $keybase.RelPermalink }}">
 </head>
 <body {{ if .IsHome }}id="home"{{ end }} class="light">
-    <!-- Main content -->
+  <!-- Main content -->
   {{ block "main" . }}
   {{ end }}
 
@@ -83,10 +83,8 @@
 
   {{ partial "theme-swticher.html" . }}
 
-  <!-- a11y -->
-  <!-- {{ $tota11y := resources.Get "js/tota11y.js" | minify }}
-  <script src="{{ $tota11y.Permalink }}"></script> -->
-  
+  {{ block "lazy" . }}
+  {{ end }}
   <!-- SW -->
   {{ $sw := resources.Get "sw.js" | minify }}
   <script>
@@ -111,7 +109,7 @@
       body.classList.toggle('light');
     }
   </script>
-  <!-- Console Crap -->
+  <!-- Console Stuf -->
   <script>
     function isIE() {
       ua = navigator.userAgent;
@@ -123,5 +121,8 @@
     }
     console.log('I love to sleep because in my dreams I can finally get revenge on the stingray that strangled Steve Irwin.');
   </script>
+  <!-- a11y -->
+  <!-- {{ $tota11y := resources.Get "js/tota11y.js" | minify }}
+  <script src="{{ $tota11y.Permalink }}"></script> -->
 </body>
 </html>
