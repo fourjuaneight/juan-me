@@ -1,21 +1,13 @@
 // Theme definitions
-$dieci: (
-  accent: #E3910B,
-  background: #000,
-  box: 8px 8px 0 0 #C69B24,
-  link: #FBCD23,
-  meta: #C69B24,
-  text: #fff,
+$light: (
+  accent: #21232E,
+  background: #fff,
+  box: 8px 8px 0 0 #545454,
+  link: #8F3A6D,
+  meta: #545454,
+  text: #424352,
 );
-$dracula: (
-  accent: #17CF51,
-  background: #343846,
-  box: 8px 8px 0 0 #FFB3D8,
-  link: #57EC87,
-  meta: #FFB3D8,
-  text: #fff,
-);
-$gotham: (
+$dark: (
   accent: #2EB88C,
   background: #12151B,
   box: 8px 8px 0 0 #71ADBC,
@@ -23,15 +15,7 @@ $gotham: (
   meta: #F2815A,
   text: #9DA1B4,
 );
-$panic: (
-  accent: #2595B1,
-  background: #101D2A,
-  box: 8px 8px 0 0 #F8B437,
-  link: #55C0DB,
-  meta: #F8B437,
-  text: #fff,
-);
 @mixin color($property, $varName) {
-  #{$property}: map-get($dracula, $varName);
-  #{$property}: var(--#{$varName}, map-get($dracula, $varName));
+  #{$property}: map-get($light, $varName);
+  #{$property}: var(--#{$varName}, map-get($light, $varName));
 }

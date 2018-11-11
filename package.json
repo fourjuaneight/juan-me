@@ -4,7 +4,8 @@
   "description": "A site about Juan Villela and blog featuring his coding adventure",
   "main": "gulpfile.js",
   "dependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "natives": "^1.1.6"
   },
   "devDependencies": {
     "autoprefixer": "^9.0.1",
