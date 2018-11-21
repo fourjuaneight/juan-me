@@ -35,3 +35,6 @@ pygmentsStyle = "monokai"
   
 [outputs]
   home = ["html", "rss"]
+  
+[params.google]
+  analytics = "UA-119777735-2"
