@@ -80,7 +80,7 @@ galite('send', 'pageview');
   {{ $keybase := resources.Get "keybase.txt" }}
   <link href="{{ $keybase.RelPermalink }}">
 </head>
-<body {{ if .IsHome }}id="home"{{ end }} class="dracula">
+<body {{ if .IsHome }}id="home"{{ end }} class="light">
     <!-- Main content -->
   {{ block "main" . }}
   {{ end }}
@@ -114,13 +114,11 @@ galite('send', 'pageview');
   </script>
   <!-- Theme Switcher -->
   <script>
-    const themes = ['dieci', 'dracula', 'gotham', 'panic'];
-    const themeSwitcher = document.querySelectorAll('#theme-switcher');
+    const button = document.querySelector('#theme-switcher');
     const body = document.querySelector("body");
-    for (let button of themeSwitcher) {
-      button.onclick = () => {
-        body.className = themes[Math.floor(Math.random() * themes.length)];
-      }
+    button.onclick = () => {
+      body.classList.toggle('dark');
+      body.classList.toggle('light');
     }
   </script>
   <!-- Console Crap -->

@@ -258,35 +258,21 @@ body {
       width: 40px;
     }
   }
-  &.dieci {
+  &.light {
     button#theme-switcher {
       svg path {
-        fill: rgba(#FBCD23,.7);
-        stroke: rgba(#FBCD23,.7);
+        fill: rgba(#8F3A6D,.7);
+        stroke: rgba(#8F3A6D,.7);
       }
       &:hover {
         svg path {
-          fill: #FBCD23;
-          stroke: #FBCD23;
+          fill: #8F3A6D;
+          stroke: #8F3A6D;
         }
       }
     }
   }
-  &.dracula {
-    button#theme-switcher {
-      svg path {
-        fill: rgba(#FF8ACC,.7);
-        stroke: rgba(#FF8ACC,.7);
-      }
-      &:hover {
-        svg path {
-          fill: #FF8ACC;
-          stroke: #FF8ACC;
-        }
-      }
-    }
-  }
-  &.gotham {
+  &.dark {
     button#theme-switcher {
       svg path {
         fill: rgba(#F2815A,.7);
@@ -296,20 +282,6 @@ body {
         svg path {
           fill: #F2815A;
           stroke: #F2815A;
-        }
-      }
-    }
-  }
-  &.panic {
-    button#theme-switcher {
-      svg path {
-        fill: rgba(#F8B437,.5);
-        stroke: rgba(#F8B437,.5);
-      }
-      &:hover {
-        svg path {
-          fill: #F8B437;
-          stroke: #F8B437;
         }
       }
     }

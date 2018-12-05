@@ -1,11 +1,9 @@
 // Theme Switcher
-const themes = ['dieci', 'dracula', 'gotham', 'panic'];
-const themeSwitcher = document.querySelectorAll('#theme-switcher');
+const button = document.querySelector('#theme-switcher');
 const body = document.querySelector("body");
-for (let button of themeSwitcher) {
-  button.onclick = () => {
-    body.className = themes[Math.floor(Math.random() * themes.length)];
-  }
+button.onclick = () => {
+  body.classList.toggle('dark');
+  body.classList.toggle('light');
 }
 // SW
 if (navigator.serviceWorker) {

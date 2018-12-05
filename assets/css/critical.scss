@@ -31,33 +31,19 @@ body {
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
   // Themes
-  &.dieci {
-    --background: #{map-get($dieci, background)};
-    --text: #{map-get($dieci, text)};
-    --meta: #{map-get($dieci, meta)};
-    --link: #{map-get($dieci, link)};
-    --accent: #{map-get($dieci, accent)};
+  &.dark {
+    --background: #{map-get($dark, background)};
+    --text: #{map-get($dark, text)};
+    --meta: #{map-get($dark, meta)};
+    --link: #{map-get($dark, link)};
+    --accent: #{map-get($dark, accent)};
   }
-  &.dracula {
-    --background: #{map-get($dracula, background)};
-    --text: #{map-get($dracula, text)};
-    --meta: #{map-get($dracula, meta)};
-    --link: #{map-get($dracula, link)};
-    --accent: #{map-get($dracula, accent)};
-  }
-  &.gotham {
-    --background: #{map-get($gotham, background)};
-    --text: #{map-get($gotham, text)};
-    --meta: #{map-get($gotham, meta)};
-    --link: #{map-get($gotham, link)};
-    --accent: #{map-get($gotham, accent)};
-  }
-  &.panic {
-    --background: #{map-get($panic, background)};
-    --text: #{map-get($panic, text)};
-    --meta: #{map-get($panic, meta)};
-    --link: #{map-get($panic, link)};
-    --accent: #{map-get($panic, accent)};
+  &.light {
+    --background: #{map-get($light, background)};
+    --text: #{map-get($light, text)};
+    --meta: #{map-get($light, meta)};
+    --link: #{map-get($light, link)};
+    --accent: #{map-get($light, accent)};
   }
   .hidden {
     @extend %visually-hidden;
