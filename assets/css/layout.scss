@@ -109,8 +109,9 @@ ul.portfolio {
     margin: 10px;
     min-height: 280px;
     figure {
-      @extend %full-width;
-      max-width: 300px;
+      height: auto;
+      min-height: 180px;
+      width: 300px;
     }
     h3 {
       @extend %full-width;
