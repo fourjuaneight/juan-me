@@ -13,7 +13,7 @@
   
   <!-- RSS -->
   {{ with .OutputFormats.Get "rss" -}}
-      {{ printf `<link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Title | safeHTML }}
+    {{ printf `<link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Title | safeHTML }}
   {{ end -}}
   
   <!-- Open Graph -->
@@ -25,7 +25,18 @@
   {{ template "_internal/schema.html" . }}
 
   <!-- Fonts -->  
-  <link rel="preload" href={{ "type/Rubik-subset.woff2" | relURL }} as="font" type="font/woff2" crossorigin>
+  {{ $Rubik2 := resources.Get "fonts/Rubik.woff2" }}
+  <link rel="preload" href={{ $Rubik2.Permalink }} as="font" type="font/woff2" crossorigin>
+  {{ $Rubik := resources.Get "fonts/Rubik.woff" }}
+  <link rel="preload" href={{ $Rubik.Permalink }} as="font" type="font/woff" crossorigin>
+  {{ $Rubiki2 := resources.Get "fonts/Rubik-Italic.woff2" }}
+  <link rel="preload" href={{ $Rubiki2.Permalink }} as="font" type="font/woff2" crossorigin>
+  {{ $Rubiki := resources.Get "fonts/Rubik-Italic.woff" }}
+  <link rel="preload" href={{ $Rubiki.Permalink }} as="font" type="font/woff" crossorigin>
+  {{ $Rubikb2 := resources.Get "fonts/Rubik-Bold.woff2" }}
+  <link rel="preload" href={{ $Rubikb2.Permalink }} as="font" type="font/woff2" crossorigin>
+  {{ $Rubikb := resources.Get "fonts/Rubik-Bold.woff" }}
+  <link rel="preload" href={{ $Rubikb.Permalink }} as="font" type="font/woff" crossorigin>
   
   <!-- Critical -->
   {{ partial "critical.html" . }}
@@ -34,9 +45,6 @@
   {{ $styles := resources.Get "css/main.scss" | toCSS | postCSS | minify }}
   <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
   
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="{{ "icons/favicon.png" | relURL }}">
-
   <!-- Manifest -->
   {{ $manifest := resources.Get "manifest.json" }}
   <link rel="manifest" href="{{ $manifest.RelPermalink }}">
