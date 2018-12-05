@@ -4,16 +4,7 @@
   "description": "A site about Juan Villela and blog featuring his coding adventure",
   "main": "gulpfile.js",
   "dependencies": {
-    "gulp": "^3.9.1",
-    "natives": "^1.1.6"
-  },
-  "devDependencies": {
-    "autoprefixer": "^9.0.1",
-    "cssnano": "^4.0.3",
-    "gulp-concat-util": "^0.5.5",
-    "gulp-postcss": "^7.0.1",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.1"
+    "gulp": "^3.9.1"
   },
   "scripts": {
     "build": "gulp build; hugo",
@@ -35,5 +26,27 @@
   "bugs": {
     "url": "https://github.com/fourjuaneight/juan/issues"
   },
-  "homepage": "https://github.com/fourjuaneight/juan#readme"
+  "homepage": "https://github.com/fourjuaneight/juan#readme",
+  "engines": {
+    "node": "8.14.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.1.5",
+    "cssnano": "^4.1.4",
+    "gulp": "^3.9.1",
+    "gulp-concat-util": "^0.5.5",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.1",
+    "npm": "6.4.1",
+    "postcss-calc": "^7.0.1",
+    "postcss-cli": "^6.0.0",
+    "postcss-custom-properties": "^8.0.9",
+    "postcss-import": "^12.0.1",
+    "postcss-mixins": "^6.2.0",
+    "postcss-nested": "^4.1.0",
+    "postcss-simple-vars": "^5.0.1",
+    "sugarss": "^2.0.0"
+  }
 }
