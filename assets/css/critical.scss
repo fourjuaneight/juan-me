@@ -197,6 +197,37 @@ body {
     }
   }
   // Article
+  main.bookshelf {
+    section.book-list {
+      @extend %content-flex-start;
+      @extend %flex;
+      @extend %flex-wrap;
+      @extend %items-center;
+      @include color(border-top-color, meta);
+      border-top-style: solid;
+      border-top-width: 1px;
+      padding-top: 15px;
+      margin: 15px -15px 0;
+      @include media-query-max(370px) {
+        justify-content: center;
+      }
+      article {
+        height: 265px;
+        margin: 0 15px 30px;
+        width: 155px;
+        a.cover {
+          width: 150px;
+          img {
+            height: 150px;
+            width: 150px;
+          }
+        }
+        time.date {
+          font-size: 16px;
+        }
+      }
+    }
+  }
   article {
     padding: 0;
     margin-bottom: 30px;
