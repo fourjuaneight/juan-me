@@ -6,6 +6,6 @@ length = "2h 30m"
 cover = "books/binti.jpg"
 audible = "https://www.audible.com/pd/Binti-Audiobook/B010HEGGO2"
 tags = ["sci-fi"]
-draft = true
+draft = false
 showthedate = true
 +++

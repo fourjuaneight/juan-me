@@ -229,6 +229,9 @@ body {
     }
     &.book {
       margin-bottom: 20px;
+      &:hover h2.title a {
+        @include color(color, link);
+      }
       h2.book-title {
         font-size: 20px;
         line-height: 20px;

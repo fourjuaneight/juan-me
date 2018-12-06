@@ -3,8 +3,10 @@
   <main class="list bookshelf">
     <h1 class="title page-title">Audio Bookshelf</h1>
     <section class="book-list">
-      {{ range .Pages }}
-        {{ .Render "li"}}
+      {{ range .Data.Pages.GroupByDate "2006-01-02" }}
+        {{ range .Pages }}
+          {{ .Render "li"}}
+        {{ end }}
       {{ end }}
     </section>
   </main>
