@@ -1,4 +1,0 @@
-{{ $cover := resources.Get (print "img/" (.Params.cover)) | fingerprint }}
-<a class="audible-link" href="{{ .Params.audible }}" target="_blank" rel="noopener">
-  <img src="{{ $cover.Permalink }}" alt="{{ .Title }} by {{ .Params.author }}" class="cover">
-</a>

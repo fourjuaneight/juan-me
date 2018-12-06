@@ -30,7 +30,7 @@ a:hover svg {
 }
 a.meta,
 hr,
-.meta {
+p.meta {
   @include color(color, meta);
 }
 a.meta:active,

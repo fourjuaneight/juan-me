@@ -79,15 +79,41 @@ main.list {
         height: 350px;
         margin: 0 15px 30px;
         width: 155px;
-        a.audible-link {
+        a.cover {
           width: 150px;
-          img.cover {
-            height: 230px;
+          img {
+            height: 150px;
             width: 150px;
           }
         }
         time.date {
           font-size: 16px;
+        }
+      }
+    }
+  }
+  article {
+    section.extra {
+      @extend %content-space-between;
+      @extend %flex;
+      @extend %flex-wrap;
+      @extend %full-width;
+      @extend %items-center;
+      grid-row: 5;
+      @include media-query-max(900px) {
+        grid-column: 1/3;
+      }
+      @include media-query-max(440px) {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        a.purchase {
+          margin-bottom: 15px;
+        }
+      }
+      p.tag {
+        @include media-query-max(900px) {
+          grid-column: 1/2;
         }
       }
     }
