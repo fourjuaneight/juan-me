@@ -21,7 +21,7 @@ ul#portfolio {
 }
 // List
 main.list {
-  min-height: calc(100vh - 250px);
+  min-height: calc(100vh - 194px);
   h1.page-title {
     margin-bottom: 30px;
   }
@@ -61,33 +61,28 @@ main.list {
     }
 
   }
-  &.bookshelf {
-    section.book-list {
-      @extend %content-flex-start;
+  article {
+    section.extra {
+      @extend %content-space-between;
       @extend %flex;
       @extend %flex-wrap;
+      @extend %full-width;
       @extend %items-center;
-      @include color(border-top-color, meta);
-      border-top-style: solid;
-      border-top-width: 1px;
-      padding-top: 15px;
-      margin: 15px -15px 0;
-      @include media-query-max(370px) {
-        justify-content: center;
+      grid-row: 5;
+      @include media-query-max(900px) {
+        grid-column: 1/3;
       }
-      article {
-        height: 350px;
-        margin: 0 15px 30px;
-        width: 155px;
-        a.audible-link {
-          width: 150px;
-          img.cover {
-            height: 230px;
-            width: 150px;
-          }
+      @include media-query-max(440px) {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        a.purchase {
+          margin-bottom: 15px;
         }
-        time.date {
-          font-size: 16px;
+      }
+      p.tag {
+        @include media-query-max(900px) {
+          grid-column: 1/2;
         }
       }
     }
@@ -109,8 +104,9 @@ ul.portfolio {
     margin: 10px;
     min-height: 280px;
     figure {
-      @extend %full-width;
-      max-width: 300px;
+      height: auto;
+      min-height: 180px;
+      width: 300px;
     }
     h3 {
       @extend %full-width;

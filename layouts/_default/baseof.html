@@ -11,19 +11,9 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1.0,maximum-scale=5.0,viewport-fit=cover">
   <meta name="theme-color" content="#8F3A6D">
   
-  <script>
-(function(e,t,n,i,s,a,c){e[n]=e[n]||function(){(e[n].q=e[n].q||[]).push(arguments)}
-;a=t.createElement(i);c=t.getElementsByTagName(i)[0];a.async=true;a.src=s
-;c.parentNode.insertBefore(a,c)
-})(window,document,"galite","script","https://cdn.jsdelivr.net/npm/ga-lite@2/dist/ga-lite.min.js");
-
-galite('create', '{{ .Site.Params.google.analytics }}', 'auto');
-galite('send', 'pageview');
-</script>
-
   <!-- RSS -->
   {{ with .OutputFormats.Get "rss" -}}
-      {{ printf `<link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Title | safeHTML }}
+    {{ printf `<link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Title | safeHTML }}
   {{ end -}}
   
   <!-- Open Graph -->
@@ -35,7 +25,18 @@ galite('send', 'pageview');
   {{ template "_internal/schema.html" . }}
 
   <!-- Fonts -->  
-  <link rel="preload" href={{ "type/Rubik-subset.woff2" | relURL }} as="font" type="font/woff2" crossorigin>
+  {{ $Rubik2 := resources.Get "fonts/Rubik.woff2" }}
+  <link rel="preload" href={{ $Rubik2.Permalink }} as="font" type="font/woff2" crossorigin>
+  {{ $Rubik := resources.Get "fonts/Rubik.woff" }}
+  <link rel="preload" href={{ $Rubik.Permalink }} as="font" type="font/woff" crossorigin>
+  {{ $Rubiki2 := resources.Get "fonts/Rubik-Italic.woff2" }}
+  <link rel="preload" href={{ $Rubiki2.Permalink }} as="font" type="font/woff2" crossorigin>
+  {{ $Rubiki := resources.Get "fonts/Rubik-Italic.woff" }}
+  <link rel="preload" href={{ $Rubiki.Permalink }} as="font" type="font/woff" crossorigin>
+  {{ $Rubikb2 := resources.Get "fonts/Rubik-Bold.woff2" }}
+  <link rel="preload" href={{ $Rubikb2.Permalink }} as="font" type="font/woff2" crossorigin>
+  {{ $Rubikb := resources.Get "fonts/Rubik-Bold.woff" }}
+  <link rel="preload" href={{ $Rubikb.Permalink }} as="font" type="font/woff" crossorigin>
   
   <!-- Critical -->
   {{ partial "critical.html" . }}
@@ -44,9 +45,6 @@ galite('send', 'pageview');
   {{ $styles := resources.Get "css/main.scss" | toCSS | postCSS | minify }}
   <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
   
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="{{ "icons/favicon.png" | relURL }}">
-
   <!-- Manifest -->
   {{ $manifest := resources.Get "manifest.json" }}
   <link rel="manifest" href="{{ $manifest.RelPermalink }}">
@@ -81,7 +79,7 @@ galite('send', 'pageview');
   <link href="{{ $keybase.RelPermalink }}">
 </head>
 <body {{ if .IsHome }}id="home"{{ end }} class="light">
-    <!-- Main content -->
+  <!-- Main content -->
   {{ block "main" . }}
   {{ end }}
 
@@ -93,10 +91,8 @@ galite('send', 'pageview');
 
   {{ partial "theme-swticher.html" . }}
 
-  <!-- a11y -->
-  <!-- {{ $tota11y := resources.Get "js/tota11y.js" | minify }}
-  <script src="{{ $tota11y.Permalink }}"></script> -->
-  
+  {{ block "lazy" . }}
+  {{ end }}
   <!-- SW -->
   {{ $sw := resources.Get "sw.js" | minify }}
   <script>
@@ -121,7 +117,7 @@ galite('send', 'pageview');
       body.classList.toggle('light');
     }
   </script>
-  <!-- Console Crap -->
+  <!-- Console Stuf -->
   <script>
     function isIE() {
       ua = navigator.userAgent;
@@ -133,5 +129,8 @@ galite('send', 'pageview');
     }
     console.log('I love to sleep because in my dreams I can finally get revenge on the stingray that strangled Steve Irwin.');
   </script>
+  <!-- a11y -->
+  <!-- {{ $tota11y := resources.Get "js/tota11y.js" | minify }}
+  <script src="{{ $tota11y.Permalink }}"></script> -->
 </body>
 </html>

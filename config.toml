@@ -1,4 +1,4 @@
-baseURL = "https://www.juanvillela.me/"
+baseURL = "https://staging.juanvillela.me/"
 enableEmoji = "true"
 enableRobotsTXT = "true"
 languageCode = "en-us"

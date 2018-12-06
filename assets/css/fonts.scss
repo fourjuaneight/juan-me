@@ -4,8 +4,8 @@
   font-style: normal;
   src: local(Rubik-subset),
        local(Rubik-subset),
-       url("type/Rubik-subset.woff2") format("woff2"),
-       url("type/Rubik-subset.woff") format("woff");
+       url("fonts/Rubik-subset.woff2") format("woff2"),
+       url("fonts/Rubik-subset.woff") format("woff");
   unicode-range: U+20-7E;
 }
 @font-face {
@@ -14,8 +14,8 @@
   font-style: normal;
   src: local(Rubik),
        local(Rubik),
-       url("type/Rubik.woff2") format("woff2"),
-       url("type/Rubik.woff") format("woff");
+       url("fonts/Rubik.woff2") format("woff2"),
+       url("fonts/Rubik.woff") format("woff");
   font-display: swap;
 }
 @font-face {
@@ -24,8 +24,8 @@
   font-style: italic;
   src: local(Rubik-Italic),
        local(Rubik-Italic),
-       url("type/Rubik-Italic.woff2") format("woff2"),
-       url("type/Rubik-Italic.woff") format("woff");
+       url("fonts/Rubik-Italic.woff2") format("woff2"),
+       url("fonts/Rubik-Italic.woff") format("woff");
   font-display: swap;
 }
 @font-face {
@@ -34,8 +34,8 @@
   font-style: normal;
   src: local(Rubik-Bold),
        local(Rubik-Bold),
-       url("type/Rubik-Bold.woff2") format("woff2"),
-       url("type/Rubik-Bold.woff") format("woff");
+       url("fonts/Rubik-Bold.woff2") format("woff2"),
+       url("fonts/Rubik-Bold.woff") format("woff");
   font-display: swap;
 }
 @font-face {
@@ -44,8 +44,8 @@
   font-style: normal;
   src: local(IBMPlexMono),
        local(IBMPlexMono),
-       url("type/IBMPlexMono.woff2") format("woff2"),
-       url("type/IBMPlexMono.woff") format("woff");
+       url("fonts/IBMPlexMono.woff2") format("woff2"),
+       url("fonts/IBMPlexMono.woff") format("woff");
   font-display: swap;
 }
 @font-face {
@@ -54,8 +54,8 @@
   font-style: italic;
   src: local(IBMPlexMonoItalic),
        local(IBMPlexMonoItalic),
-       url("type/IBMPlexMonoItalic.woff2") format("woff2"),
-       url("type/IBMPlexMonoItalic.woff") format("woff");
+       url("fonts/IBMPlexMonoItalic.woff2") format("woff2"),
+       url("fonts/IBMPlexMonoItalic.woff") format("woff");
   font-display: swap;
 }
 

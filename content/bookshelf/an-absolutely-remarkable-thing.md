@@ -1,11 +1,13 @@
 +++
 title = "An Absolutely Remarkable Thing"
 author = "Hank Green"
-date = "2018-11-03"
+date = "2018-12-01"
 length = "9h 25m"
 cover = "books/an-absolutely-remarkable-thing.jpg"
-audible = "https://www.audible.com/pd/An-Absolutely-Remarkable-Thing-Audiobook/B079J4C9TP?qid=1541203632&sr=sr_1_1&ref=a_search_c3_lProduct_1_1&pf_rd_p=e81b7c27-6880-467a-b5a7-13cef5d729fe&pf_rd_r=2K124J7CBN0KEA1265R2&"
+audible = "https://www.audible.com/pd/An-Absolutely-Remarkable-Thing-Audiobook/B079J4C9TP"
 tags = ["fiction"]
-draft = true
+draft = false
 showthedate = true
 +++
+
+This was a fun book for me. I know Hank the same way I do John (his brother); YouTube and podcasts. Hank went about an interesting way to talk about the dark side of anonymity online. Not that people become shitty when no one knows who they are, but rather that people stop being people. Which I can certainly understand, although not directly related. I neither open nor secretive about myself online. I'm simply myself everywhere. That said, it was definitely interesting to hear April's journey through internet fame. And hearing a book about aliens with little to no actual alien dialogue was actually quite intriguing.

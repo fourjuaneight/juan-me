@@ -2,15 +2,36 @@
   {{ partial "header.html" . }}
   <main class="list">
     <article class="post book-review">
-      {{ partial "cover.html" . }}
+      {{ $cover := resources.Get (print "img/" (.Params.cover)) | fingerprint }}
+      <a class="purchase-link" href="{{ .Params.audible }}" target="_blank" rel="noopener">
+        <img src="{{ $cover.Permalink }}" alt="{{ .Title }} by {{ .Params.author }}" class="cover">
+      </a>
       <section class="info">
         <h1 class="title book-title">{{ .Title }}</h1>
         {{ partial "author.html" . }}
         {{ partial "read-date.html" . }}
       </section>
       <section class="content">{{ .Content }}</section>
-      {{ partial "tags.html" . }}
+      <section class="extra">
+        {{ partial "purchase.html" . }}
+        {{ partial "tags.html" . }}
+      </section>
     </article>
   </main>
   {{ partial "footer.html" . }}
+{{ end }}
+{{ define "lazy" }}
+  <!-- Scripts -->
+  {{ $lazy := resources.Get "js/lazyloading.js" | minify }}
+  <script src="{{ $lazy.Permalink }}"></script>
+
+  <!-- Lazy Loading -->
+  <script>
+    var myLazyLoad = new LazyLoad({
+      elements_selector: ".lazy",
+      threshold: 200,
+      class_loading: "loading",
+      class_error: "error"
+    });
+  </script>
 {{ end }}
