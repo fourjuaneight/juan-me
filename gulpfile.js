@@ -1,17 +1,20 @@
-const autoprefixer    = require('autoprefixer'),
-      concat          = require('gulp-concat-util'),
-      cssnano         = require('cssnano'),
-      gulp            = require('gulp'),
-      plumber         = require('gulp-plumber'),
-      postcss         = require('gulp-postcss'),
-      rename          = require('gulp-rename'),
-      sass            = require('gulp-sass');
+"use strict";
+
+// Load Plugins
+const autoprefixer = require('autoprefixer');
+const concat = require('gulp-concat-util');
+const cssnano = require('cssnano');
+const gulp = require('gulp');
+const plumber = require('gulp-plumber');
+const postcss = require('gulp-postcss');
+const rename = require('gulp-rename');
+const sass = require('gulp-sass');
 
 // Critical CSS
-gulp.task('critical', () => {
+function critical() {
   const plugins = [autoprefixer({browsers: ['> 5%']}), cssnano()];
-  return (
-    gulp.src('assets/css/critical.scss')
+  return gulp
+      .src('assets/css/critical.scss')
       .pipe(plumber())
       .pipe(sass().on('error', sass.logError))
       .pipe(postcss(plugins))
@@ -27,21 +30,23 @@ gulp.task('critical', () => {
       )
       // insert file
       .pipe(gulp.dest('layouts/partials'))
-  );
-});
+}
 
 // Watch asset folder for changes
-gulp.task('watch', gulp.series(['critical'], () => {
-  gulp.watch('assets/css/colors.scss', gulp.parallel(['critical']));
-  gulp.watch('assets/css/critical.scss', gulp.parallel(['critical']));
-  gulp.watch('assets/css/extends.scss', gulp.parallel(['critical']));
-  gulp.watch('assets/css/fonts.scss', gulp.parallel(['critical']));
-  gulp.watch('assets/css/mixins.scss', gulp.parallel(['critical']));
-  gulp.watch('assets/css/reset.scss', gulp.parallel(['critical']));
-}));
+function watchFiles() {
+  gulp.watch('assets/css/colors.scss', critical);
+  gulp.watch('assets/css/critical.scss', critical);
+  gulp.watch('assets/css/extends.scss', critical);
+  gulp.watch('assets/css/fonts.scss', critical);
+  gulp.watch('assets/css/mixins.scss', critical);
+  gulp.watch('assets/css/reset.scss', critical);
+}
+
+// Tasks
+gulp.task("critical", critical);
 
 // Run Watch as default
-gulp.task('default', gulp.series(['watch']));
+gulp.task('watch', watchFiles);
 
 // Build
 gulp.task('build', gulp.series(['critical']));
