@@ -2,7 +2,7 @@
 title = "Leaving My Comfort Zone"
 date = "2018-06-29"
 draft = false
-categories = "developement"
+category = "developement"
 showthedate = true
 +++
 

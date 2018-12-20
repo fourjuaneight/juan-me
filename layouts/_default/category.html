@@ -1,7 +1,6 @@
 {{ define "main" }}
-  {{ partial "header.html" . }}
   <main class="list">
-    <h1 class="title page-title">Archives</h1>
+    <h1 class="title page-title">{{ .Name }}</h1>
     {{ range .Data.Pages.GroupByDate "2006" }}
     <section class="year-container">
       <h3 class="title list-date">{{ .Key }}</h3>
@@ -13,5 +12,4 @@
     </section>
     {{ end }}
   </main>
-  {{ partial "footer.html" . }}
 {{ end }}

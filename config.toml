@@ -32,12 +32,13 @@ pygmentsStyle = "monokai"
 
 [taxonomies]
   genre = "genre"
-  categories = "categories"
+  category = "category"
 
 [permalinks]
-  archive = "/articles/:title/"
+  articles = "/articles/:title/"
+  bookshelf = "/bookshelf/:title/"
   genre = "/bookshelf/genre/:slug/"
-  categories = "/articles/categories/:slug/"
+  category = "/articles/category/:slug/"
 
 [outputFormats.jsonfeed]
   mediaType = "application/json"

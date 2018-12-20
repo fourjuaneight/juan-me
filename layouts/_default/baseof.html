@@ -79,9 +79,13 @@
   <link href="{{ $keybase.RelPermalink }}">
 </head>
 <body {{ if .IsHome }}id="home"{{ end }} class="light">
+  {{ partial "header.html" . }}
+
   <!-- Main content -->
   {{ block "main" . }}
   {{ end }}
+
+  {{ partial "footer.html" . }}
 
   <!-- Stuff -->
   <section class="stuff">
@@ -92,6 +96,19 @@
   {{ partial "theme-swticher.html" . }}
 
   {{ block "lazy" . }}
+  {{ end }}
+  <!-- Lazy Loader -->
+  {{ if .IsPage }}
+    {{ $lazy := resources.Get "js/lazyloading.js" | minify }}
+    <script src="{{ $lazy.Permalink }}"></script>
+    <script>
+      var myLazyLoad = new LazyLoad({
+        elements_selector: ".lazy",
+        threshold: 200,
+        class_loading: "loading",
+        class_error: "error"
+      });
+    </script>
   {{ end }}
   <!-- SW -->
   {{ $sw := resources.Get "sw.js" | minify }}

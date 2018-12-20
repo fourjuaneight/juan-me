@@ -14,10 +14,10 @@
   <!-- Site navigation menu -->
   <nav class="navbar">
     <a href="{{ .Site.BaseURL }}">Home</a>
-    <a href="{{ .Site.BaseURL }}archive">Archive</a>
+    <a href="{{ .Site.BaseURL }}articles">Articles</a>
     <a href="{{ .Site.BaseURL }}bookshelf">Bookshelf</a>
     <a href="{{ .Site.BaseURL }}about">About</a>
-    <a href="{{ .Site.BaseURL }}{{ if or (.IsHome) (eq .Section "archive") }}archive{{ else if eq .Section "bookshelf" }}bookshelf{{ end }}/feed.json" class="rss" target="_blank" rel="noopener" aria-label="RSS">
+    <a href="{{ .Site.BaseURL }}{{ if or (.IsHome) (eq .Section "articles") }}articles{{ else if eq .Section "bookshelf" }}bookshelf{{ end }}/feed.json" class="rss" target="_blank" rel="noopener" aria-label="RSS">
       <svg width="15" height="15" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         xml:space="preserve" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round"
         stroke-miterlimit="1.41421">
@@ -44,10 +44,10 @@
   
     <nav class="menu">
       <a href="{{ .Site.BaseURL }}">Home</a>
-      <a href="{{ .Site.BaseURL }}archive">Archive</a>
+      <a href="{{ .Site.BaseURL }}articles">Articles</a>
       <a href="{{ .Site.BaseURL }}bookshelf">Bookshelf</a>
       <a href="{{ .Site.BaseURL }}about">About</a>
-      <a href="{{ .Site.BaseURL }}{{ if or (.IsHome) (eq .Section "archive") }}archive{{ else if eq .Section "bookshelf" }}bookshelf{{ end }}/feed.json" class="rss" target="_blank" rel="noopener" aria-label="RSS">
+      <a href="{{ .Site.BaseURL }}{{ if or (.IsHome) (eq .Section "articles") }}articles{{ else if eq .Section "bookshelf" }}bookshelf{{ end }}/feed.json" class="rss" target="_blank" rel="noopener" aria-label="RSS">
         <svg width="15" height="15" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
           xml:space="preserve" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round"
           stroke-miterlimit="1.41421">

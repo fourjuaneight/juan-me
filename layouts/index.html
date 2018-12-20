@@ -1,9 +1,8 @@
 {{ define "main" }}
-{{ partial "header.html" . }}
   <!-- Intro Copy -->
   <main class="list">
     <h1 class="hidden">Juan Villela Blog Feed</h1>
-    {{ $paginator := .Paginate (where .Data.Pages "Type" "archive") 10 }}
+    {{ $paginator := .Paginate (where .Data.Pages "Type" "articles") 10 }}
       {{ range $paginator.Pages }}
         {{ .Render "summary"}}
     {{ end }}
@@ -11,5 +10,4 @@
   {{ if or .Paginator.HasPrev .Paginator.HasNext }}
     {{ partial "paginator.html" . }}
   {{ end }}
-  {{ partial "footer.html" . }}
 {{ end }}
