@@ -1,11 +1,14 @@
 {{ define "main" }}
   {{ partial "header.html" . }}
-  <main class="list">
-    <article class="post">
-      <h1 class="title">{{ .Title }}</h1>
-      {{ partial "date.html" . }}
-      <section class="content">{{ .Content }}</section>
-    </article>
+  <main class="list bookshelf">
+    <h1 class="title page-title">{{ .Name }}</h1>
+    <section class="book-list">
+      {{ range .Data.Pages.GroupByDate "2006-01-02" }}
+        {{ range .Pages }}
+          {{ .Render "li"}}
+        {{ end }}
+      {{ end }}
+    </section>
   </main>
   {{ partial "footer.html" . }}
 {{ end }}

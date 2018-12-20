@@ -5,6 +5,9 @@
       <h1 class="title">{{ .Title }}</h1>
       {{ partial "date.html" . }}
       <section class="content">{{ .Content }}</section>
+      {{ with .Params.categories }}
+        <p class="tag"><span>#</span><a class="meta" href="/articles/categories/{{ . | urlize }}">{{.}}</a></p>
+      {{ end }}
     </article>
   </main>
   {{ partial "footer.html" . }}

@@ -2,7 +2,7 @@
 title = "Tagging Automation"
 date = "2017-08-13"
 draft = false
-tags = ["productivity"]
+categories = "productivity"
 showthedate = true
 +++
 

@@ -5,7 +5,7 @@ date = ""
 length = "28h 51m"
 cover = "books/deaths-end.jpg"
 audible = "https://www.audible.com/pd/Deaths-End-Audiobook/B01LW7OXWP"
-tags = ["sci-fi"]
+genre = "sci-fi"
 draft = true
 showthedate = true
 +++

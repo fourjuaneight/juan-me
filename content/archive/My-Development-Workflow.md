@@ -2,7 +2,7 @@
 title = "My Development Workflow"
 date = "2017-10-15"
 draft = false
-tags = ["productivity"]
+categories = "productivity"
 showthedate = true
 +++
 

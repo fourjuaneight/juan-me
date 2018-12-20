@@ -14,7 +14,10 @@
       <section class="content">{{ .Content }}</section>
       <section class="extra">
         {{ partial "purchase.html" . }}
-        {{ partial "tags.html" . }}
+        {{ $s := .Section }}
+        {{ with .Params.genre }}
+          <p class="tag"><span>#</span><a class="meta" href="/{{ $s }}/genre/{{ . | urlize }}">{{.}}</a></p>
+        {{ end }}
       </section>
     </article>
   </main>

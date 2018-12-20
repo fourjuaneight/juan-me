@@ -1,0 +1,14 @@
+{{ define "main" }}
+  {{ partial "header.html" . }}
+  <main class="list">
+    <h1 class="title page-title">Archives</h1>
+    <section class="year-container">
+      <div class="posts-list">
+        {{ range .Data.Terms.ByCount }}
+          <a href="{{ .Name | urlize }}"><span>{{ .Name }}</span></a>
+        {{ end }}
+      </div>
+    </section>
+  </main>
+  {{ partial "footer.html" . }}
+{{ end }}

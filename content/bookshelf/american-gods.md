@@ -5,7 +5,7 @@ date = "2018-08-07"
 length = "19h 39m"
 cover = "books/american-gods.jpg"
 audible = "https://www.audible.com/pd/American-Gods-The-Tenth-Anniversary-Edition-A-Full-Cast-Production-Audiobook/B0055274U2"
-tags = ["fantasy"]
+genre = "fantasy"
 draft = false
 showthedate = true
 +++

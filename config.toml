@@ -30,8 +30,14 @@ pygmentsStyle = "monokai"
   description = "A site about Juan Villela and a blog featuring his coding adventure"
   keywords = "coding, productivity, development, front-end"
 
+[taxonomies]
+  genre = "genre"
+  categories = "categories"
+
 [permalinks]
-  archive = "/:title/"
+  archive = "/articles/:title/"
+  genre = "/bookshelf/genre/:slug/"
+  categories = "/articles/categories/:slug/"
 
 [outputFormats.jsonfeed]
   mediaType = "application/json"

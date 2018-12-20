@@ -2,7 +2,7 @@
 title = "My Audio Bookshelf"
 date = "2018-12-06"
 draft = false
-tags = ["meta"]
+categories = "meta"
 showthedate = true
 +++
 
