@@ -12,9 +12,9 @@
   <meta name="theme-color" content="#8F3A6D">
   
   <!-- RSS -->
-  {{ with .OutputFormats.Get "rss" -}}
-    {{ printf `<link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Title | safeHTML }}
-  {{ end -}}
+  <link
+  href="{{ .Site.BaseURL }}{{ if or (.IsHome) (eq .Section "archive") }}archive{{ else if eq .Section "bookshelf" }}bookshelf{{ end }}/feed.json"
+  rel="alternate" type="application/json" title="{{ .Site.Title }}" />
   
   <!-- Open Graph -->
   <link rel="canonical" href="{{ .Permalink }}">
