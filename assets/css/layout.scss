@@ -23,7 +23,19 @@ ul#portfolio {
 main.list {
   min-height: calc(100vh - 194px);
   h1.page-title {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+  }
+  nav.all-tags {
+    @extend %content-flex-start;
+    @extend %flex;
+    @extend %flex-wrap;
+    @extend %items-center;
+    margin-bottom: 20px;
+    width: auto;
+    p.tag {
+      margin-right: 15px;
+      font-style: italic;
+    }
   }
   section.year-container {
     @extend %content-space-between;
@@ -51,12 +63,27 @@ main.list {
         }
       }
     }
-    div.posts-list {
+    .posts-list {
       @extend %full-width;
       max-width: 475px;
       article.list-item:last-child,
       article.list-item section.info {
         margin-bottom: 0;
+      }
+    }
+    ul.posts-list {
+      @extend %content-center;
+      @extend %flex;
+      @extend %flex-column;
+      @extend %items-flex-start;
+      max-width: 100%;
+      padding: 0;
+      li.post-tag {
+        font-size: 20px;
+        font-weight: bold;
+        list-style-type: none;
+        margin: 15px 0;
+        text-transform: capitalize;
       }
     }
 

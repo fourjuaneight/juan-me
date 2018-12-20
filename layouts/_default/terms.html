@@ -1,12 +1,14 @@
 {{ define "main" }}
   <main class="list">
-    <h1 class="title page-title">Archives</h1>
+    <h1 class="title page-title">Terms</h1>
     <section class="year-container">
-      <div class="posts-list">
+      <ul class="posts-list">
         {{ range .Data.Terms.ByCount }}
-          <a href="{{ .Name | urlize }}"><span>{{ .Name }}</span></a>
+          <li class="post-tag">
+            <a href="{{ .Name | urlize }}"><span>{{ .Name }}</span></a>
+          </li>
         {{ end }}
-      </div>
+      </ul>
     </section>
   </main>
 {{ end }}
