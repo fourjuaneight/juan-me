@@ -12,8 +12,14 @@
   <meta name="theme-color" content="#8F3A6D">
   
   <!-- RSS -->
+  {{ $.Scratch.Set "bs" "" }}
+  {{ if eq .Kind "taxonomy" }}
+    {{ if eq .Section "genre" }}
+      {{ $.Scratch.Set "bs" "bookshelf" }}
+    {{ end }}
+  {{ end }}
   <link
-  href="{{ .Site.BaseURL }}{{ if or (.IsHome) (eq .Section "archive") }}archive{{ else if eq .Section "bookshelf" }}bookshelf{{ end }}/feed.json"
+  href="{{ .Site.BaseURL }}{{ if or (eq .Section "bookshelf") (eq (.Scratch.Get "b") "bookshelf" ) }}bookshelf{{ else }}articles{{ end }}/feed.json"
   rel="alternate" type="application/json" title="{{ .Site.Title }}" />
   
   <!-- Open Graph -->
