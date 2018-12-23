@@ -8,6 +8,10 @@
 *::after {
   box-sizing: inherit;
 }
+*::selection {
+  @include color(background, meta);
+  color: #fff;
+}
 html {
   box-sizing: border-box;
   -webkit-overflow-scrolling: touch;
