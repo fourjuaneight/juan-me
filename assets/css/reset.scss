@@ -1,4 +1,63 @@
 // Reset
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+*::selection {
+  @include color(background, meta);
+  color: #fff;
+}
+html {
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+body {
+  @include color(background-color, background);
+  @include color(color, text);
+  font-size: 18px;
+  font-weight: 400;
+  height: 100vh;
+  margin: 0 auto;
+  overflow-x: hidden;
+  padding: 0;
+  width: 100%;
+  /* Fallback */
+  padding: 0 10px;
+  /* iOS 11 */
+  padding-left: constant(safe-area-inset-left);
+  padding-right: constant(safe-area-inset-right);
+  /* iOS 11.2+ */
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  // Themes
+  &.light {
+    --background: #{map-get($light, background)};
+    --text: #{map-get($light, text)};
+    --meta: #{map-get($light, meta)};
+    --link: #{map-get($light, link)};
+    --accent: #{map-get($light, accent)};
+  }
+  &.dark {
+    --background: #{map-get($dark, background)};
+    --text: #{map-get($dark, text)};
+    --meta: #{map-get($dark, meta)};
+    --link: #{map-get($dark, link)};
+    --accent: #{map-get($dark, accent)};
+  }
+  .hidden {
+    @extend %visually-hidden;
+  }
+  @media screen and (prefers-color-scheme: dark) {
+    &.dark {
+      --background: #{map-get($dark, background)};
+      --text: #{map-get($dark, text)};
+      --meta: #{map-get($dark, meta)};
+      --link: #{map-get($dark, link)};
+      --accent: #{map-get($dark, accent)};
+    }
+  }
+}
 a,
 article h2 a,
 ul#portfolio h4 a {
@@ -151,4 +210,39 @@ p code {
 }
 .highlight pre {
   overflow-x: scroll;
+}
+@media print {
+  header#header,
+  footer#footer,
+  section.stuff,
+  button#theme-switcher {
+    display: none;
+  }
+  main.list {
+    > * {
+      color: #333;
+    }
+    h1 {
+      font-size: 28px;
+    }
+    h2 {
+      font-size: 26px;
+    }
+    h3 {
+      font-size: 24px;
+    }
+    h4 {
+      font-size: 20px;
+    }
+    h3, h4 {
+      font-weight: normal;
+    }
+    a {
+      color: #333;
+      text-decoration: none;
+      &.email::after {
+        content: ': hello@juanvillela.me';
+      }
+    }
+  }
 }

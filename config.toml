@@ -4,17 +4,6 @@ enableRobotsTXT = "true"
 languageCode = "en-us"
 title = "Juan Villela"
 
-FootnoteReturnLinkContents = "↩"
-SectionPagesMenu = "main"
-
-# Pygments Syntax Highlighting
-pygmentsUseClassic = false
-pygmentsUseClasses = true
-pygmentsCodeFences = true
-pygmentsCodefencesGuessSyntax = true
-pygmentsOptions = "linenos=inline, lineseparator=<br>"
-pygmentsStyle = "monokai"
-
 [author]
   name = "Juan Villela"
   email = "hello@juanvillela.me"
@@ -27,27 +16,11 @@ pygmentsStyle = "monokai"
   social = "fourjuaneight"
 
 [params.meta]
-  description = "A site about Juan Villela and a blog featuring his coding adventure"
-  keywords = "coding, productivity, development, front-end"
-
-[taxonomies]
-  genre = "genre"
-  category = "category"
-
-[permalinks]
-  articles = "/articles/:title/"
-  bookshelf = "/bookshelf/:title/"
-  genre = "/bookshelf/genre/:slug/"
-  category = "/articles/category/:slug/"
-
-[outputFormats.jsonfeed]
-  mediaType = "application/json"
-  baseName = "feed"
-  isPlainText = true
+  description = "Juan Villela Front-End Developer"
+  keywords = "coding, business, development, front-end"
 
 [outputs]
   home = ["html"]
-  section = ["html", "jsonfeed"]
 
 [params.google]
   analytics = "UA-119777735-2"

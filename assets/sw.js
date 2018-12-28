@@ -1,5 +1,5 @@
 (function () {
-  const version = 'v2';
+  const version = 'v3';
   const cacheName = ':juanvillela:';
   const staticCacheName = version + cacheName + 'static';
   const pagesCacheName = cacheName + 'pages';
@@ -9,12 +9,12 @@
     '/archive/',
     '/offline/',
     '/css/main.min.css',
-    '/fonts/Rubik.woff',
-    '/fonts/Rubik.woff2',
-    '/fonts/Rubik-Italic.woff',
-    '/fonts/Rubik-Italic.woff2',
-    '/fonts/Rubik-Bold.woff',
-    '/fonts/Rubik-Bold.woff2',
+    '/fonts/IBMPlexSans.woff',
+    '/fonts/IBMPlexSans.woff2',
+    '/fonts/IBMPlexSans-Italic.woff',
+    '/fonts/IBMPlexSans-Italic.woff2',
+    '/fonts/IBMPlexSans-SemiBold.woff',
+    '/fonts/IBMPlexSans-SemiBold.woff2',
   ];
   function updateStaticCache() {
     // These items must be cached for the Service Worker to complete installation

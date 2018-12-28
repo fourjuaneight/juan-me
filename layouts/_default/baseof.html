@@ -10,18 +10,7 @@
   <meta name="keywords" content="{{ .Site.Params.meta.keywords }}">
   <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1.0,maximum-scale=5.0,viewport-fit=cover">
   <meta name="theme-color" content="#8F3A6D">
-  
-  <!-- RSS -->
-  {{ $.Scratch.Set "bs" "" }}
-  {{ if eq .Kind "taxonomy" }}
-    {{ if eq .Section "genre" }}
-      {{ $.Scratch.Set "bs" "bookshelf" }}
-    {{ end }}
-  {{ end }}
-  <link
-  href="{{ .Site.BaseURL }}{{ if or (eq .Section "bookshelf") (eq (.Scratch.Get "b") "bookshelf" ) }}bookshelf{{ else }}articles{{ end }}/feed.json"
-  rel="alternate" type="application/json" title="{{ .Site.Title }}" />
-  
+
   <!-- Open Graph -->
   <link rel="canonical" href="{{ .Permalink }}">
   {{ template "_internal/twitter_cards.html" . }}
@@ -31,26 +20,26 @@
   {{ template "_internal/schema.html" . }}
 
   <!-- Fonts -->  
-  {{ $Rubik2 := resources.Get "fonts/Rubik.woff2" }}
-  <link rel="preload" href={{ $Rubik2.Permalink }} as="font" type="font/woff2" crossorigin>
-  {{ $Rubik := resources.Get "fonts/Rubik.woff" }}
-  <link rel="preload" href={{ $Rubik.Permalink }} as="font" type="font/woff" crossorigin>
-  {{ $Rubiki2 := resources.Get "fonts/Rubik-Italic.woff2" }}
-  <link rel="preload" href={{ $Rubiki2.Permalink }} as="font" type="font/woff2" crossorigin>
-  {{ $Rubiki := resources.Get "fonts/Rubik-Italic.woff" }}
-  <link rel="preload" href={{ $Rubiki.Permalink }} as="font" type="font/woff" crossorigin>
-  {{ $Rubikb2 := resources.Get "fonts/Rubik-Bold.woff2" }}
-  <link rel="preload" href={{ $Rubikb2.Permalink }} as="font" type="font/woff2" crossorigin>
-  {{ $Rubikb := resources.Get "fonts/Rubik-Bold.woff" }}
-  <link rel="preload" href={{ $Rubikb.Permalink }} as="font" type="font/woff" crossorigin>
-  
+  {{ $Plex2 := resources.Get "fonts/IBMPlexSans.woff2" }}
+  <link rel="preload" href={{ $Plex2.Permalink }} as="font" type="font/woff2" crossorigin>
+  {{ $Plex := resources.Get "fonts/IBMPlexSans.woff" }}
+  <link rel="preload" href={{ $Plex.Permalink }} as="font" type="font/woff" crossorigin>
+  {{ $Plexi2 := resources.Get "fonts/IBMPlexSans-Italic.woff2" }}
+  <link rel="preload" href={{ $Plexi2.Permalink }} as="font" type="font/woff2" crossorigin>
+  {{ $Plexi := resources.Get "fonts/IBMPlexSans-Italic.woff" }}
+  <link rel="preload" href={{ $Plexi.Permalink }} as="font" type="font/woff" crossorigin>
+  {{ $Plexsb2 := resources.Get "fonts/IBMPlexSans-SemiBold.woff2" }}
+  <link rel="preload" href={{ $Plexsb2.Permalink }} as="font" type="font/woff2" crossorigin>
+  {{ $Plexsb := resources.Get "fonts/IBMPlexSans-SemiBold.woff" }}
+  <link rel="preload" href={{ $Plexsb.Permalink }} as="font" type="font/woff" crossorigin>
+
   <!-- Critical -->
   {{ partial "critical.html" . }}
 
   <!-- Stylesheets -->
   {{ $styles := resources.Get "css/main.scss" | toCSS | postCSS | minify }}
   <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
-  
+
   <!-- Manifest -->
   {{ $manifest := resources.Get "manifest.json" }}
   <link rel="manifest" href="{{ $manifest.RelPermalink }}">
@@ -79,19 +68,12 @@
   <link rel="icon" sizes="192x192" href="{{ $i192.RelPermalink }}">
   {{ $i512 := resources.Get "icons/icon-512x512.png" }}
   <link rel="icon" sizes="512x512" href="{{ $i512.RelPermalink }}">
-
-  <!-- Keybase Proof -->
-  {{ $keybase := resources.Get "keybase.txt" }}
-  <link href="{{ $keybase.RelPermalink }}">
 </head>
 <body {{ if .IsHome }}id="home"{{ end }} class="light">
-  {{ partial "header.html" . }}
 
   <!-- Main content -->
   {{ block "main" . }}
   {{ end }}
-
-  {{ partial "footer.html" . }}
 
   <!-- Stuff -->
   <section class="stuff">
@@ -100,22 +82,6 @@
   </section>
 
   {{ partial "theme-swticher.html" . }}
-
-  {{ block "lazy" . }}
-  {{ end }}
-  <!-- Lazy Loader -->
-  {{ if .IsPage }}
-    {{ $lazy := resources.Get "js/lazyloading.js" | minify }}
-    <script src="{{ $lazy.Permalink }}"></script>
-    <script>
-      var myLazyLoad = new LazyLoad({
-        elements_selector: ".lazy",
-        threshold: 200,
-        class_loading: "loading",
-        class_error: "error"
-      });
-    </script>
-  {{ end }}
   <!-- SW -->
   {{ $sw := resources.Get "sw.js" | minify }}
   <script>
@@ -152,8 +118,5 @@
     }
     console.log('I love to sleep because in my dreams I can finally get revenge on the stingray that strangled Steve Irwin.');
   </script>
-  <!-- a11y -->
-  <!-- {{ $tota11y := resources.Get "js/tota11y.js" | minify }}
-  <script src="{{ $tota11y.Permalink }}"></script> -->
 </body>
 </html>
