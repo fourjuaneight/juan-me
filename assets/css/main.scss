@@ -146,7 +146,7 @@ footer#footer {
   section.copy {
     @extend %flex;
     margin-top: 30px;
-    width: 345px;
+    width: 290px;
     @include media-query-max(345px) {
       font-size: 17px;
     }
