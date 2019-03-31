@@ -28,6 +28,12 @@
     "url": "https://github.com/fourjuaneight/juan-me/issues"
   },
   "homepage": "https://github.com/fourjuaneight/juan-me#readme",
+  "engines": {
+    "node": "10.15.1"
+  },
+  "resolutions": {
+    "natives": "1.1.3"
+  },
   "devDependencies": {
     "@babel/core": "^7.3.3",
     "@babel/preset-env": "^7.3.1",

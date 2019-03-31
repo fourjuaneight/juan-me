@@ -61,7 +61,6 @@ function clean() {
     indent_char: ' ',
     indent_size: 2
   }))
-  .pipe(strip.html())
   .pipe(gulp.dest('public'));
 }
 
