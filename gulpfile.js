@@ -5,9 +5,12 @@ const autoprefixer = require('autoprefixer');
 const concat = require('gulp-concat-util');
 const cssnano = require('cssnano');
 const gulp = require('gulp');
+const htmlbeautify = require('gulp-jsbeautifier');
+const htmlmin = require('gulp-htmlmin');
 const plumber = require('gulp-plumber');
 const postcss = require('gulp-postcss');
 const rename = require('gulp-rename');
+const replace = require('gulp-replace');
 const sass = require('gulp-sass');
 
 // Critical CSS
