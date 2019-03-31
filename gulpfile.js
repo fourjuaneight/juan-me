@@ -32,6 +32,36 @@ function critical() {
       .pipe(gulp.dest('layouts/partials'))
 }
 
+// Run Webpack
+function webpack() {
+  return cp.spawn('webpack', {
+    err: true,
+    stderr: true,
+    stdout: true
+  });
+}
+
+/*
+HTML Cleanup:
+- Removed HTML comments.
+- Removed extra <p> tags.
+*/
+function clean() {
+  return gulp
+  .src(['public/**/*.html'])
+  .pipe(plumber())
+  .pipe(htmlmin({ collapseWhitespace: true }))
+  .pipe(replace(/<p><(p|a|div|section|h1|h2|h3|h4|ul|li|img|figure|picture)(.*?)>/g, '<$1$2>'))
+  .pipe(replace(/<\/(p|a|div|section|h1|h2|h3|h4|ul|li|img|figure|picture)(.*?)><\/p>/g, '</$1$2>'))
+  .pipe(replace(/<p><\/p>/g, ''))
+  .pipe(htmlbeautify({
+    indent_char: ' ',
+    indent_size: 2
+  }))
+  .pipe(strip.html())
+  .pipe(gulp.dest('public'));
+}
+
 // Watch asset folder for changes
 function watchFiles() {
   gulp.watch('assets/css/colors.scss', critical);
@@ -43,6 +73,8 @@ function watchFiles() {
 }
 
 // Tasks
+gulp.task('cleanup', clean);
+gulp.task('webpack', webpack);
 gulp.task("critical", critical);
 
 // Run Watch as default

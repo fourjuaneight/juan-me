@@ -17,10 +17,7 @@ title = "Juan Villela"
 
 [params.meta]
   description = "Juan Villela Front-End Developer"
-  keywords = "coding, business, development, front-end"
+  keywords = "coding, development, front-end"
 
 [outputs]
   home = ["html"]
-
-[params.google]
-  analytics = "UA-119777735-2"
