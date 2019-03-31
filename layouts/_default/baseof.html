@@ -14,9 +14,10 @@
   <!-- Open Graph -->
   <link rel="canonical" href="{{ .Permalink }}">
   {{ template "_internal/twitter_cards.html" . }}
-  <meta name="twitter:image" content="{{ "icons/avatar.png" | relURL }}">
+  {{ $avatar := resources.Get "icons/avatar.png" }}
+  <meta name="twitter:image" content="{{ $avatar.Permalink }}">
   {{ template "_internal/opengraph.html" . }}
-  <meta property="og:image" content="{{ "icons/avatar.png" | relURL }}">
+  <meta property="og:image" content="{{ $avatar.Permalink }}">
   {{ template "_internal/schema.html" . }}
 
   <!-- Fonts -->  
@@ -24,10 +25,6 @@
   <link rel="preload" href={{ $Plex2.Permalink }} as="font" type="font/woff2" crossorigin>
   {{ $Plex := resources.Get "fonts/IBMPlexSans.woff" }}
   <link rel="preload" href={{ $Plex.Permalink }} as="font" type="font/woff" crossorigin>
-  {{ $Plexi2 := resources.Get "fonts/IBMPlexSans-Italic.woff2" }}
-  <link rel="preload" href={{ $Plexi2.Permalink }} as="font" type="font/woff2" crossorigin>
-  {{ $Plexi := resources.Get "fonts/IBMPlexSans-Italic.woff" }}
-  <link rel="preload" href={{ $Plexi.Permalink }} as="font" type="font/woff" crossorigin>
   {{ $Plexsb2 := resources.Get "fonts/IBMPlexSans-SemiBold.woff2" }}
   <link rel="preload" href={{ $Plexsb2.Permalink }} as="font" type="font/woff2" crossorigin>
   {{ $Plexsb := resources.Get "fonts/IBMPlexSans-SemiBold.woff" }}
@@ -42,32 +39,32 @@
 
   <!-- Manifest -->
   {{ $manifest := resources.Get "manifest.json" }}
-  <link rel="manifest" href="{{ $manifest.RelPermalink }}">
+  <link rel="manifest" href="{{ $manifest.Permalink }}">
 
   <!-- Favicon -->
   {{ $favicon := resources.Get "icons/favicon.png" }}
-  <link rel="shortcut icon" href="{{ $favicon.RelPermalink }}" i>
+  <link rel="shortcut icon" href="{{ $favicon.Permalink }}" i>
 
   <!-- Webclip and Apple Touch Icon -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}">
   {{ $ati152 := resources.Get "icons/apple-touch-icon-152x152.png" }}
-  <link rel="apple-touch-icon" sizes="152x152" href="{{ $ati152.RelPermalink }}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{{ $ati152.Permalink }}">
   {{ $ati167 := resources.Get "icons/apple-touch-icon-167x167.png" }}
-  <link rel="apple-touch-icon" sizes="167x167" href="{{ $ati167.RelPermalink }}">
+  <link rel="apple-touch-icon" sizes="167x167" href="{{ $ati167.Permalink }}">
   {{ $ati180 := resources.Get "icons/apple-touch-icon-180x180.png" }}
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ $ati180.RelPermalink }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ $ati180.Permalink }}">
   {{ $spt := resources.Get "icons/safari-pinned-tab.svg" | minify }}
-  <link rel="mask-icon" color="#8F3A6D" href="{{ $spt.RelPermalink }}">
+  <link rel="mask-icon" color="#8F3A6D" href="{{ $spt.Permalink }}">
 
   <!-- Icons -->
   {{ $i128 := resources.Get "icons/icon-128x128.png" }}
-  <link rel="icon" sizes="128x128" href="{{ $i128.RelPermalink }}">
+  <link rel="icon" sizes="128x128" href="{{ $i128.Permalink }}">
   {{ $i192 := resources.Get "icons/icon-192x192.png" }}
-  <link rel="icon" sizes="192x192" href="{{ $i192.RelPermalink }}">
+  <link rel="icon" sizes="192x192" href="{{ $i192.Permalink }}">
   {{ $i512 := resources.Get "icons/icon-512x512.png" }}
-  <link rel="icon" sizes="512x512" href="{{ $i512.RelPermalink }}">
+  <link rel="icon" sizes="512x512" href="{{ $i512.Permalink }}">
 </head>
 <body {{ if .IsHome }}id="home"{{ end }} class="light">
 
@@ -86,7 +83,7 @@
   {{ $sw := resources.Get "sw.js" | minify }}
   <script>
     if (navigator.serviceWorker) {
-      navigator.serviceWorker.register("{{ $sw.RelPermalink }}", { scope: "/" });
+      navigator.serviceWorker.register("{{ $sw.Permalink }}", { scope: "/" });
       navigator.serviceWorker.ready.then(registration => {
         console.log("Service Worker Ready");
       });
@@ -98,25 +95,7 @@
     }
   </script>
   <!-- Theme Switcher -->
-  <script>
-    const button = document.querySelector('#theme-switcher');
-    const body = document.querySelector("body");
-    button.onclick = () => {
-      body.classList.toggle('dark');
-      body.classList.toggle('light');
-    }
-  </script>
-  <!-- Console Stuf -->
-  <script>
-    function isIE() {
-      ua = navigator.userAgent;
-      const is_ie = ua.includes("MSIE ") || ua.includes("Trident/");
-      return is_ie;
-    }
-    if (isIE()){
-      console.log('Fuck yeah it works on IE 11.');
-    }
-    console.log('I love to sleep because in my dreams I can finally get revenge on the stingray that strangled Steve Irwin.');
-  </script>
+  {{ $bundle := resources.Get "js/bundle.js" | minify }}
+  <script src="{{ $bundle.Permalink }}"></script>
 </body>
 </html>

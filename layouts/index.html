@@ -2,10 +2,11 @@
   <!-- Intro Copy -->
   <main id="intro" role="main">
     <!-- Avatar -->
-    {{ partial "avatar.html" . }}
+    {{ $avatar := resources.Get "img/avatar.png" }}
+    <img src="{{ $avatar.Permalink }}" alt="" class="avatar">
     <!-- Intro Message -->
-    <h1>Hi, I’m <a href="{{ .Site.BaseURL }}about" class="about">Juan</a> and I like websites. Sometimes I make them.</h1>
-    <h2>You can read about my coding ramblings and other stuff on my <a href="https://www.cleverlaziness.com/" target="_blank" rel="noopener">blog</a>!</h2>
+    <h1>Hi, I’m Juan and I like websites. Sometimes I make them.</h1>
+    <h2>You can read about my coding ramblings and other stuff on my <a href="https://www.cleverlaziness.com/" target="_blank" rel="noopener noreferrer">blog</a>!</h2>
     <!-- Social -->
     {{ partial "social.html" . }}
   </main>

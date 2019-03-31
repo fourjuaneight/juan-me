@@ -22,18 +22,18 @@ body {
     .avatar {
       height: 175px;
       margin: 5px 0 15px;
-      width: 126px;
+      width: 175px;
       @include media-query-max(675px) {
         height: 150px;
-        width: 108px;
+        width: 150px;
       }
       @include media-query-max(420px) {
         height: 125px;
-        width: 90px;
+        width: 125px;
       }
       @include media-query-max(375px) {
         height: 100px;
-        width: 72px;
+        width: 100px;
       }
     }
     h1, h2 {
@@ -83,32 +83,6 @@ body {
             fill: transparent;
           }
         }
-      }
-    }
-  }
-  // Header
-  header#header {
-    @extend %items-flex-end;
-    @extend %content-space-between;
-    min-height: 70px;
-    @include media-query-max(570px) {
-      align-items: flex-start;
-    }
-    a.home {
-      @extend %content-center;
-      @extend %flex;
-      @extend %items-flex-end;
-      @extend %decoration-none;
-      height: 40px;
-      width: 135px;
-      svg#box {
-        height: 25px;
-        margin: 0 15px 0 0;
-        width: 50px;
-      }
-      p {
-        line-height: 18px;
-        width: 68px;
       }
     }
   }

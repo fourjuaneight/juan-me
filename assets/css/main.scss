@@ -3,69 +3,6 @@
 @import 'extends';
 @import 'mixins';
 
-// List
-main.list {
-  min-height: calc(100vh - 194px);
-}
-// Article
-article {
-  padding: 0;
-  margin-bottom: 30px;
-  h1, h2, p {
-    margin-bottom: 15px;
-  }
-  h2.title {
-    font-size: 36px;
-    a {
-      @extend %decoration-none;
-    }
-  }
-  h2.title,
-  p.content {
-    margin: 0 0 15px;
-  }
-  section.content {
-    margin: 15px 0;
-    div#avatar {
-      @extend %content-flex-start;
-      @extend %flex;
-      height: 250px;
-      margin-bottom: 15px;
-      width: 100%;
-      svg {
-        height: 250px;
-        width: 185px;
-      }
-    }
-  }
-}
-// About
-ul.portfolio {
-  @extend %content-space-between;
-  @extend %flex;
-  @extend %flex-wrap;
-  @extend %items-center;
-  margin: 0;
-  padding: 0;
-  @include media-query-max(670px) {
-    justify-content: center;
-  }
-  li.projects {
-    list-style: none;
-    margin: 10px;
-    min-height: 280px;
-    figure {
-      height: auto;
-      min-height: 180px;
-      width: 300px;
-    }
-    h3 {
-      @extend %full-width;
-      max-width: 300px;
-      text-align: center;
-    }
-  }
-}
 // 404
 a.back-home {
   @extend %flex;
@@ -107,57 +44,6 @@ main.err-404 {
     height: auto;
     max-width: 650px;
     width: 100%;
-  }
-}
-// Footer
-footer#footer {
-  flex-direction: column;
-  height: 124px;
-  padding-bottom: 30px !important;
-  nav.social,
-  nav.social a,
-  section.copy {
-    @extend %margin-center;
-  }
-  nav.social {
-    @extend %content-center;
-    max-width: 240px;
-    min-height: 30px;
-    width: 100%;
-    a,
-    a svg {
-      height: 30px;
-      width: 30px;
-    }
-    a svg {
-      margin: 0;
-    }
-    a.email {
-      svg g path {
-        fill: transparent;
-      }
-    }
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      a {
-        margin: 0 15px;
-      }
-    }
-  }
-  section.copy {
-    @extend %flex;
-    margin-top: 30px;
-    width: 290px;
-    @include media-query-max(345px) {
-      font-size: 17px;
-    }
-    h5 {
-      font-size: 18px;
-      font-weight: normal;
-      margin: 0;
-      @include media-query-max(345px) {
-        font-size: 17px;
-      }
-    }
   }
 }
 // Theme Switcher
