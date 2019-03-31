@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/fourjuaneight
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.juanvillela.me
+  * I am fourjuaneight (https://keybase.io/fourjuaneight) on keybase.
+  * I have a public key with fingerprint 53C2 5C12 3B02 F729 9259  7E02 E26E 2420 7AA2 5136
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01010e7749a2d1cee025425a8b7b7b992201cf85b4acc60bec7b2a13d2213114c2760a",
+      "fingerprint": "53c25c123b02f72992597e02e26e24207aa25136",
+      "host": "keybase.io",
+      "key_id": "e26e24207aa25136",
+      "kid": "01010e7749a2d1cee025425a8b7b7b992201cf85b4acc60bec7b2a13d2213114c2760a",
+      "uid": "882f220a52b89e836547dc92a5b07519",
+      "username": "fourjuaneight"
+    },
+    "service": {
+      "hostname": "www.juanvillela.me",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1554064986,
+  "expire_in": 157680000,
+  "prev": "7e1803057630be7a3cff0c2053bf91313ac561ca5d9e562e634a876fbfc83ca2",
+  "seqno": 45,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.0
+Comment: https://keybase.io/crypto
+
+yMIuAnicrVJJaBRBFJ1REzVx31CioqWEqJPQVd3V1T2YKG5xi4iCoEbH6urqSevY
+Pfb0TIxJCAjuaCRKPCjiqCCICAqCB3ENBtwuRlRUFNxxAdEETEi0OujNo/UPRf3/
+3qv3P79lcN9QXpiUTUgWf60tCt+9cSodqswWrqkFhmvWgGgt2MR7L54wecqPbbJN
+EAUSFMEJUXSKTMg4lxBWEKaaQUToOkISZJaGDYUypkoGZ8RAFMomQlCGUGGIqBIF
+EWDZTpx7Sc92fCGLZYYwg0g2JGQRJHSwToQ2RypHCpIIpQhDWRXEKjcVMIQ5g6Z4
+ie2KnHjEeu39A/+ffad75TQNWYJCMTI0nWuyihViMh1RbEgEQz0Aprjn0M1coC03
+7W1MU4fb8Sof1EeAKGVsxoPpBu38gVVXV5cEsIydSPAELRHJCEh6ru8yNyHqVb6f
+TEUDvl+T7CVwI/ZHKmbYjilGKhgZ7qVs1wFRKJDMtwNtiLEiqYquqRHAtyZtj8fs
+AIGJqkniBP/wjJAkHGqSLIm8LIZAqMwsS2JIwrJh6WISMmVYhYxiU+dYRVyVFaoR
+1TIspsmMIhA0t8VxQVTBwieNC82UHXeon/Y4qL95vbJfKJwXys3pE+xaKG/gsL8b
+mH0+ILT38dIRp0H2eH3o4+Ylv6bub78BS9e0jJ9SMGTa2enzb5dlz8x9P3b4vu+N
+zeBNw5W2fK8OLSjq6F89rz12LlO57lgk23d2V+mynvwRbbmtLeF1n9q6exaVno68
+WT/5UUGjRb1VLfsu5Y99a065OrL8fqssv2wrSs5Z7nTOnHS4OP5yGjDWQnnHO99q
+fvJw+6jXd0o6Mzu/3N+Te3Lb4pXp7zmwqTx36IwXhXr35dXf+uWc2T3GLo8POnJx
++vk5F3DdikPkILn3bGf3ynEfRh7vuTb6xMRnE4alf+xqVZpyFs4KP9jg0ANdXdny
+4oqGz0M7E1M7Dv18NXvLhaMLu5/e+fDlVsXbht9EGzsf
+=fD++
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/fourjuaneight
+
+==================================================================
